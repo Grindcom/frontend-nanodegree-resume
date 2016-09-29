@@ -1,22 +1,22 @@
 /*
 This is empty on purpose! Your code to build the resume will go here.
- */
- // Access a tag id from JavaScript
- // $("#main").append("Greg Ford, B.Sc.");
- // How to use variables and print to console
- var firstName = "Greg";
- var lastName = "Ford";
- // console.log("My name is " + firstName);
- // Using replace
- var oldEmail = "ford@grindcom.ca";
- var newEmail = oldEmail.replace("grindcom","facet-it");
- // console.log("My first email was "+oldEmail);
- // console.log("But now I use "+newEmail+" for business");
+*/
+// Access a tag id from JavaScript
+// $("#main").append("Greg Ford, B.Sc.");
+// How to use variables and print to console
+var firstName = "Greg";
+var lastName = "Ford";
+// console.log("My name is " + firstName);
+// Using replace
+var oldEmail = "ford@grindcom.ca";
+var newEmail = oldEmail.replace("grindcom","facet-it");
+// console.log("My first email was "+oldEmail);
+// console.log("But now I use "+newEmail+" for business");
 
- //
- // Set up Header
- //
- // Set up name and role variables
+//
+// Set up Header
+//
+// Set up name and role variables
 var myname = firstName + " " + lastName + " B.sc.";
 var desiredRole = "Front-end Developer";
 var skills = ["programming","problem solving","C","C++","C#","Java"];
@@ -62,18 +62,46 @@ work.city = "Williams Lake";
 // Education object
 //
 var education = {
-  "school" : "",
-  "degree" : "",
-  "major" : "",
-  "yearsAttended" : {
-    "start" : "",
-    "end" : ""
-  },
-  "city" : ""
+  "schools" : [
+    {
+      "name" : "Devry Institute of Technology",
+      "degree" : "B.Sc.",
+      "major" : "Computer Engineering Technology",
+      "yearsAttended" : {
+        "start" : "2003",
+        "end" : "2006"
+      },
+      "city" : "Calgary"
+    },
+    {
+      "name" : "University of Norther British Columbia",
+      "degree" : "",
+      "major" : "Computer Science",
+      "yearsAttended" : {
+        "start" : "1997",
+        "end" : "1999"
+      },
+      "city" : "Prince George"
+    }
+  ],
+  "onlineCourses" : [
+    {
+      "title" : "Git and GitHub",
+      "school" : "Udacity",
+      "dates" : 2016,
+      "url" : ""
+    },
+    {
+      "title" : "JavaScript Syntax",
+      "school" : "Udacity",
+      "dates" : 2016,
+      "url" : ""
+    }
+  ]
 };
-education["school"] = "Devry Institute of Technology";
+education["school"] = "";
 education["degree"] = "Bachelor of Science";
-education["major"] = "Computer Engineering Technology";
+education["major"] = "";
 education["yearsAttended"].start = 2003;
 education["yearsAttended"].end = 2006;
 education["city"] = "Calgary";
