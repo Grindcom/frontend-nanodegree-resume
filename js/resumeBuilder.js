@@ -1,5 +1,5 @@
 /*
-  Code to build the resume will go here.
+Code to build the resume will go here.
 */
 // How to use variables and print to console
 var firstName = "Greg";
@@ -43,19 +43,28 @@ var bio = {
 // Work object
 //
 var work = {
-  "currentJob" : "a",
-  "employer" : "b",
-  "yearsWorked" : {
-    "start" : "",
-    "end" : ""
-  },
-  "city" : "d"
+  "jobs" = [
+    {
+      "employer" : "Williams Lake Fire Department",
+      "jobTitle" : "Firefighter",
+      "date" : {
+        "start" : "2011",
+        "end" : "current"
+      },
+      "location" : "Williams Lake"
+    },
+    {
+      "employer" : "b",
+      "jobTitle" : "a",
+      "date" : {
+        "start" : "",
+        "end" : ""
+      },
+      "location" : "d"
+    }
+  ]
+
 };
-work.currentJob = "Firefighter";
-work.employer = "Williams Lake Fire Department";
-work.yearsWorked.start = 2011;
-work.yearsWorked.end = "current";
-work.city = "Williams Lake";
 //
 // Education object
 //
