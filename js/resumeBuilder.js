@@ -42,70 +42,78 @@ var bio = {
 //
 // Work object
 //
+
 var work = {
-  "jobs" = [
+  "jobs" : [
     {
       "employer" : "Williams Lake Fire Department",
-      "jobTitle" : "Firefighter",
+      "title" : "Firefighter",
       "date" : {
-        "start" : "2011",
+        "start" : "March, 2011",
         "end" : "current"
       },
-      "location" : "Williams Lake"
+      "location" : "Williams Lake",
+      "description" : "Professional Firefighter NFPA 1001 certification."
     },
     {// ToDo: finish adding work experience
       "employer" : "Grindcom (Self-Employed)",
-      "jobTitle" : "CEO, System Architect",
+      "title" : "CEO, System Architect",
       "date" : {
-        "start" : "2006",
-        "end" : "2015"
+        "start" : "March, 2006",
+        "end" : "June, 2015"
       },
-      "location" : "Williams Lake"
+      "location" : "Williams Lake",
+      "description" : "Grindcom was focused on research and development of a measurement and control system for industrial forestry equipment.  Operationaly I was the system architect, software and hardware developer.  Managing this business included maintaining the R&D budget; utilizing Canadian federal programs such as SR&ED and IRAP."
     },
     {// ToDo: finish adding work experience
       "employer" : "Attending DeVry",
-      "jobTitle" : "Student",
+      "title" : "Student",
       "date" : {
-        "start" : "2003",
-        "end" : "2006"
+        "start" : "March, 2003",
+        "end" : "Fegruary, 2006"
       },
-      "location" : "Calgary"
+      "location" : "Calgary",
+      "description" : "Persue degree in computer engineering technology."
     },
     {// ToDo: finish adding work experience
       "employer" : "Tom Ford Logging Ltd.",
-      "jobTitle" : "Supervisor, Industrial Computer Tech.",
+      "title" : "Supervisor, Industrial Computer Tech.",
       "date" : {
-        "start" : "1999",
-        "end" : "2003"
+        "start" : "May, 1999",
+        "end" : "February, 2003"
       },
-      "location" : "Williams Lake"
+      "location" : "Williams Lake",
+      "description" : "Supervise logging operations, administer and maintain measurement and control computers on board heavy equipment."
     },
     {// ToDo: finish adding work experience
       "employer" : "Attend University of Norther British Columbia",
-      "jobTitle" : "Student, Computer Science",
+      "title" : "Student, Computer Science",
       "date" : {
-        "start" : "1997",
-        "end" : "1999"
+        "start" : "September, 1997",
+        "end" : "January, 1999"
       },
-      "location" : "Prince George"
+      "location" : "Prince George",
+      "description" : "Study programming languages including C and C++."
     },
     {// ToDo: finish adding work experience
       "employer" : "Attend Okanagan University Collage",
-      "jobTitle" : "Student, General Studies",
+      "title" : "Student, General Studies",
       "date" : {
-        "start" : "1996",
-        "end" : "1997"
+        "start" : "April, 1996",
+        "end" : "April, 1997"
       },
-      "location" : "Kelowna"
+      "location" : "Kelowna",
+      "description" : ""
     },
     {// ToDo: finish adding work experience
       "employer" : "Tom Ford Logging Ltd.",
-      "jobTitle" : "Heavy Equipment Operator",
+      "title" : "Heavy Equipment Operator",
       "date" : {
-        "start" : "1985",
-        "end" : "1996"
+        "start" : "June, 1985",
+        "end" : "March, 1996"
       },
-      "location" : "Williams Lake"
+      "location" : "Williams Lake",
+      "description" : "Operating Skidders, Dozers and Log loaders."
     }
   ]
 
@@ -197,7 +205,6 @@ var formattedMessage = HTMLwelcomeMsg.replace("%data%",bio.message);
 var formattedPic = HTMLbioPic.replace("%data%",bio.picture);
 // format education
 
-// format job
 
 // Add to header
 //  Use prepend to put it at the start of the header area
@@ -206,12 +213,46 @@ $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 $("#header").prepend(formattedPic);
 //
+// Add skills
+//
+// If there are skills listed add them
+if(bio.skills.length > 0)
+{
+  // Add skills to html
+  $("#header").append(HTMLskillsStart);
+  //
+  var formattedSkill = "";
+  var i = 0;
+  do{
+    formattedSkill = HTMLskills.replace("%data%",bio.skills[i]);
+    $("#skills").append(formattedSkill);
+    i++;
+  }while(i < bio.skills.length);
+
+}
+//
 // Add work experience
 //
-$("#workExperience").append(formattedWorkStart);
-$("#workExperience").append(formattedEmployer);
-$("#workExperience").append(formattedJobTitle);
-$("#workExperience").append(formattedWorkDate);
+function displayWork(){
+  var formattedEmployer = "";
+  var formattedTitle = "";
+  var formattedConcat = "";
+  var formattedDates = "";
+  var formattedDescrip = "";
+
+  for(job in work.jobs){
+    $("#workExperience").append(HTMLworkStart);
+    formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
+    formattedTitle = HTMLworkTitle.replace("%data%",work.jobs[job].title);
+    formattedDates = HTMLworkDates.replace("%data%",work.jobs[job].date.start + " - " + work.jobs[job].date.end);
+    formattedDescrip = HTMLworkDescription.replace("%data%",work.jobs[job].description);
+    formattedConcat = formattedEmployer + formattedTitle + formattedDates + formattedDescrip;
+    $(".work-entry:last").append(formattedConcat);
+  }
+}
+if(work.jobs.length > 0){
+  displayWork();
+}
 //
 // Add projects
 //
@@ -223,3 +264,16 @@ $("#workExperience").append(formattedWorkDate);
 //
 // Add maps
 //
+
+//
+// Log mouse clicks
+//
+$(document).click(function(loc){
+  logClicks(loc.pageX,loc.pageY);
+});
+
+function locationizer(arr){
+  arr.forEach(function(thing){
+
+  });
+}
