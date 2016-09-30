@@ -225,7 +225,7 @@ if(bio.skills.length > 0)
   var i = 0;
   do{
     formattedSkill = HTMLskills.replace("%data%",bio.skills[i]);
-    $("#skills").append(formattedSkill);
+    $("#skills:last").append(formattedSkill);
     i++;
   }while(i < bio.skills.length);
 
@@ -271,9 +271,19 @@ if(work.jobs.length > 0){
 $(document).click(function(loc){
   logClicks(loc.pageX,loc.pageY);
 });
-
-function locationizer(arr){
-  arr.forEach(function(thing){
-
-  });
+//
+// Add Internationalize button
+//
+$("#main").append(internationalizeButton);
+function inName(intName){
+  var tmpName = intName.split(" ");
+  tmpName[0] = tmpName[0][0].toUpperCase() + tmpName[0].slice(1);
+  intName = tmpName[0] + " " + tmpName[1].toUpperCase();
+  return intName;
 }
+console.log(inName("sebastian thrun"));
+// function locationizer(arr){
+//   arr.forEach(function(thing){
+//
+//   });
+// }
