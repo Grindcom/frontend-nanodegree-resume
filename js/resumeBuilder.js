@@ -54,13 +54,58 @@ var work = {
       "location" : "Williams Lake"
     },
     {// ToDo: finish adding work experience
-      "employer" : "b",
-      "jobTitle" : "a",
+      "employer" : "Grindcom (Self-Employed)",
+      "jobTitle" : "CEO, System Architect",
       "date" : {
-        "start" : "",
-        "end" : ""
+        "start" : "2006",
+        "end" : "2015"
       },
-      "location" : "d"
+      "location" : "Williams Lake"
+    },
+    {// ToDo: finish adding work experience
+      "employer" : "Attending DeVry",
+      "jobTitle" : "Student",
+      "date" : {
+        "start" : "2003",
+        "end" : "2006"
+      },
+      "location" : "Calgary"
+    },
+    {// ToDo: finish adding work experience
+      "employer" : "Tom Ford Logging Ltd.",
+      "jobTitle" : "Supervisor, Industrial Computer Tech.",
+      "date" : {
+        "start" : "1999",
+        "end" : "2003"
+      },
+      "location" : "Williams Lake"
+    },
+    {// ToDo: finish adding work experience
+      "employer" : "Attend University of Norther British Columbia",
+      "jobTitle" : "Student, Computer Science",
+      "date" : {
+        "start" : "1997",
+        "end" : "1999"
+      },
+      "location" : "Prince George"
+    },
+    {// ToDo: finish adding work experience
+      "employer" : "Attend Okanagan University Collage",
+      "jobTitle" : "Student, General Studies",
+      "date" : {
+        "start" : "1996",
+        "end" : "1997"
+      },
+      "location" : "Kelowna"
+    },
+    {// ToDo: finish adding work experience
+      "employer" : "Tom Ford Logging Ltd.",
+      "jobTitle" : "Heavy Equipment Operator",
+      "date" : {
+        "start" : "1985",
+        "end" : "1996"
+      },
+      "location" : "Williams Lake"
     }
   ]
 
