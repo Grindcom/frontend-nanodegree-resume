@@ -93,16 +93,34 @@ var education = {
   ],
   "onlineCourses" : [
     {
-      "title" : "Git and GitHub",
+      "title" : "How to Use Git and GitHub",
       "school" : "Udacity",
       "dates" : 2016,
-      "url" : ""
+      "url" : "https://www.udacity.com/course/how-to-use-git-and-github--ud775"
     },
     {
-      "title" : "JavaScript Syntax",
+      "title" : "Responsive Web Design Fundamentals",
       "school" : "Udacity",
       "dates" : 2016,
-      "url" : ""
+      "url" : "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
+    },
+    {
+      "title" : "JavaScript Basics",
+      "school" : "Udacity",
+      "dates" : 2016,
+      "url" : "https://www.udacity.com/course/javascript-basics--ud804"
+    },
+    {
+      "title" : "Intro to HTML and CSS",
+      "school" : "Udacity",
+      "dates" : 2016,
+      "url" : "https://www.udacity.com/course/intro-to-html-and-css--ud304"
+    },
+    {
+      "title" : "Responsive Images",
+      "school" : "Udacity",
+      "dates" : 2016,
+      "url" : "https://www.udacity.com/course/responsive-images--ud882"
     }
   ]
 };
