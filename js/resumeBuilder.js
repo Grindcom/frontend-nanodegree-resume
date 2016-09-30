@@ -53,7 +53,7 @@ var work = {
       },
       "location" : "Williams Lake"
     },
-    {
+    {// ToDo: finish adding work experience
       "employer" : "b",
       "jobTitle" : "a",
       "date" : {
@@ -106,6 +106,24 @@ var education = {
     }
   ]
 };
+//
+// Projects object
+//
+var projects = {
+  "projects" : [
+    {
+      "title" : "a",
+      "dates" : {
+        "start" : "b",
+        "end" : "c"
+      },
+      "description" : "d",
+      "images" : [{
+        "url" : ""
+      }]
+    }
+  ]
+}
 //
 // Format information
 //
