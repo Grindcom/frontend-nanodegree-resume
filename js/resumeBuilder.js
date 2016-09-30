@@ -194,6 +194,14 @@ var projects = {
       }]
     }
   ]
+
+}
+projects.display = function(){
+  //     $("#project").append(HTMLprojectStart);
+      console.log("Hello");
+  // projects.forEach(function(project){
+  //
+  // });
 }
 //
 // Format information
@@ -256,7 +264,7 @@ if(work.jobs.length > 0){
 //
 // Add projects
 //
-
+projects.display();
 //
 // Add Education
 //
@@ -281,7 +289,7 @@ function inName(intName){
   intName = tmpName[0] + " " + tmpName[1].toUpperCase();
   return intName;
 }
-console.log(inName("sebastian thrun"));
+
 // function locationizer(arr){
 //   arr.forEach(function(thing){
 //
