@@ -283,7 +283,7 @@ projects.display();
 //
 // Add maps
 //
-$("#mapDiv").append(map);
+$("#mapDiv").append(googleMap);
 //
 // Log mouse clicks
 //

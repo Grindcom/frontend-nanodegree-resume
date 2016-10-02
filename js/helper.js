@@ -128,7 +128,6 @@ function initializeMap() {
 
     // adds the single location property from bio to the locations array
     locations.push(bio.contacts.location);
-
     // iterates through school locations and appends each location to
     // the locations array. Note that forEach is used for array iteration
     // as described in the Udacity FEND Style Guide:
@@ -136,11 +135,11 @@ function initializeMap() {
     education.schools.forEach(function(school){
       locations.push(school.location);
     });
-
     // iterates through work locations and appends each location to
     // the locations array. Note that forEach is used for array iteration
     // as described in the Udacity FEND Style Guide:
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
+
     work.jobs.forEach(function(job){
       locations.push(job.location);
     });
@@ -210,15 +209,17 @@ function initializeMap() {
     var service = new google.maps.places.PlacesService(map);
 
     // Iterates through the array of locations, creates a search object for each location
-      locations.forEach(function(place){
-      // the search request object
-      var request = {
-        query: place
-      };
-
-      // Actually searches the Google Maps API for location data and runs the callback
-      // function with the search results after each search.
-      service.textSearch(request, callback);
+    locations.forEach(function(place){
+      // if place is valid
+      if(place){
+        // the search request object
+        var request = {
+          query: place
+        };
+        // Actually searches the Google Maps API for location data and runs the callback
+        // function with the search results after each search.
+        service.textSearch(request, callback);
+      }
     });
   }
 
@@ -227,11 +228,9 @@ function initializeMap() {
 
   // locations is an array of location strings returned from locationFinder()
   locations = locationFinder();
-
   // pinPoster(locations) creates pins on the map for each location in
   // the locations array
   pinPoster(locations);
-
 }
 
 /*
@@ -243,7 +242,7 @@ window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
-window.addEventListener('resize', function(e) {
-  // Make sure the map bounds get updated on page resize
- map.fitBounds(mapBounds);
-});
+// window.addEventListener('resize', function(e) {
+//   // Make sure the map bounds get updated on page resize
+//  map.fitBounds(mapBounds);
+// });
