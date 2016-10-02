@@ -31,12 +31,12 @@ var bio = {
   "age" : 48,
   "skills" : skills,
   "message" : message,
-  "contact" : {
+  "contacts" : {
     "mobile" : "250-305-8802",
     "email" : oldEmail,
     "github" : "Grindcom",
     "linkedin" : "gtford",
-    "location" : "British Columbia"
+    "location" : "Williams Lake, BC"
   }
 };
 //
@@ -52,7 +52,7 @@ var work = {
         "start" : "March, 2011",
         "end" : "current"
       },
-      "location" : "Williams Lake",
+      "location" : "Williams Lake,BC",
       "description" : "Professional Firefighter NFPA 1001 certification."
     },
     {// ToDo: finish adding work experience
@@ -62,7 +62,7 @@ var work = {
         "start" : "March, 2006",
         "end" : "June, 2015"
       },
-      "location" : "Williams Lake",
+      "location" : "Williams Lake,BC",
       "description" : "Grindcom was focused on research and development of a measurement and control system for industrial forestry equipment.  Operationaly I was the system architect, software and hardware developer.  Managing this business included maintaining the R&D budget; utilizing Canadian federal programs such as SR&ED and IRAP."
     },
     {// ToDo: finish adding work experience
@@ -72,7 +72,7 @@ var work = {
         "start" : "March, 2003",
         "end" : "Fegruary, 2006"
       },
-      "location" : "Calgary",
+      "location" : "Calgary,AB",
       "description" : "Persue degree in computer engineering technology."
     },
     {// ToDo: finish adding work experience
@@ -82,7 +82,7 @@ var work = {
         "start" : "May, 1999",
         "end" : "February, 2003"
       },
-      "location" : "Williams Lake",
+      "location" : "Williams Lake,BC",
       "description" : "Supervise logging operations, administer and maintain measurement and control computers on board heavy equipment."
     },
     {// ToDo: finish adding work experience
@@ -92,7 +92,7 @@ var work = {
         "start" : "September, 1997",
         "end" : "January, 1999"
       },
-      "location" : "Prince George",
+      "location" : "Prince George,BC",
       "description" : "Study programming languages including C and C++."
     },
     {// ToDo: finish adding work experience
@@ -102,7 +102,7 @@ var work = {
         "start" : "April, 1996",
         "end" : "April, 1997"
       },
-      "location" : "Kelowna",
+      "location" : "Kelowna,BC",
       "description" : ""
     },
     {// ToDo: finish adding work experience
@@ -183,12 +183,12 @@ var education = {
 var projects = {
   "projects" : [
     {
-      "title" : "a",
+      "title" : "Portfolio",
       "dates" : {
-        "start" : "b",
-        "end" : "c"
+        "start" : "September, 2016",
+        "end" : "September, 2016"
       },
-      "description" : "d",
+      "description" : "A projects portfolio, created for the Front End Developer nanodegree.",
       "images" : [{
         "url" : ""
       }]
@@ -197,11 +197,22 @@ var projects = {
 
 }
 projects.display = function(){
-  //     $("#project").append(HTMLprojectStart);
-      console.log("Hello");
-  // projects.forEach(function(project){
-  //
-  // });
+  // set up variables
+  var frmTitle = "";
+  var frmDate = "";
+  var frmDescrip = "";
+  var frmImage = "";
+  var frmConcat = "";
+  // iterate through all projects and place them in the projects div
+  projects.projects.forEach(function(project){
+    $("#projects").append(HTMLprojectStart);
+    frmTitle = HTMLprojectTitle.replace("%data%",project.title);
+    frmDate = HTMLprojectDates.replace("%data%",project.dates.start + " - " + project.dates.end);
+    frmDescrip = HTMLprojectDescription.replace("%data%",project.description);
+    frmImage = HTMLprojectImage.replace("%data%",project.images[0].url);
+    frmConcat = frmTitle + frmDate + frmDescrip + frmImage;
+    $(".project-entry:last").append(frmConcat);
+  });
 }
 //
 // Format information
@@ -272,7 +283,7 @@ projects.display();
 //
 // Add maps
 //
-
+$("#mapDiv").append(map);
 //
 // Log mouse clicks
 //
