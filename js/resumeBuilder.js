@@ -262,7 +262,7 @@ function displayWork(){
   for(job in work.jobs){
     $("#workExperience").append(HTMLworkStart);
     formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
-    formattedTitle = HTMLworkTitle.replace("%data%",work.jobs[job].title);
+    formattedTitle = HTMLworkTitle.replace("%data%",work.jobs[job].title.bold());
     formattedDates = HTMLworkDates.replace("%data%",work.jobs[job].date.start + " - " + work.jobs[job].date.end);
     formattedDescrip = HTMLworkDescription.replace("%data%",work.jobs[job].description);
     formattedConcat = formattedEmployer + formattedTitle + formattedDates + formattedDescrip;
