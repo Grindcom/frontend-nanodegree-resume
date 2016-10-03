@@ -6,16 +6,15 @@
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-    max-width: 900px;
+  max-width: 900px;
 }
 header, nav, footer, section, article, div {
   box-sizing: border-box;
-
 }
 /*.container{
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+width: 100%;
+display: flex;
+flex-wrap: wrap;
 }*/
 
 .row{
@@ -30,12 +29,14 @@ header, nav, footer, section, article, div {
 .box{
   /*border: 1px solid black;*/
   width: 300px;
-  height: 250px;
+  /*height: 250px;*/
+  border-radius: 12px;
+  box-shadow: 1px 1px 5px #7d97ad;
   overflow: hidden;
 }
 /**/
 
-html,body{
+html,body,footer{
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
