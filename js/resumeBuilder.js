@@ -52,7 +52,7 @@ var education = {
       "degree" : "B.Sc.",
       "majors" : "Computer Engineering Technology",
       "dates" : "March, 2003 to February, 2006",
-      "url" : "http://www.devry.edu"
+      "url" : "http://www.devry.edu/degree-programs/engineering-information-sciences/computer-engineering-technology.html"
     },
     {
       "name" : "University of Norther British Columbia",
@@ -104,67 +104,28 @@ var education = {
 //
 var work = {
   "jobs" : [
-    {
+    {// work experience
       "employer" : "Williams Lake Fire Department",
       "title" : "Firefighter",
-      "date" : {
-        "start" : "March, 2011",
-        "end" : "current"
-      },
       "location" : "Williams Lake,BC",
-      "description" : "Professional Firefighter NFPA 1001 certification."
+      "dates" : "March, 2011 - in progress",
+      "description" : "Professional Firefighter, NFPA 1001 certification."
     },
-    {// ToDo: finish adding work experience
+    {// work experience
       "employer" : "Grindcom (Self-Employed)",
       "title" : "CEO, System Architect",
-      "date" : {
-        "start" : "March, 2006",
-        "end" : "June, 2015"
-      },
       "location" : "Williams Lake,BC",
+      "dates" : "March, 2006 - June, 2015",
       "description" : "Grindcom was focused on research and development of a measurement and control system for industrial forestry equipment.  Operationaly I was the system architect, software and hardware developer.  Managing this business included maintaining the R&D budget; utilizing Canadian federal programs such as SR&ED and IRAP."
     },
-    {// ToDo: finish adding work experience
-      "employer" : "Attending DeVry",
-      "title" : "Student",
-      "date" : {
-        "start" : "March, 2003",
-        "end" : "Fegruary, 2006"
-      },
-      "location" : "Calgary,AB",
-      "description" : "Persue degree in computer engineering technology."
-    },
-    {// ToDo: finish adding work experience
+    {// work experience
       "employer" : "Tom Ford Logging Ltd.",
       "title" : "Supervisor, Industrial Computer Tech.",
-      "date" : {
-        "start" : "May, 1999",
-        "end" : "February, 2003"
-      },
-      "location" : "Williams Lake,BC",
+            "location" : "Williams Lake,BC",
+      "date" : "May, 1999 - February, 2003",
       "description" : "Supervise logging operations, administer and maintain measurement and control computers on board heavy equipment."
     },
-    {// ToDo: finish adding work experience
-      "employer" : "Attend University of Norther British Columbia",
-      "title" : "Student, Computer Science",
-      "date" : {
-        "start" : "September, 1997",
-        "end" : "January, 1999"
-      },
-      "location" : "Prince George,BC",
-      "description" : "Study programming languages including C and C++."
-    },
-    {// ToDo: finish adding work experience
-      "employer" : "Attend Okanagan University Collage",
-      "title" : "Student, General Studies",
-      "date" : {
-        "start" : "April, 1996",
-        "end" : "April, 1997"
-      },
-      "location" : "Kelowna,BC",
-      "description" : ""
-    },
-    {// ToDo: finish adding work experience
+    {// work experience
       "employer" : "Tom Ford Logging Ltd.",
       "title" : "Heavy Equipment Operator",
       "date" : {
@@ -186,7 +147,7 @@ var work = {
       $("#workExperience").append(HTMLworkStart);
       formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
       formattedTitle = HTMLworkTitle.replace("%data%",work.jobs[job].title.bold());
-      formattedDates = HTMLworkDates.replace("%data%",work.jobs[job].date.start + " - " + work.jobs[job].date.end);
+      formattedDates = HTMLworkDates.replace("%data%",work.jobs[job].dates);
       formattedDescrip = HTMLworkDescription.replace("%data%",work.jobs[job].description);
       formattedConcat = formattedEmployer + formattedTitle + formattedDates + formattedDescrip;
       $(".work-entry:last").append(formattedConcat);
