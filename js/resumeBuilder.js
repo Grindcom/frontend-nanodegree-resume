@@ -42,6 +42,64 @@ var bio = {
   }
 };
 //
+// Education object
+//
+var education = {
+  "schools" : [
+    {
+      "name" : "Devry University, Calgary campus",
+      "location" : "Phoenix, AZ",
+      "degree" : "B.Sc.",
+      "majors" : "Computer Engineering Technology",
+      "dates" : "March, 2003 to February, 2006",
+      "url" : "http://www.devry.edu"
+    },
+    {
+      "name" : "University of Norther British Columbia",
+      "location" : "Prince George, BC",
+      "degree" : "NA",
+      "majors" : "Computer Science",
+      "dates" : "September, 1997 to January, 1999",
+      "url": "http://www.unbc.ca"
+    }
+  ],
+  "onlineCourses" : [
+    {
+      "title" : "How to Use Git and GitHub",
+      "school" : "Udacity",
+      "dates" : "September, 2016",
+      "url" : "https://www.udacity.com/course/how-to-use-git-and-github--ud775"
+    },
+    {
+      "title" : "Responsive Web Design Fundamentals",
+      "school" : "Udacity",
+      "dates" : "September, 2016",
+      "url" : "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
+    },
+    {
+      "title" : "JavaScript Basics",
+      "school" : "Udacity",
+      "dates" : "September, 2016",
+      "url" : "https://www.udacity.com/course/javascript-basics--ud804"
+    },
+    {
+      "title" : "Intro to HTML and CSS",
+      "school" : "Udacity",
+      "dates" : "September, 2016",
+      "url" : "https://www.udacity.com/course/intro-to-html-and-css--ud304"
+    },
+    {
+      "title" : "Responsive Images",
+      "school" : "Udacity",
+      "dates" : "September, 2016",
+      "url" : "https://www.udacity.com/course/responsive-images--ud882"
+    }
+  ],
+  "display": function(){
+
+  }
+};
+//
 // Work object
 //
 var work = {
@@ -136,68 +194,7 @@ var work = {
   }
 
 };
-//
-// Education object
-//
-var education = {
-  "schools" : [
-    {
-      "name" : "Devry Institute of Technology",
-      "degree" : "B.Sc.",
-      "major" : "Computer Engineering Technology",
-      "yearsAttended" : {
-        "start" : "2003",
-        "end" : "2006"
-      },
-      "city" : "Calgary"
-    },
-    {
-      "name" : "University of Norther British Columbia",
-      "degree" : "",
-      "major" : "Computer Science",
-      "yearsAttended" : {
-        "start" : "1997",
-        "end" : "1999"
-      },
-      "city" : "Prince George"
-    }
-  ],
-  "onlineCourses" : [
-    {
-      "title" : "How to Use Git and GitHub",
-      "school" : "Udacity",
-      "dates" : 2016,
-      "url" : "https://www.udacity.com/course/how-to-use-git-and-github--ud775"
-    },
-    {
-      "title" : "Responsive Web Design Fundamentals",
-      "school" : "Udacity",
-      "dates" : 2016,
-      "url" : "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
-    },
-    {
-      "title" : "JavaScript Basics",
-      "school" : "Udacity",
-      "dates" : 2016,
-      "url" : "https://www.udacity.com/course/javascript-basics--ud804"
-    },
-    {
-      "title" : "Intro to HTML and CSS",
-      "school" : "Udacity",
-      "dates" : 2016,
-      "url" : "https://www.udacity.com/course/intro-to-html-and-css--ud304"
-    },
-    {
-      "title" : "Responsive Images",
-      "school" : "Udacity",
-      "dates" : 2016,
-      "url" : "https://www.udacity.com/course/responsive-images--ud882"
-    }
-  ],
-  "display": function(){
 
-  }
-};
 //
 // Projects object
 //
