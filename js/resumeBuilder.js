@@ -166,10 +166,7 @@ var projects = {
   "projects" : [
     {
       "title" : "Portfolio",
-      "dates" : {
-        "start" : "September, 2016",
-        "end" : "September, 2016"
-      },
+      "dates" : "September, 2016 - September, 2016",
       "description" : "A projects portfolio, created for the Front End Developer nanodegree.",
       "images" : [{
         "url" : ""
