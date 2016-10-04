@@ -17,9 +17,8 @@ var newEmail = oldEmail.replace("grindcom","facet-it");
 // Set up name and role variables
 var myname = firstName + " " + lastName + " B.sc.";
 var desiredRole = "Front-end Developer";
-var skills = ["programming","problem solving","C","C++","C#","Java"];
+var skills = ["Programming","Problem solving","C","C++","C#","Java","JavaScript","HTML","CSS"];
 var message = "Thanks for checking out my Resume";
-
 
 //
 // Set up bio object
@@ -39,16 +38,23 @@ var bio = {
   "biopic" : "./images/greg_casual-800x350_large_1x.jpg",
   display: function(){
     // format bio
-    var formattedName = HTMLheaderName.replace("%data%",bio.name);
-    var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
-    var formattedMessage = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
-    var formattedPic = HTMLbioPic.replace("%data%",bio.biopic);
+    var formattedName = HTMLheaderName.replace("%data%",this.name);
+    var formattedRole = HTMLheaderRole.replace("%data%",this.role);
+    var formattedMessage = HTMLwelcomeMsg.replace("%data%",this.welcomeMessage);
+    var formattedPic = HTMLbioPic.replace("%data%",this.biopic);
+    // Contacts
+    var formattedEmail = HTMLemail.replace("%data%",this.contacts.email);
+    var formattedMobile = HTMLmobile.replace("%data%",this.contacts.mobile);
+    var formattedGit = HTMLgithub.replace("%data%",this.contacts.github);
+    var formattedLin = HTMLlinkedIn.replace("%data%",this.contacts.linkedin);
+    var formattedLocation = HTMLlocation.replace("%data%",this.contacts.location);
     // Add to header
     //  Use prepend to put it at the start of the header area
-    $("#header").prepend(formattedMessage);
+    $("#header").append(formattedMessage);
     $("#header").prepend(formattedRole);
     $("#header").prepend(formattedName);
     $("#header").prepend(formattedPic);
+
 
     // If there are skills listed add them
     if(bio.skills.length > 0)
@@ -63,7 +69,15 @@ var bio = {
         $("#skills:last").append(formattedSkill);
       });
     }
-
+    //
+    // Add contacts
+    //
+    $("#topContacts").insertAfter("#skills");
+    $("#topContacts").append(formattedMobile);
+    $("#topContacts").append(formattedEmail);
+    $("#topContacts").append(formattedGit);
+    $("#topContacts").append(formattedLin);
+    $("#topContacts").append(formattedLocation);
   }
 };
 //
@@ -265,9 +279,3 @@ function inName(intName){
   intName = tmpName[0] + " " + tmpName[1].toUpperCase();
   return intName;
 }
-
-// function locationizer(arr){
-//   arr.forEach(function(thing){
-//
-//   });
-// }
