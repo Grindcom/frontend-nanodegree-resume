@@ -70,7 +70,7 @@ var bio = {
       });
     }
     //
-    // Add contacts
+    // Add contacts to top header
     //
     $("#topContacts").insertAfter("#skills");
     $("#topContacts").append(formattedMobile);
@@ -78,6 +78,14 @@ var bio = {
     $("#topContacts").append(formattedGit);
     $("#topContacts").append(formattedLin);
     $("#topContacts").append(formattedLocation);
+    //
+    // Add contacts to footer contacts
+    //
+    $("#footerContacts").append(formattedMobile);
+    $("#footerContacts").append(formattedEmail);
+    $("#footerContacts").append(formattedGit);
+    $("#footerContacts").append(formattedLin);
+    $("#footerContacts").append(formattedLocation);
   }
 };
 //
