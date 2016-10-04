@@ -136,10 +136,7 @@ var work = {
     {// work experience
       "employer" : "Tom Ford Logging Ltd.",
       "title" : "Heavy Equipment Operator",
-      "date" : {
-        "start" : "June, 1985",
-        "end" : "March, 1996"
-      },
+      "dates" : "June, 1985 - March, 1996",
       "location" : "Williams Lake",
       "description" : "Operating Skidders, Dozers and Log loaders."
     }
