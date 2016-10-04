@@ -38,6 +38,31 @@ var bio = {
   "skills" : skills,
   "biopic" : "./images/greg_casual-800x350_large_1x.jpg",
   display: function(){
+    // format bio
+    var formattedName = HTMLheaderName.replace("%data%",bio.name);
+    var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
+    var formattedMessage = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
+    var formattedPic = HTMLbioPic.replace("%data%",bio.biopic);
+    // Add to header
+    //  Use prepend to put it at the start of the header area
+    $("#header").prepend(formattedMessage);
+    $("#header").prepend(formattedRole);
+    $("#header").prepend(formattedName);
+    $("#header").prepend(formattedPic);
+
+    // If there are skills listed add them
+    if(bio.skills.length > 0)
+    {
+      // Add skills to html
+      $("#header").append(HTMLskillsStart);
+      //
+      var formattedSkill = "";
+      //
+      bio.skills.forEach(function(skill){
+        formattedSkill = HTMLskills.replace("%data%",skill);
+        $("#skills:last").append(formattedSkill);
+      });
+    }
 
   }
 };
@@ -104,6 +129,7 @@ var education = {
     }
   ],
   "display": function(){
+    // format education
 
   }
 };
@@ -193,41 +219,12 @@ var projects = {
   }
 
 };
-//
-// Format information
-//
-// format bio
-var formattedName = HTMLheaderName.replace("%data%",bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
-var formattedMessage = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
-var formattedPic = HTMLbioPic.replace("%data%",bio.biopic);
-// format education
 
-
-// Add to header
-//  Use prepend to put it at the start of the header area
-$("#header").prepend(formattedMessage);
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-$("#header").prepend(formattedPic);
 //
-// Add skills
+// Add bio
 //
-// If there are skills listed add them
-if(bio.skills.length > 0)
-{
-  // Add skills to html
-  $("#header").append(HTMLskillsStart);
-  //
-  var formattedSkill = "";
-  var i = 0;
-  do{
-    formattedSkill = HTMLskills.replace("%data%",bio.skills[i]);
-    $("#skills:last").append(formattedSkill);
-    i++;
-  }while(i < bio.skills.length);
+bio.display();
 
-}
 //
 // Add work experience
 //
@@ -246,7 +243,7 @@ if(projects.projects.length > 0 ){
 // Add Education
 //
 if((education.schools.length > 0) || (education.onlineCourses.length > 0) ){
-  console.log("display education");
+  education.display();
 }
 //
 // Add maps
