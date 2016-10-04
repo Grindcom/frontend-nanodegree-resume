@@ -231,18 +231,23 @@ if(bio.skills.length > 0)
 //
 // Add work experience
 //
-
 if(work.jobs.length > 0){
   work.display();
 }
+
 //
 // Add projects
 //
-projects.display();
+if(projects.projects.length > 0 ){
+  projects.display();
+}
+
 //
 // Add Education
 //
-
+if((education.schools.length > 0) || (education.onlineCourses.length > 0) ){
+  console.log("display education");
+}
 //
 // Add maps
 //
