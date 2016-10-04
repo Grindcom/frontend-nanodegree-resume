@@ -48,7 +48,7 @@ var education = {
   "schools" : [
     {
       "name" : "Devry University, Calgary campus",
-      "location" : "Phoenix, AZ",
+      "location" : "Calgary, AB",
       "degree" : "B.Sc.",
       "majors" : "Computer Engineering Technology",
       "dates" : "March, 2003 to February, 2006",
@@ -61,6 +61,14 @@ var education = {
       "majors" : "Computer Science",
       "dates" : "September, 1997 to January, 1999",
       "url": "http://www.unbc.ca"
+    },
+    {
+      "name" : "Okanagan University Collage",
+      "location" : "Kelowna, BC",
+      "degree" : "NA",
+      "majors" : "General Studies",
+      "dates" : "June, 1996 to May, 1997",
+      "url": "http://www.ouc.bc.ca"
     }
   ],
   "onlineCourses" : [
@@ -121,7 +129,7 @@ var work = {
     {// work experience
       "employer" : "Tom Ford Logging Ltd.",
       "title" : "Supervisor, Industrial Computer Tech.",
-            "location" : "Williams Lake,BC",
+      "location" : "Williams Lake,BC",
       "date" : "May, 1999 - February, 2003",
       "description" : "Supervise logging operations, administer and maintain measurement and control computers on board heavy equipment."
     },
@@ -142,18 +150,16 @@ var work = {
     var formattedConcat = "";
     var formattedDates = "";
     var formattedDescrip = "";
-
-    for(job in work.jobs){
+    this.jobs.forEach(function(job){
       $("#workExperience").append(HTMLworkStart);
-      formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
-      formattedTitle = HTMLworkTitle.replace("%data%",work.jobs[job].title.bold());
-      formattedDates = HTMLworkDates.replace("%data%",work.jobs[job].dates);
-      formattedDescrip = HTMLworkDescription.replace("%data%",work.jobs[job].description);
+      formattedEmployer = HTMLworkEmployer.replace("%data%",job.employer);
+      formattedTitle = HTMLworkTitle.replace("%data%",job.title.bold());
+      formattedDates = HTMLworkDates.replace("%data%",job.dates);
+      formattedDescrip = HTMLworkDescription.replace("%data%",job.description);
       formattedConcat = formattedEmployer + formattedTitle + formattedDates + formattedDescrip;
       $(".work-entry:last").append(formattedConcat);
-    }
+    });
   }
-
 };
 
 //
