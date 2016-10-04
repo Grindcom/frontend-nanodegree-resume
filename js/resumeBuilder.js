@@ -25,19 +25,18 @@ var message = "Thanks for checking out my Resume";
 // Set up bio object
 //
 var bio = {
-  "biopic" : "./images/greg_casual-800x350_large_1x.jpg",
   "name" : myname,
   "role" : desiredRole,
-  "age" : 48,
-  "skills" : skills,
-  "welcomeMessage" : message,
   "contacts" : {
     "mobile" : "250-305-8802",
     "email" : oldEmail,
     "github" : "Grindcom",
-    "linkedin" : "gtford",
+    "linkedin" : "gtford",// replace twitter
     "location" : "Williams Lake, BC"
   },
+  "welcomeMessage" : message,
+  "skills" : skills,
+  "biopic" : "./images/greg_casual-800x350_large_1x.jpg",
   display: function(){
 
   }
