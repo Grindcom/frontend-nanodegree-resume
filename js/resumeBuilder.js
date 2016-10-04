@@ -45,7 +45,6 @@ var bio = {
 //
 // Work object
 //
-
 var work = {
   "jobs" : [
     {
@@ -118,7 +117,24 @@ var work = {
       "location" : "Williams Lake",
       "description" : "Operating Skidders, Dozers and Log loaders."
     }
-  ]
+  ],
+  "display": function(){
+    var formattedEmployer = "";
+    var formattedTitle = "";
+    var formattedConcat = "";
+    var formattedDates = "";
+    var formattedDescrip = "";
+
+    for(job in work.jobs){
+      $("#workExperience").append(HTMLworkStart);
+      formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
+      formattedTitle = HTMLworkTitle.replace("%data%",work.jobs[job].title.bold());
+      formattedDates = HTMLworkDates.replace("%data%",work.jobs[job].date.start + " - " + work.jobs[job].date.end);
+      formattedDescrip = HTMLworkDescription.replace("%data%",work.jobs[job].description);
+      formattedConcat = formattedEmployer + formattedTitle + formattedDates + formattedDescrip;
+      $(".work-entry:last").append(formattedConcat);
+    }
+  }
 
 };
 //
@@ -199,27 +215,27 @@ var projects = {
         "url" : ""
       }]
     }
-  ]
+  ],
+  "display":function(){
+    // set up variables
+    var frmTitle = "";
+    var frmDate = "";
+    var frmDescrip = "";
+    var frmImage = "";
+    var frmConcat = "";
+    // iterate through all projects and place them in the projects div
+    projects.projects.forEach(function(project){
+      $("#projects").append(HTMLprojectStart);
+      frmTitle = HTMLprojectTitle.replace("%data%",project.title);
+      frmDate = HTMLprojectDates.replace("%data%",project.dates.start + " - " + project.dates.end);
+      frmDescrip = HTMLprojectDescription.replace("%data%",project.description);
+      frmImage = HTMLprojectImage.replace("%data%",project.images[0].url);
+      frmConcat = frmTitle + frmDate + frmDescrip + frmImage;
+      $(".project-entry:last").append(frmConcat);
+    });
+  }
 
-}
-projects.display = function(){
-  // set up variables
-  var frmTitle = "";
-  var frmDate = "";
-  var frmDescrip = "";
-  var frmImage = "";
-  var frmConcat = "";
-  // iterate through all projects and place them in the projects div
-  projects.projects.forEach(function(project){
-    $("#projects").append(HTMLprojectStart);
-    frmTitle = HTMLprojectTitle.replace("%data%",project.title);
-    frmDate = HTMLprojectDates.replace("%data%",project.dates.start + " - " + project.dates.end);
-    frmDescrip = HTMLprojectDescription.replace("%data%",project.description);
-    frmImage = HTMLprojectImage.replace("%data%",project.images[0].url);
-    frmConcat = frmTitle + frmDate + frmDescrip + frmImage;
-    $(".project-entry:last").append(frmConcat);
-  });
-}
+};
 //
 // Format information
 //
@@ -258,25 +274,9 @@ if(bio.skills.length > 0)
 //
 // Add work experience
 //
-function displayWork(){
-  var formattedEmployer = "";
-  var formattedTitle = "";
-  var formattedConcat = "";
-  var formattedDates = "";
-  var formattedDescrip = "";
 
-  for(job in work.jobs){
-    $("#workExperience").append(HTMLworkStart);
-    formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
-    formattedTitle = HTMLworkTitle.replace("%data%",work.jobs[job].title.bold());
-    formattedDates = HTMLworkDates.replace("%data%",work.jobs[job].date.start + " - " + work.jobs[job].date.end);
-    formattedDescrip = HTMLworkDescription.replace("%data%",work.jobs[job].description);
-    formattedConcat = formattedEmployer + formattedTitle + formattedDates + formattedDescrip;
-    $(".work-entry:last").append(formattedConcat);
-  }
-}
 if(work.jobs.length > 0){
-  displayWork();
+  work.display();
 }
 //
 // Add projects
