@@ -25,18 +25,21 @@ var message = "Thanks for checking out my Resume";
 // Set up bio object
 //
 var bio = {
-  "picture" : "./images/greg_casual-800x350_large_1x.jpg",
-  "bioname" : myname,
+  "biopic" : "./images/greg_casual-800x350_large_1x.jpg",
+  "name" : myname,
   "role" : desiredRole,
   "age" : 48,
   "skills" : skills,
-  "message" : message,
+  "welcomeMessage" : message,
   "contacts" : {
     "mobile" : "250-305-8802",
     "email" : oldEmail,
     "github" : "Grindcom",
     "linkedin" : "gtford",
     "location" : "Williams Lake, BC"
+  },
+  display: function(){
+
   }
 };
 //
@@ -175,7 +178,10 @@ var education = {
       "dates" : 2016,
       "url" : "https://www.udacity.com/course/responsive-images--ud882"
     }
-  ]
+  ],
+  "display": function(){
+
+  }
 };
 //
 // Projects object
@@ -218,10 +224,10 @@ projects.display = function(){
 // Format information
 //
 // format bio
-var formattedName = HTMLheaderName.replace("%data%",bio.bioname);
+var formattedName = HTMLheaderName.replace("%data%",bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
-var formattedMessage = HTMLwelcomeMsg.replace("%data%",bio.message);
-var formattedPic = HTMLbioPic.replace("%data%",bio.picture);
+var formattedMessage = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
+var formattedPic = HTMLbioPic.replace("%data%",bio.biopic);
 // format education
 
 
