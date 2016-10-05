@@ -11,19 +11,24 @@
 header, nav, footer, section, article, div {
   box-sizing: border-box;
 }
-/*.container{
+.container{
 width: 100%;
 display: flex;
 flex-wrap: wrap;
-}*/
 
-.row{
+}
+
+.row, .row-h2{
   position: relative;
   width: 100%;
   display: flex;
   /*Let elements flow to next line*/
   flex-wrap: wrap;
   /**/
+}
+
+.row{
+  justify-content: center;
 }
 
 .box{

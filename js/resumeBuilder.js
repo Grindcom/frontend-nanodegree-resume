@@ -195,8 +195,10 @@ var work = {
     var formattedConcat = "";
     var formattedDates = "";
     var formattedDescrip = "";
+    //
     this.jobs.forEach(function(job){
       $("#workExperience").append(HTMLworkStart);
+      $(".work-entry").addClass("box");
       formattedEmployer = HTMLworkEmployer.replace("%data%",job.employer);
       formattedTitle = HTMLworkTitle.replace("%data%",job.title.bold());
       formattedDates = HTMLworkDates.replace("%data%",job.dates);
@@ -231,6 +233,7 @@ var projects = {
     // iterate through all projects and place them in the projects div
     projects.projects.forEach(function(project){
       $("#projects").append(HTMLprojectStart);
+      $(".project-entry").addClass("box");
       frmTitle = HTMLprojectTitle.replace("%data%",project.title);
       frmDate = HTMLprojectDates.replace("%data%",project.dates.start + " - " + project.dates.end);
       frmDescrip = HTMLprojectDescription.replace("%data%",project.description);
