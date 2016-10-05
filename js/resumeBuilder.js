@@ -151,15 +151,14 @@ var education = {
     }
   ],
   "display": function(){
-
-    //
-    var formattedOnTitle = "";
-    var formattedOnSchool = "";
-    var formattedOnDates = "";
-    var formattedOnURL = "";
     //
     // Display schools
     //
+    if(this.schools.length > 0){
+      // if there are schools add an h3 row
+      var HTMLschoolHeader = '<h3 id="schoolHeader" class="row-h3">Schools</h3>';
+      $("#education").append(HTMLschoolHeader);
+    }
     this.schools.forEach(function(school){
       $("#education").append(HTMLschoolStart);
       $(".education-entry").addClass("box-education");
@@ -172,15 +171,28 @@ var education = {
       var formattedMajor = HTMLschoolMajor.replace("%data%",school.majors);
       //
       var concatAll = formattedName + formattedDegree + formattedDates + formattedLocation + formattedMajor;
-      // console.log(concatAll);
       //
       $(".education-entry:last").append(concatAll);
     });
     //
     // Display online courses
     //
-    this.onlineCourses.forEach(function(){
-
+    if(this.onlineCourses.length > 0){
+      //if there are courses add an h3 row
+      HTMLonlineClasses = HTMLonlineClasses.replace("<h3>",'<h3 id="onlineHeader" class="row-h3">');
+      $("#education").append(HTMLonlineClasses);
+    }
+    //
+    this.onlineCourses.forEach(function(course){
+      var HTMLonlineStart = '<div class="online-entry box-online"></div>';
+      $("#education").append(HTMLonlineStart);
+      //
+      var formattedOnTitle = HTMLonlineTitle.replace("%data%",course.title);
+      formattedOnTitle = formattedOnTitle.replace("#",course.url);
+      var formattedOnSchool = HTMLonlineSchool.replace("%data%",course.school);
+      var formattedOnDates = HTMLonlineDates.replace("%data%",course.dates);
+      var concatAll = formattedOnTitle + formattedOnSchool + formattedOnDates;
+      $(".online-entry:last").append(concatAll);
     });
   }
 };
