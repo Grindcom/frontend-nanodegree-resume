@@ -12,9 +12,9 @@ header, nav, footer, section, article, div {
   box-sizing: border-box;
 }
 .container{
-width: 100%;
-display: flex;
-flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 
 }
 
@@ -29,6 +29,11 @@ flex-wrap: wrap;
 
 .row{
   justify-content: center;
+}
+
+.row-h2{
+  border-bottom: 1px solid #7d97ad;
+  box-shadow: 1px 1px 5px #7d97ad;
 }
 
 .box{
