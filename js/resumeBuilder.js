@@ -235,7 +235,7 @@ var projects = {
       $("#projects").append(HTMLprojectStart);
       $(".project-entry").addClass("box");
       frmTitle = HTMLprojectTitle.replace("%data%",project.title);
-      frmDate = HTMLprojectDates.replace("%data%",project.dates.start + " - " + project.dates.end);
+      frmDate = HTMLprojectDates.replace("%data%",project.dates);
       frmDescrip = HTMLprojectDescription.replace("%data%",project.description);
       frmImage = HTMLprojectImage.replace("%data%",project.images[0].url);
       frmConcat = frmTitle + frmDate + frmDescrip + frmImage;
