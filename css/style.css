@@ -18,7 +18,7 @@ header, nav, footer, section, article, div {
 
 }
 
-.row, .row-h2{
+.row, .row-h2, .row-h3{
   position: relative;
   width: 100%;
   display: flex;
@@ -31,7 +31,7 @@ header, nav, footer, section, article, div {
   justify-content: center;
 }
 
-.row-h2{
+.row-h2, .row-h3{
   border-bottom: 1px solid #7d97ad;
   box-shadow: 1px 1px 5px #7d97ad;
 }
