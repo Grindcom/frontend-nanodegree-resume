@@ -260,26 +260,27 @@ var projects = {
       "dates" : "September, 2016 - September, 2016",
       "description" : "A projects portfolio, created for the Front End Developer nanodegree.",
       "images" : [{
-        "url" : ""
+        "url" :"./images/pexels-photo-255x150_thumb_1x.jpg"
       }]
     }
   ],
   "display":function(){
-    // set up variables
-    var frmTitle = "";
-    var frmDate = "";
-    var frmDescrip = "";
-    var frmImage = "";
-    var frmConcat = "";
     // iterate through all projects and place them in the projects div
     projects.projects.forEach(function(project){
       $("#projects").append(HTMLprojectStart);
       $(".project-entry").addClass("box");
-      frmTitle = HTMLprojectTitle.replace("%data%",project.title);
-      frmDate = HTMLprojectDates.replace("%data%",project.dates);
-      frmDescrip = HTMLprojectDescription.replace("%data%",project.description);
-      frmImage = HTMLprojectImage.replace("%data%",project.images[0].url);
-      frmConcat = frmTitle + frmDate + frmDescrip + frmImage;
+      // Add title div
+      var frmTitle = HTMLprojectTitle.replace("%data%",project.title);
+      // add the href link to title div
+      frmTitle = frmTitle.replace("%data%",project.url);
+      // Add project dates
+      var frmDate = HTMLprojectDates.replace("%data%",project.dates);
+      // Add description
+      var frmDescrip = HTMLprojectDescription.replace("%data%",project.description);
+      // Add first image of array
+      var frmImage = HTMLprojectImage.replace("%data%",project.images[0].url);
+      // Combine all formatted strings
+      var frmConcat = frmTitle + frmDate + frmDescrip + frmImage;
       $(".project-entry:last").append(frmConcat);
     });
   }
@@ -293,14 +294,14 @@ bio.display();
 
 //
 // Add work experience
-//
+//  Make sure there are jobs first, then call work display
 if(work.jobs.length > 0){
   work.display();
 }
 
 //
 // Add projects
-//
+//  Make sure there is something in projects first
 if(projects.projects.length > 0 ){
   projects.display();
 }
