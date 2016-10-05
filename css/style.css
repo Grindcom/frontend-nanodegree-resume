@@ -36,7 +36,7 @@ header, nav, footer, section, article, div {
   box-shadow: 1px 1px 5px #7d97ad;
 }
 
-.box, .box-education{
+.box, .box-education, .box-online{
   /*border: 1px solid black;*/
   width: 300px;
   /*height: 250px;*/
@@ -48,6 +48,11 @@ header, nav, footer, section, article, div {
 .box-education{
   width: 375px;
 }
+
+.box-online{
+  width: 275px;
+}
+
 /**/
 
 html,body,footer{
