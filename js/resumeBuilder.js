@@ -307,6 +307,7 @@ if(projects.projects.length > 0 ){
 
 //
 // Add Education
+//  Make sure there is something to display before calling function
 //
 if((education.schools.length > 0) || (education.onlineCourses.length > 0) ){
   education.display();
@@ -315,6 +316,8 @@ if((education.schools.length > 0) || (education.onlineCourses.length > 0) ){
 // Add maps
 //
 $("#mapDiv").append(googleMap);
+// add the row-h2 css to mapDiv
+$("#mapDiv").children("h2").addClass("row-h2");
 //
 // Log mouse clicks
 //
