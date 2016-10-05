@@ -18,7 +18,7 @@ var newEmail = oldEmail.replace("grindcom","facet-it");
 var myname = firstName + " " + lastName + " B.sc.";
 var desiredRole = "Front-end Developer";
 var skills = ["Programming","Problem solving","C","C++","C#","Java","JavaScript","HTML","CSS"];
-var message = "Thanks for checking out my Resume";
+var message = "Thanks for checking out my Resume'.  I created it while taking the UDacity, Front-end developer nanodegree course set.  This site outlines my abilities, experience and training.  It also serves directly as sample of my developer skill set - HTML, CSS and JavaScript - as it originated as a template which I expanded on to create what you see here.";
 
 //
 // Set up bio object
