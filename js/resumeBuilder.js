@@ -104,7 +104,7 @@ var education = {
     {
       "name" : "University of Norther British Columbia",
       "location" : "Prince George, BC",
-      "degree" : "NA",
+      "degree" : "",
       "majors" : "Computer Science",
       "dates" : "September, 1997 to January, 1999",
       "url": "http://www.unbc.ca"
@@ -112,7 +112,7 @@ var education = {
     {
       "name" : "Okanagan University Collage",
       "location" : "Kelowna, BC",
-      "degree" : "NA",
+      "degree" : "",
       "majors" : "General Studies",
       "dates" : "June, 1996 to May, 1997",
       "url": "http://www.ouc.bc.ca"
@@ -151,8 +151,37 @@ var education = {
     }
   ],
   "display": function(){
-    // format education
 
+    //
+    var formattedOnTitle = "";
+    var formattedOnSchool = "";
+    var formattedOnDates = "";
+    var formattedOnURL = "";
+    //
+    // Display schools
+    //
+    this.schools.forEach(function(school){
+      $("#education").append(HTMLschoolStart);
+      $(".education-entry").addClass("box-education");
+      // format education
+      var formattedName = HTMLschoolName.replace("%data%",school.name);
+      formattedName = formattedName.replace("#",school.url);
+      var formattedDegree = HTMLschoolDegree.replace("%data%",school.degree);
+      var formattedDates = HTMLschoolDates.replace("%data%",school.dates);
+      var formattedLocation = HTMLschoolLocation.replace("%data%",school.location);
+      var formattedMajor = HTMLschoolMajor.replace("%data%",school.majors);
+      //
+      var concatAll = formattedName + formattedDegree + formattedDates + formattedLocation + formattedMajor;
+      // console.log(concatAll);
+      //
+      $(".education-entry:last").append(concatAll);
+    });
+    //
+    // Display online courses
+    //
+    this.onlineCourses.forEach(function(){
+
+    });
   }
 };
 //
