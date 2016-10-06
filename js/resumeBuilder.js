@@ -273,7 +273,7 @@ var projects = {
   "display":function(){
     // iterate through all projects and place them in the projects div
     projects.projects.forEach(function(project){
-      $("#projects").append(HTMLprojectStart);
+      $("#sub-projects").append(HTMLprojectStart);
       // Add the box class to surround the project entry
       $(".project-entry").addClass("box");
       // Add title div
@@ -338,13 +338,19 @@ $("#mapDiv").children("h2").addClass("row-h2");
 //
 // Log mouse clicks
 //
-$(document).click(function(loc){
-  logClicks(loc.pageX,loc.pageY);
-});
+// $(document).click(function(loc){
+//   logClicks(loc.pageX,loc.pageY);
+// });
 //
 // Show/Hide Sections
 //
-
+$(document).ready(function(){
+  // Project header click event handler
+  $("#project-h2").click(function(event){
+    // Show or hide project sub zone
+    $("#sub-projects").slideToggle();
+  });
+});
 //
 // Add Internationalize button
 //
