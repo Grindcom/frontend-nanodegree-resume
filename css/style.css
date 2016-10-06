@@ -38,6 +38,7 @@ header, nav, footer, section, article, div {
 
 .row{
   justify-content: center;
+    padding-bottom: 10px;
 }
 
 .row-h2, .row-h3{
