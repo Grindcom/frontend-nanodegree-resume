@@ -340,8 +340,10 @@ $("#mapDiv").children("h2").addClass("row-h2");
 //
 window.addEventListener('load',initializeView);
 function initializeView(){
-  $("#sub-education").toggle();
-  $("#sub-projects").toggle();
+  // Cause a click event on the project-h2
+  $("#project-h2").click();
+  // Cause a click event on the education-h2
+  $("#education-h2").click();
 }
 //
 // Log mouse clicks
@@ -396,7 +398,22 @@ $(document).ready(function(){
   // Education header click event handler
   $("#education-h2").click(function(event){
     // Show or hide education sub zone
-    $("#sub-education").slideToggle();
+    $("#sub-education").slideToggle(function(){
+      // Get the value of the :visible object
+      var isVis = $("#sub-education").is(":visible");
+      // get the a element for this
+      var arrow = $("#education-h2").children('a');
+      // if visible
+      if(isVis){
+        // Set h2 to up arrow
+        arrow.removeClass("entypo-down-open-mini");
+        arrow.addClass("entypo-up-open-mini");
+      }else {// if not visible
+        // Set h2 to have a down arrow
+        arrow.removeClass("entypo-up-open-mini");
+        arrow.addClass("entypo-down-open-mini");
+      }
+    });
   });
 });
 //
