@@ -1,5 +1,7 @@
 /*
-Code to build the resume will go here.
+* Code to build the resume will go here.
+* Written by Greg Ford, B.Sc.
+*   Oct. 2016
 */
 // How to use variables and print to console
 var firstName = "Greg";
