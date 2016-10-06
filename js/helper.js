@@ -69,6 +69,8 @@ $(document).ready(function() {
     var $name = $('#name');
     var iName = inName($name.text()) || function(){};
     $name.html(iName);
+
+    $(".row").hide();
   });
 });
 

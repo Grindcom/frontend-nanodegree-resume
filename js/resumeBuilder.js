@@ -18,7 +18,7 @@ var newEmail = oldEmail.replace("grindcom","facet-it");
 var myname = firstName + " " + lastName + " B.sc.";
 var desiredRole = "Front-end Developer";
 var skills = ["Programming","Problem solving","C","C++","C#","Java","JavaScript","HTML","CSS"];
-var message = "Thanks for checking out my Resume'.  I created it while taking the UDacity, Front-end developer nanodegree course set.  This site outlines my abilities, experience and training.  It also serves as a sample of my developer skill set - HTML, CSS and JavaScript - as it originated as a template which I expanded on to create what you see here.";
+var message = "Thanks for checking out my Resume'.  As you can see I am fairly new to the field of Front-end developer, but I have a strong background in several other programming languages.  Combining that with a diverse range of real-world experience gives me a unique perspective on any new job or project.";
 
 //
 // Set up bio object
@@ -42,7 +42,7 @@ var bio = {
     var formattedRole = HTMLheaderRole.replace("%data%",this.role);
     var formattedMessage = HTMLwelcomeMsg.replace("%data%",this.welcomeMessage);
     var formattedPic = HTMLbioPic.replace("%data%",this.biopic);
-    // Contacts
+    // Set up Contacts
     var formattedEmail = HTMLemail.replace("%data%",this.contacts.email);
     var formattedMobile = HTMLmobile.replace("%data%",this.contacts.mobile);
     var formattedGit = HTMLgithub.replace("%data%",this.contacts.github);
@@ -61,11 +61,11 @@ var bio = {
     {
       // Add skills to html
       $("#header").append(HTMLskillsStart);
+      $("#skills").addClass("row");
       //
-      var formattedSkill = "";
       //
       bio.skills.forEach(function(skill){
-        formattedSkill = HTMLskills.replace("%data%",skill);
+        var formattedSkill = HTMLskills.replace("%data%",skill);
         $("#skills:last").append(formattedSkill);
       });
     }
@@ -254,21 +254,29 @@ var work = {
 // Projects object
 //
 var projects = {
-  "projects" : [
-    {
-      "title" : "Portfolio",
-      "dates" : "September, 2016 - September, 2016",
-      "description" : "A projects portfolio, created for the Front End Developer nanodegree.",
-      "images" : [{
-        "url" :"./images/pexels-photo-255x150_thumb_1x.jpg"
-      }]
-    }
-  ],
+  "projects" : [{
+    "title" : "Portfolio",
+    "dates" : "September, 2016 - September, 2016",
+    "description" : "A portfolio of projects, created for the Front End Developer nanodegree.",
+    "images" : [{
+      "url" :"./images/pexels-photo-255x150_thumb_1x.jpg"
+    }]
+  },{
+    "title" : "Resume'",
+    "dates" : "September, 2016 - September, 2016",
+    "description" : "A Resume' of projects, created for the UDacity Front End Developer nanodegree. It serves as a sample of my developer skill set - HTML, CSS and JavaScript.",
+    "images" : [{
+      "url" :"./images/pexels-photo-255x150_thumb_1x.jpg"
+    }]
+  }],
   "display":function(){
     // iterate through all projects and place them in the projects div
     projects.projects.forEach(function(project){
       $("#projects").append(HTMLprojectStart);
+      // Add the box class to surround the project entry
       $(".project-entry").addClass("box");
+
+
       // Add title div
       var frmTitle = HTMLprojectTitle.replace("%data%",project.title);
       // add the href link to title div
@@ -279,6 +287,8 @@ var projects = {
       var frmDescrip = HTMLprojectDescription.replace("%data%",project.description);
       // Add first image of array
       var frmImage = HTMLprojectImage.replace("%data%",project.images[0].url);
+      // Add the css to the project picture
+      frmImage = frmImage.replace(">", 'class="projectpic">');
       // Combine all formatted strings
       var frmConcat = frmTitle + frmDate + frmDescrip + frmImage;
       $(".project-entry:last").append(frmConcat);
