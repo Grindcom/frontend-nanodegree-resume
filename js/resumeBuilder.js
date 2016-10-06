@@ -161,10 +161,10 @@ var education = {
     if(this.schools.length > 0){
       // if there are schools add an h3 row
       var HTMLschoolHeader = '<h3 id="schoolHeader" class="row-h3">Schools</h3>';
-      $("#education").append(HTMLschoolHeader);
+      $("#sub-education").append(HTMLschoolHeader);
     }
     this.schools.forEach(function(school){
-      $("#education").append(HTMLschoolStart);
+      $("#sub-education").append(HTMLschoolStart);
       $(".education-entry").addClass("box-education");
       // format education
       var formattedName = HTMLschoolName.replace("%data%",school.name);
@@ -184,13 +184,13 @@ var education = {
     if(this.onlineCourses.length > 0){
       //if there are courses add an h3 row
       HTMLonlineClasses = HTMLonlineClasses.replace("<h3>",'<h3 id="onlineHeader" class="row-h3">');
-      $("#education").append(HTMLonlineClasses);
+      $("#sub-education").append(HTMLonlineClasses);
     }
     // Iterate through the online array and set up
     //  the course boxes.
     this.onlineCourses.forEach(function(course){
       var HTMLonlineStart = '<div class="online-entry box-online"></div>';
-      $("#education").append(HTMLonlineStart);
+      $("#sub-education").append(HTMLonlineStart);
       //
       var formattedOnTitle = HTMLonlineTitle.replace("%data%",course.title);
       formattedOnTitle = formattedOnTitle.replace("#",course.url);
@@ -239,7 +239,7 @@ var work = {
     // Iterate through work array and setup
     //  their boxes
     this.jobs.forEach(function(job){
-      $("#workExperience").append(HTMLworkStart);
+      $("#sub-work").append(HTMLworkStart);
       $(".work-entry").addClass("box");
       var formattedEmployer = HTMLworkEmployer.replace("%data%",job.employer);
       var formattedTitle = HTMLworkTitle.replace("%data%",job.title.bold());
@@ -345,10 +345,25 @@ $("#mapDiv").children("h2").addClass("row-h2");
 // Show/Hide Sections
 //
 $(document).ready(function(){
+  // Work header click event handler
+  $("#work-h2").click(function(event){
+    // Show or hide Work sub zone
+    $("#sub-work").slideToggle();
+  });
   // Project header click event handler
   $("#project-h2").click(function(event){
     // Show or hide project sub zone
     $("#sub-projects").slideToggle();
+  });
+  // Education header click event handler
+  $("#education-h2").click(function(event){
+    // Show or hide education sub zone
+    $("#sub-education").slideToggle();
+  });
+  // Map div header click event handler
+  $("#map-h2").click(function(event){
+    // Show or hide Map sub zone
+    $("#sub-mapDiv").slideToggle();
   });
 });
 //
