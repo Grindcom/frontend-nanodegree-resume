@@ -8,6 +8,15 @@
   box-sizing: border-box;
   max-width: 900px;
 }
+
+/*@import url(http://weloveiconfonts.com/api/?family=entypo);*/
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+  text-shadow: 3px 3px 3px #aaa;
+  font-size: 1.5em;
+}
+
 header, nav, footer, section, article, div {
   box-sizing: border-box;
 }
@@ -40,6 +49,7 @@ header, nav, footer, section, article, div {
 .row-h2{
   box-shadow: 5px -2px 4px 2px #7d97ad;
   box-shadow: 1px 1px 5px #7d97ad;
+  justify-content: space-between;
 }
 
 .row-h3{

@@ -336,6 +336,14 @@ $("#mapDiv").append(googleMap);
 // add the row-h2 css to mapDiv
 $("#mapDiv").children("h2").addClass("row-h2");
 //
+// Initialize view
+//
+window.addEventListener('load',initializeView);
+function initializeView(){
+  $("#sub-education").toggle();
+  $("#sub-projects").toggle();
+}
+//
 // Log mouse clicks
 //
 // $(document).click(function(loc){
@@ -348,7 +356,24 @@ $(document).ready(function(){
   // Work header click event handler
   $("#work-h2").click(function(event){
     // Show or hide Work sub zone
-    $("#sub-work").slideToggle();
+    $("#sub-work").slideToggle(function(){
+      // Get the value of the :visible object
+      var isVis = $("#sub-work").is(":visible");
+      // get the a element for this
+      var arrow = $("#work-h2").children('a');
+      // if visible
+      if(isVis){
+        // Set h2 to up arrow
+        arrow.removeClass("entypo-down-open");
+        arrow.addClass("entypo-up-open");
+        console.log("Visible");
+      }else {// if not visible        
+        // Set h2 to have a down arrow
+        arrow.removeClass("entypo-up-open");
+        arrow.addClass("entypo-down-open");
+        console.log("Hidden");
+      }
+    });
   });
   // Project header click event handler
   $("#project-h2").click(function(event){
