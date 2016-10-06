@@ -360,11 +360,6 @@ $(document).ready(function(){
     // Show or hide education sub zone
     $("#sub-education").slideToggle();
   });
-  // Map div header click event handler
-  $("#map-h2").click(function(event){
-    // Show or hide Map sub zone
-    $("#sub-mapDiv").slideToggle();
-  });
 });
 //
 // Add Internationalize button
