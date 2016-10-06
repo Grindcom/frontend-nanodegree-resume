@@ -224,7 +224,7 @@ var work = {
       "employer" : "Tom Ford Logging Ltd.",
       "title" : "Supervisor, Industrial Computer Tech.",
       "location" : "Williams Lake,BC",
-      "date" : "May, 1999 - February, 2003",
+      "dates" : "May, 1999 - February, 2003",
       "description" : "Supervise logging operations, administer and maintain measurement and control computers on board heavy equipment."
     },
     {// work experience
@@ -364,21 +364,34 @@ $(document).ready(function(){
       // if visible
       if(isVis){
         // Set h2 to up arrow
-        arrow.removeClass("entypo-down-open");
-        arrow.addClass("entypo-up-open");
-        console.log("Visible");
-      }else {// if not visible        
+        arrow.removeClass("entypo-down-open-mini");
+        arrow.addClass("entypo-up-open-mini");
+      }else {// if not visible
         // Set h2 to have a down arrow
-        arrow.removeClass("entypo-up-open");
-        arrow.addClass("entypo-down-open");
-        console.log("Hidden");
+        arrow.removeClass("entypo-up-open-mini");
+        arrow.addClass("entypo-down-open-mini");
       }
     });
   });
   // Project header click event handler
   $("#project-h2").click(function(event){
     // Show or hide project sub zone
-    $("#sub-projects").slideToggle();
+    $("#sub-projects").slideToggle(function(){
+      // Get the value of the :visible object
+      var isVis = $("#sub-projects").is(":visible");
+      // get the a element for this
+      var arrow = $("#project-h2").children('a');
+      // if visible
+      if(isVis){
+        // Set h2 to up arrow
+        arrow.removeClass("entypo-down-open-mini");
+        arrow.addClass("entypo-up-open-mini");
+      }else {// if not visible
+        // Set h2 to have a down arrow
+        arrow.removeClass("entypo-up-open-mini");
+        arrow.addClass("entypo-down-open-mini");
+      }
+    });
   });
   // Education header click event handler
   $("#education-h2").click(function(event){
