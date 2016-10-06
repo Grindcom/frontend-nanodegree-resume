@@ -10,11 +10,8 @@ var lastName = "Ford";
 // Using replace
 var oldEmail = "ford@grindcom.ca";
 var newEmail = oldEmail.replace("grindcom","facet-it");
-// console.log("My first email was "+oldEmail);
-// console.log("But now I use "+newEmail+" for business");
-
 //
-// Set up Header
+// Set up Header objecst
 //
 // Set up name and role variables
 var myname = firstName + " " + lastName + " B.sc.";
@@ -22,6 +19,11 @@ var desiredRole = "Front-end Developer";
 var skills = ["Programming","Problem solving","C","C++","C#","Java","JavaScript","HTML","CSS"];
 var message = "Thanks for checking out my Resume'.  As you can see I am fairly new to the field of Front-end developer, but I have a strong background in several other programming languages.  Combining that with a diverse range of real-world experience gives me a unique perspective on any new job or project.";
 
+/**************************************************
+*
+*          OBJECT DECLARATIONS
+*
+****************************************************/
 //
 // Set up bio object
 //
@@ -56,13 +58,13 @@ var bio = {
     $("#header").prepend(formattedRole);
     $("#header").prepend(formattedName);
     $("#header").prepend(formattedPic);
-
-
+    //
     // If there are skills listed add them
     if(bio.skills.length > 0)
     {
       // Add skills to html
       $("#header").append(HTMLskillsStart);
+      // Give the skills div row css features
       $("#skills").addClass("row");
       //
       //
@@ -72,7 +74,7 @@ var bio = {
       });
     }
     //
-    // Add contacts to top header
+    // Add Contact information to top header
     //
     $("#topContacts").insertAfter("#skills");
     $("#topContacts").append(formattedMobile);
@@ -81,7 +83,7 @@ var bio = {
     $("#topContacts").append(formattedLin);
     $("#topContacts").append(formattedLocation);
     //
-    // Add contacts to footer contacts
+    // Add Contact information to footer contacts
     //
     $("#footerContacts").append(formattedMobile);
     $("#footerContacts").append(formattedEmail);
@@ -95,7 +97,7 @@ var bio = {
 //
 var education = {
   "schools" : [
-    {
+    {// School attended
       "name" : "Devry University, Calgary campus",
       "location" : "Calgary, AB",
       "degree" : "B.Sc.",
@@ -103,7 +105,7 @@ var education = {
       "dates" : "March, 2003 to February, 2006",
       "url" : "http://www.devry.edu/degree-programs/engineering-information-sciences/computer-engineering-technology.html"
     },
-    {
+    {// School attended
       "name" : "University of Norther British Columbia",
       "location" : "Prince George, BC",
       "degree" : "",
@@ -111,7 +113,7 @@ var education = {
       "dates" : "September, 1997 to January, 1999",
       "url": "http://www.unbc.ca"
     },
-    {
+    {// School attended
       "name" : "Okanagan University Collage",
       "location" : "Kelowna, BC",
       "degree" : "",
@@ -121,31 +123,31 @@ var education = {
     }
   ],
   "onlineCourses" : [
-    {
+    {// Online course
       "title" : "How to Use Git and GitHub",
       "school" : "Udacity",
       "dates" : "September, 2016",
       "url" : "https://www.udacity.com/course/how-to-use-git-and-github--ud775"
     },
-    {
+    {// Online course
       "title" : "Responsive Web Design Fundamentals",
       "school" : "Udacity",
       "dates" : "September, 2016",
       "url" : "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
     },
-    {
+    {// Online course
       "title" : "JavaScript Basics",
       "school" : "Udacity",
       "dates" : "September, 2016",
       "url" : "https://www.udacity.com/course/javascript-basics--ud804"
     },
-    {
+    {// Online course
       "title" : "Intro to HTML and CSS",
       "school" : "Udacity",
       "dates" : "September, 2016",
       "url" : "https://www.udacity.com/course/intro-to-html-and-css--ud304"
     },
-    {
+    {// Online course
       "title" : "Responsive Images",
       "school" : "Udacity",
       "dates" : "September, 2016",
@@ -184,7 +186,8 @@ var education = {
       HTMLonlineClasses = HTMLonlineClasses.replace("<h3>",'<h3 id="onlineHeader" class="row-h3">');
       $("#education").append(HTMLonlineClasses);
     }
-    //
+    // Iterate through the online array and set up
+    //  the course boxes.
     this.onlineCourses.forEach(function(course){
       var HTMLonlineStart = '<div class="online-entry box-online"></div>';
       $("#education").append(HTMLonlineStart);
@@ -233,20 +236,16 @@ var work = {
     }
   ],
   "display": function(){
-    var formattedEmployer = "";
-    var formattedTitle = "";
-    var formattedConcat = "";
-    var formattedDates = "";
-    var formattedDescrip = "";
-    //
+    // Iterate through work array and setup
+    //  their boxes
     this.jobs.forEach(function(job){
       $("#workExperience").append(HTMLworkStart);
       $(".work-entry").addClass("box");
-      formattedEmployer = HTMLworkEmployer.replace("%data%",job.employer);
-      formattedTitle = HTMLworkTitle.replace("%data%",job.title.bold());
-      formattedDates = HTMLworkDates.replace("%data%",job.dates);
-      formattedDescrip = HTMLworkDescription.replace("%data%",job.description);
-      formattedConcat = formattedEmployer + formattedTitle + formattedDates + formattedDescrip;
+      var formattedEmployer = HTMLworkEmployer.replace("%data%",job.employer);
+      var formattedTitle = HTMLworkTitle.replace("%data%",job.title.bold());
+      var formattedDates = HTMLworkDates.replace("%data%",job.dates);
+      var formattedDescrip = HTMLworkDescription.replace("%data%",job.description);
+      var formattedConcat = formattedEmployer + formattedTitle + formattedDates + formattedDescrip;
       $(".work-entry:last").append(formattedConcat);
     });
   }
@@ -256,14 +255,14 @@ var work = {
 // Projects object
 //
 var projects = {
-  "projects" : [{
+  "projects" : [{// Project
     "title" : "Portfolio",
     "dates" : "September, 2016 - September, 2016",
     "description" : "A portfolio of projects, created for the Front End Developer nanodegree.",
     "images" : [{
       "url" :"./images/pexels-photo-255x150_thumb_1x.jpg"
     }]
-  },{
+  },{// Project
     "title" : "Resume'",
     "dates" : "September, 2016 - September, 2016",
     "description" : "A Resume' of projects, created for the UDacity Front End Developer nanodegree. It serves as a sample of my developer skill set - HTML, CSS and JavaScript.",
@@ -277,8 +276,6 @@ var projects = {
       $("#projects").append(HTMLprojectStart);
       // Add the box class to surround the project entry
       $(".project-entry").addClass("box");
-
-
       // Add title div
       var frmTitle = HTMLprojectTitle.replace("%data%",project.title);
       // add the href link to title div
@@ -299,6 +296,11 @@ var projects = {
 
 };
 
+/**************************************************
+*
+*          OPERATIONS
+*
+****************************************************/
 //
 // Add bio
 //
@@ -307,6 +309,7 @@ bio.display();
 //
 // Add work experience
 //  Make sure there are jobs first, then call work display
+//
 if(work.jobs.length > 0){
   work.display();
 }
@@ -314,6 +317,7 @@ if(work.jobs.length > 0){
 //
 // Add projects
 //  Make sure there is something in projects first
+//
 if(projects.projects.length > 0 ){
   projects.display();
 }
@@ -337,6 +341,10 @@ $("#mapDiv").children("h2").addClass("row-h2");
 $(document).click(function(loc){
   logClicks(loc.pageX,loc.pageY);
 });
+//
+// Show/Hide Sections
+//
+
 //
 // Add Internationalize button
 //
