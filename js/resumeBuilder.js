@@ -263,14 +263,16 @@ var projects = {
     "description" : "A portfolio of projects, created for the Front End Developer nanodegree.",
     "images" : [{
       "url" :"./images/pexels-photo-255x150_thumb_1x.jpg"
-    }]
+    }],
+    "giturl" : "https://github.com/Grindcom/udacity-front-end-dev-project1"
   },{// Project
     "title" : "Resume'",
     "dates" : "September, 2016 - September, 2016",
     "description" : "A Resume' of projects, created for the UDacity Front End Developer nanodegree. It serves as a sample of my developer skill set - HTML, CSS and JavaScript.",
     "images" : [{
       "url" :"./images/pexels-photo-255x150_thumb_1x.jpg"
-    }]
+    }],
+    "giturl" : "https://github.com/Grindcom/frontend-nanodegree-resume"
   }],
   "display":function(){
     // iterate through all projects and place them in the projects div
@@ -281,7 +283,7 @@ var projects = {
       // Add title div
       var frmTitle = HTMLprojectTitle.replace("%data%",project.title);
       // add the href link to title div
-      frmTitle = frmTitle.replace("%data%",project.url);
+      frmTitle = frmTitle.replace("#",project.giturl);
       // Add project dates
       var frmDate = HTMLprojectDates.replace("%data%",project.dates);
       // Add description
