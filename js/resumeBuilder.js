@@ -9,11 +9,11 @@ var lastName = "Ford";
 // console.log("My name is " + firstName);
 // Using replace
 var oldEmail = "ford@grindcom.ca";
-var newEmail = oldEmail.replace("grindcom","facet-it");
+var newEmail = oldEmail.replace('grindcom','facet-it');
 //
 // Used multiple times to replace div information
 //
-var data = "%data%";
+var data = '%data%';
 
 //
 // Set up Header objecst
@@ -33,24 +33,24 @@ var message = "Thanks for checking out my Resume'.  I have a strong background i
 // Set up bio object
 //
 var bio = {
-  "name" : myname,
-  "role" : desiredRole,
-  "contacts" : {
-    "mobile" : "250-305-8802",
-    "email" : oldEmail,
-    "github" : "Grindcom",
-    "linkedin" : "gtford",// replace twitter
-    "location" : "Williams Lake, BC"
+  'name' : myname,
+  'role' : desiredRole,
+  'contacts' : {
+    'mobile' : "250-305-8802",
+    'email' : oldEmail,
+    'github' : "Grindcom",
+    'linkedin' : "gtford",// replace twitter
+    'location' : "Williams Lake, BC"
   },
-  "welcomeMessage" : message,
-  "skills" : skills,
-  "biopic" : "./images/greg_casual-800x350_large_1x.jpg",
+  'welcomeMessage' : message,
+  'skills' : skills,
+  'biopic' : "./images/greg_casual-800x350_large_1x.jpg",
   display: function(){
     // format bio
     var formattedName = HTMLheaderName.replace(data,this.name);
     var formattedRole = HTMLheaderRole.replace(data,this.role);
     // Add header-role class name to span to manipulate font
-    formattedRole = formattedRole.replace("<span>",'<span class="header-role">');
+    formattedRole = formattedRole.replace('<span>','<span class="header-role">');
     var formattedMessage = HTMLwelcomeMsg.replace(data,this.welcomeMessage);
     var formattedPic = HTMLbioPic.replace(data,this.biopic);
     // Set up Contacts
@@ -61,111 +61,111 @@ var bio = {
     var formattedLocation = HTMLlocation.replace(data,this.contacts.location);
     // Add to header
     //  Use prepend to put it at the start of the header area
-    $("#header").append(formattedMessage);
-    $("#header").prepend(formattedRole);
-    $("#header").prepend(formattedName);
-    $("#header").prepend(formattedPic);
+    $('#header').append(formattedMessage);
+    $('#header').prepend(formattedRole);
+    $('#header').prepend(formattedName);
+    $('#header').prepend(formattedPic);
     //
     // If there are skills listed add them
     if(bio.skills.length > 0)
     {
       // Add skills to html
-      $("#header").append(HTMLskillsStart);
+      $('#header').append(HTMLskillsStart);
       // Give the skills div row css features
-      $("#skills").addClass("row");
+      $('#skills').addClass('row');
       //
       //
       bio.skills.forEach(function(skill){
         var formattedSkill = HTMLskills.replace(data,skill);
-        $("#skills:last").append(formattedSkill);
+        $('#skills:last').append(formattedSkill);
       });
     }
     //
     // Add Contact information to top header and footer
     //
-    $("#topContacts").insertAfter("#skills");
-    $("#topContacts, #footerContacts").append(formattedMobile);
-    $("#topContacts, #footerContacts").append(formattedEmail);
-    $("#topContacts, #footerContacts").append(formattedGit);
-    $("#topContacts, #footerContacts").append(formattedLin);
-    $("#topContacts, #footerContacts").append(formattedLocation);
+    $('#topContacts').insertAfter('#skills');
+    $('#topContacts, #footerContacts').append(formattedMobile);
+    $('#topContacts, #footerContacts').append(formattedEmail);
+    $('#topContacts, #footerContacts').append(formattedGit);
+    $('#topContacts, #footerContacts').append(formattedLin);
+    $('#topContacts, #footerContacts').append(formattedLocation);
   }
 };
 //
 // Education object
 //
 var education = {
-  "schools" : [{// School attended
-    "name" : "Devry University, Calgary campus",
-    "location" : "Calgary, AB",
-    "degree" : "B.Sc.",
-    "majors" : ["Computer Engineering Technology",""],
-    "dates" : "March, 2003 to February, 2006",
-    "url" : "http://www.devry.edu/degree-programs/engineering-information-sciences/computer-engineering-technology.html"
+  'schools' : [{// School attended
+    'name' : "Devry University, Calgary campus",
+    'location' : "Calgary, AB",
+    'degree' : "B.Sc.",
+    'majors' : ["Computer Engineering Technology",""],
+    'dates' : "March, 2003 to February, 2006",
+    'url' : "http://www.devry.edu/degree-programs/engineering-information-sciences/computer-engineering-technology.html"
   },
   {// School attended
-    "name" : "University of Norther British Columbia",
-    "location" : "Prince George, BC",
-    "degree" : "",
-    "majors" : ["Computer Science",""],
-    "dates" : "September, 1997 to January, 1999",
-    "url": "http://www.unbc.ca"
+    'name' : "University of Norther British Columbia",
+    'location' : "Prince George, BC",
+    'degree' : "",
+    'majors' : ["Computer Science",""],
+    'dates' : "September, 1997 to January, 1999",
+    'url': "http://www.unbc.ca"
   },
   {// School attended
-    "name" : "Okanagan University Collage",
-    "location" : "Kelowna, BC",
-    "degree" : "",
-    "majors" : ["General Studies",""],
-    "dates" : "June, 1996 to May, 1997",
-    "url": "http://www.ouc.bc.ca"
+    'name' : "Okanagan University Collage",
+    'location' : "Kelowna, BC",
+    'degree' : "",
+    'majors' : ["General Studies",""],
+    'dates' : "June, 1996 to May, 1997",
+    'url': "http://www.ouc.bc.ca"
   }
 ],
-"onlineCourses" : [{// Online course
-    "title" : "How to Use Git and GitHub",
-    "school" : "Udacity",
-    "dates" : "September, 2016",
-    "url" : "https://www.udacity.com/course/how-to-use-git-and-github--ud775"
+'onlineCourses' : [{// Online course
+    'title' : "How to Use Git and GitHub",
+    'school' : "Udacity",
+    'dates' : "September, 2016",
+    'url' : "https://www.udacity.com/course/how-to-use-git-and-github--ud775"
   },
   {// Online course
-    "title" : "Responsive Web Design Fundamentals",
-    "school" : "Udacity",
-    "dates" : "September, 2016",
-    "url" : "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
+    'title' : "Responsive Web Design Fundamentals",
+    'school' : "Udacity",
+    'dates' : "September, 2016",
+    'url' : "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
   },
   {// Online course
-    "title" : "JavaScript Basics",
-    "school" : "Udacity",
-    "dates" : "September, 2016",
-    "url" : "https://www.udacity.com/course/javascript-basics--ud804"
+    'title' : "JavaScript Basics",
+    'school' : "Udacity",
+    'dates' : "September, 2016",
+    'url' : "https://www.udacity.com/course/javascript-basics--ud804"
   },
   {// Online course
-    "title" : "Intro to HTML and CSS",
-    "school" : "Udacity",
-    "dates" : "September, 2016",
-    "url" : "https://www.udacity.com/course/intro-to-html-and-css--ud304"
+    'title' : "Intro to HTML and CSS",
+    'school' : "Udacity",
+    'dates' : "September, 2016",
+    'url' : "https://www.udacity.com/course/intro-to-html-and-css--ud304"
   },
   {// Online course
-    "title" : "Responsive Images",
-    "school" : "Udacity",
-    "dates" : "September, 2016",
-    "url" : "https://www.udacity.com/course/responsive-images--ud882"
+    'title' : "Responsive Images",
+    'school' : "Udacity",
+    'dates' : "September, 2016",
+    'url' : "https://www.udacity.com/course/responsive-images--ud882"
   }
 ],
-"display": function(){
+'display': function(){
   //
   // Display schools
   //
   if(this.schools.length > 0){
     // if there are schools add an h3 row
     var HTMLschoolHeader = '<h3 id="schoolHeader" class="row-h3">Schools</h3>';
-    $("#sub-education").append(HTMLschoolHeader);
+    $('#sub-education').append(HTMLschoolHeader);
   }
   this.schools.forEach(function(school){
-    $("#sub-education").append(HTMLschoolStart);
-    $(".education-entry").addClass("box-education");
+    $('#sub-education').append(HTMLschoolStart);
+    $('.education-entry').addClass('box-education');
     // format education
     var formattedName = HTMLschoolName.replace(data,school.name);
-    formattedName = formattedName.replace("#",school.url);
+    formattedName = formattedName.replace('#',school.url);
     var formattedDegree = HTMLschoolDegree.replace(data,school.degree);
     var formattedDates = HTMLschoolDates.replace(data,school.dates);
     var formattedLocation = HTMLschoolLocation.replace(data,school.location);
@@ -173,28 +173,28 @@ var education = {
     //
     var concatAll = formattedName + formattedDegree + formattedDates + formattedLocation + formattedMajor;
     //
-    $(".education-entry:last").append(concatAll);
+    $('.education-entry:last').append(concatAll);
   });
   //
   // Display online courses
   //
   if(this.onlineCourses.length > 0){
     //if there are courses add an h3 row
-    HTMLonlineClasses = HTMLonlineClasses.replace("<h3>",'<h3 id="onlineHeader" class="row-h3">');
-    $("#sub-education").append(HTMLonlineClasses);
+    HTMLonlineClasses = HTMLonlineClasses.replace('<h3>','<h3 id="onlineHeader" class="row-h3">');
+    $('#sub-education').append(HTMLonlineClasses);
   }
   // Iterate through the online array and set up
   //  the course boxes.
   this.onlineCourses.forEach(function(course){
     var HTMLonlineStart = '<div class="online-entry box-online"></div>';
-    $("#sub-education").append(HTMLonlineStart);
+    $('#sub-education').append(HTMLonlineStart);
     //
     var formattedOnTitle = HTMLonlineTitle.replace(data,course.title);
-    formattedOnTitle = formattedOnTitle.replace("#",course.url);
+    formattedOnTitle = formattedOnTitle.replace('#',course.url);
     var formattedOnSchool = HTMLonlineSchool.replace(data,course.school);
     var formattedOnDates = HTMLonlineDates.replace(data,course.dates);
     var concatAll = formattedOnTitle + formattedOnSchool + formattedOnDates;
-    $(".online-entry:last").append(concatAll);
+    $('.online-entry:last').append(concatAll);
   });
 }
 };
@@ -202,47 +202,47 @@ var education = {
 // Work object
 //
 var work = {
-  "jobs" : [{// work experience
-    "employer" : "Williams Lake Fire Department",
-    "title" : "Firefighter",
-    "location" : "Williams Lake,BC",
-    "dates" : "March, 2011 - in progress",
-    "description" : "Professional Firefighter, NFPA 1001 certification."
+  'jobs' : [{// work experience
+    'employer' : "Williams Lake Fire Department",
+    'title' : "Firefighter",
+    'location' : "Williams Lake,BC",
+    'dates' : "March, 2011 - in progress",
+    'description' : "Professional Firefighter, NFPA 1001 certification."
   },
   {// work experience
-    "employer" : "Grindcom (Self-Employed)",
-    "title" : "CEO, System Architect",
-    "location" : "Williams Lake,BC",
-    "dates" : "March, 2006 - June, 2015",
-    "description" : "Grindcom was focused on research and development of a measurement and control system for industrial forestry equipment.  Operationaly I was the system architect, software and hardware developer.  Managing this business included maintaining the R&D budget; utilizing Canadian federal programs such as SR&ED and IRAP."
+    'employer' : "Grindcom (Self-Employed)",
+    'title' : "CEO, System Architect",
+    'location' : "Williams Lake,BC",
+    'dates' : "March, 2006 - June, 2015",
+    'description' : "Grindcom was focused on research and development of a measurement and control system for industrial forestry equipment.  Operationaly I was the system architect, software and hardware developer.  Managing this business included maintaining the R&D budget; utilizing Canadian federal programs such as SR&ED and IRAP."
   },
   {// work experience
-    "employer" : "Tom Ford Logging Ltd.",
-    "title" : "Supervisor, Industrial Computer Tech.",
-    "location" : "Williams Lake,BC",
-    "dates" : "May, 1999 - February, 2003",
-    "description" : "Supervise logging operations, administer and maintain measurement and control computers on board heavy equipment."
+    'employer' : "Tom Ford Logging Ltd.",
+    'title' : "Supervisor, Industrial Computer Tech.",
+    'location' : "Williams Lake,BC",
+    'dates' : "May, 1999 - February, 2003",
+    'description' : "Supervise logging operations, administer and maintain measurement and control computers on board heavy equipment."
   },
   {// work experience
-    "employer" : "Tom Ford Logging Ltd.",
-    "title" : "Heavy Equipment Operator",
-    "dates" : "June, 1985 - March, 1996",
-    "location" : "Williams Lake",
-    "description" : "Operating Skidders, Dozers and Log loaders."
+    'employer' : "Tom Ford Logging Ltd.",
+    'title' : "Heavy Equipment Operator",
+    'dates' : "June, 1985 - March, 1996",
+    'location' : "Williams Lake",
+    'description' : "Operating Skidders, Dozers and Log loaders."
   }
 ],
-"display": function(){
+'display': function(){
   // Iterate through work array and setup
   //  their boxes
   this.jobs.forEach(function(job){
-    $("#sub-work").append(HTMLworkStart);
-    $(".work-entry").addClass("box");
+    $('#sub-work').append(HTMLworkStart);
+    $('.work-entry').addClass('box');
     var formattedEmployer = HTMLworkEmployer.replace(data,job.employer);
     var formattedTitle = HTMLworkTitle.replace(data,job.title.bold());
     var formattedDates = HTMLworkDates.replace(data,job.dates);
     var formattedDescrip = HTMLworkDescription.replace(data,job.description);
     var formattedConcat = formattedEmployer + formattedTitle + formattedDates + formattedDescrip;
-    $(".work-entry:last").append(formattedConcat);
+    $('.work-entry:last').append(formattedConcat);
   });
 }
 };
@@ -251,38 +251,38 @@ var work = {
 // Projects object
 //
 var projects = {
-  "projects" : [{// Project
-    "title" : "Portfolio",
-    "dates" : "September, 2016 - September, 2016",
-    "description" : "A portfolio of projects, created for the Front End Developer nanodegree.",
-    "images" : ["./images/pexels-photo-255x150_thumb_1x.jpg","./images/PuppiesOn_theRun-255x150_thumb_1x.jpg"],
-    "giturl" : "https://github.com/Grindcom/udacity-front-end-dev-project1"
+  'projects' : [{// Project
+    'title' : "Portfolio",
+    'dates' : "September, 2016 - September, 2016",
+    'description' : "A portfolio of projects, created for the Front End Developer nanodegree.",
+    'images' : ["./images/pexels-photo-255x150_thumb_1x.jpg","./images/PuppiesOn_theRun-255x150_thumb_1x.jpg"],
+    'giturl' : "https://github.com/Grindcom/udacity-front-end-dev-project1"
   },{// Project
-    "title" : "Resume'",
-    "dates" : "September, 2016 - September, 2016",
-    "description" : "A Resume' of projects, created for the UDacity Front End Developer nanodegree. It serves as a sample of my developer skill set - HTML, CSS and JavaScript.",
-    "images" : ["./images/pexels-photo-255x150_thumb_1x.jpg"],
-    "giturl" : "https://github.com/Grindcom/frontend-nanodegree-resume"
+    'title' : "Resume'",
+    'dates' : "September, 2016 - September, 2016",
+    'description' : "A Resume' of projects, created for the UDacity Front End Developer nanodegree. It serves as a sample of my developer skill set - HTML, CSS and JavaScript.",
+    'images' : ["./images/pexels-photo-255x150_thumb_1x.jpg"],
+    'giturl' : "https://github.com/Grindcom/frontend-nanodegree-resume"
   }],
-  "display":function(){
+  'display':function(){
     // iterate through all projects and place them in the projects div
     projects.projects.forEach(function(project){
-      $("#sub-projects").append(HTMLprojectStart);
+      $('#sub-projects').append(HTMLprojectStart);
       // Add the box class to surround the project entry
-      $(".project-entry").addClass("box");
+      $('.project-entry').addClass('box');
       // Add title div
       var frmTitle = HTMLprojectTitle.replace(data,project.title);
       // add the href link to title div
-      frmTitle = frmTitle.replace("#",project.giturl);
+      frmTitle = frmTitle.replace('#',project.giturl);
       // Add project dates
       var frmDate = HTMLprojectDates.replace(data,project.dates);
       // Add description
       var frmDescrip = HTMLprojectDescription.replace(data,project.description);
       // Add the css to the project picture
-      var devTemplate = HTMLprojectImage.replace(">", 'class="projectpic">');
+      var devTemplate = HTMLprojectImage.replace('>', 'class="projectpic">');
       // If the image array has any values, iterate through
       //  them and add them to the project images
-      var frmImage = "";
+      var frmImage = '';
       //
       if(project.images.length > 0){
         project.images.forEach(function(image){
@@ -291,7 +291,7 @@ var projects = {
       }
       // Combine all formatted strings
       var frmConcat = frmTitle + frmDate + frmDescrip + frmImage;
-      $(".project-entry:last").append(frmConcat);
+      $('.project-entry:last').append(frmConcat);
     });
   }
 
@@ -333,18 +333,18 @@ if((education.schools.length > 0) || (education.onlineCourses.length > 0) ){
 //
 // Add maps
 //
-$("#mapDiv").append(googleMap);
+$('#mapDiv').append(googleMap);
 // add the row-h2 css to mapDiv
-$("#mapDiv").children("h2").addClass("row-h2");
+$('#mapDiv').children('h2').addClass('row-h2');
 //
 // Initialize view
 //
 window.addEventListener('load',initializeView);
 function initializeView(){
   // Cause a click event on the project-h2
-  $("#project-h2").click();
+  $('#project-h2').click();
   // Cause a click event on the education-h2
-  $("#education-h2").click();
+  $('#education-h2').click();
 }
 //
 // Log mouse clicks
@@ -357,62 +357,62 @@ function initializeView(){
 //
 $(document).ready(function(){
   // Work header click event handler
-  $("#work-h2").click(function(event){
+  $('#work-h2').click(function(event){
     // Show or hide Work sub zone
-    $("#sub-work").slideToggle(function(){
+    $('#sub-work').slideToggle(function(){
       // Get the value of the :visible object
-      var isVis = $("#sub-work").is(":visible");
+      var isVis = $('#sub-work').is(':visible');
       // get the a element for this
-      var arrow = $("#work-h2").children('a');
+      var arrow = $('#work-h2').children('a');
       // if visible
       if(isVis){
         // Set h2 to up arrow
-        arrow.removeClass("entypo-down-open-mini");
-        arrow.addClass("entypo-up-open-mini");
+        arrow.removeClass('entypo-down-open-mini');
+        arrow.addClass('entypo-up-open-mini');
       }else {// if not visible
         // Set h2 to have a down arrow
-        arrow.removeClass("entypo-up-open-mini");
-        arrow.addClass("entypo-down-open-mini");
+        arrow.removeClass('entypo-up-open-mini');
+        arrow.addClass('entypo-down-open-mini');
       }
     });
   });
   // Project header click event handler
-  $("#project-h2").click(function(event){
+  $('#project-h2').click(function(event){
     // Show or hide project sub zone
-    $("#sub-projects").slideToggle(function(){
+    $('#sub-projects').slideToggle(function(){
       // Get the value of the :visible object
-      var isVis = $("#sub-projects").is(":visible");
+      var isVis = $('#sub-projects').is(':visible');
       // get the a element for this
-      var arrow = $("#project-h2").children('a');
+      var arrow = $('#project-h2').children('a');
       // if visible
       if(isVis){
         // Set h2 to up arrow
-        arrow.removeClass("entypo-down-open-mini");
-        arrow.addClass("entypo-up-open-mini");
+        arrow.removeClass('entypo-down-open-mini');
+        arrow.addClass('entypo-up-open-mini');
       }else {// if not visible
         // Set h2 to have a down arrow
-        arrow.removeClass("entypo-up-open-mini");
-        arrow.addClass("entypo-down-open-mini");
+        arrow.removeClass('entypo-up-open-mini');
+        arrow.addClass('entypo-down-open-mini');
       }
     });
   });
   // Education header click event handler
-  $("#education-h2").click(function(event){
+  $('#education-h2').click(function(event){
     // Show or hide education sub zone
-    $("#sub-education").slideToggle(function(){
+    $('#sub-education').slideToggle(function(){
       // Get the value of the :visible object
-      var isVis = $("#sub-education").is(":visible");
+      var isVis = $('#sub-education').is(':visible');
       // get the a element for this
-      var arrow = $("#education-h2").children('a');
+      var arrow = $('#education-h2').children('a');
       // if visible
       if(isVis){
         // Set h2 to up arrow
-        arrow.removeClass("entypo-down-open-mini");
-        arrow.addClass("entypo-up-open-mini");
+        arrow.removeClass('entypo-down-open-mini');
+        arrow.addClass('entypo-up-open-mini');
       }else {// if not visible
         // Set h2 to have a down arrow
-        arrow.removeClass("entypo-up-open-mini");
-        arrow.addClass("entypo-down-open-mini");
+        arrow.removeClass('entypo-up-open-mini');
+        arrow.addClass('entypo-down-open-mini');
       }
     });
   });
@@ -420,10 +420,10 @@ $(document).ready(function(){
 //
 // Add Internationalize button
 //
-$("#main").append(internationalizeButton);
+$('#main').append(internationalizeButton);
 function inName(intName){
-  var tmpName = intName.split(" ");
+  var tmpName = intName.split(' ');
   tmpName[0] = tmpName[0][0].toUpperCase() + tmpName[0].slice(1);
-  intName = tmpName[0] + " " + tmpName[1].toUpperCase();
+  intName = tmpName[0] + ' ' + tmpName[1].toUpperCase();
   return intName;
 }
