@@ -95,8 +95,7 @@ var bio = {
 // Education object
 //
 var education = {
-  "schools" : [
-    {// School attended
+  "schools" : [{// School attended
       "name" : "Devry University, Calgary campus",
       "location" : "Calgary, AB",
       "degree" : "B.Sc.",
