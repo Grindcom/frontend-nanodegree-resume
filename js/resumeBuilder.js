@@ -120,8 +120,7 @@ var education = {
     "url": "http://www.ouc.bc.ca"
   }
 ],
-"onlineCourses" : [
-  {// Online course
+"onlineCourses" : [{// Online course
     "title" : "How to Use Git and GitHub",
     "school" : "Udacity",
     "dates" : "September, 2016",
@@ -203,50 +202,49 @@ var education = {
 // Work object
 //
 var work = {
-  "jobs" : [
-    {// work experience
-      "employer" : "Williams Lake Fire Department",
-      "title" : "Firefighter",
-      "location" : "Williams Lake,BC",
-      "dates" : "March, 2011 - in progress",
-      "description" : "Professional Firefighter, NFPA 1001 certification."
-    },
-    {// work experience
-      "employer" : "Grindcom (Self-Employed)",
-      "title" : "CEO, System Architect",
-      "location" : "Williams Lake,BC",
-      "dates" : "March, 2006 - June, 2015",
-      "description" : "Grindcom was focused on research and development of a measurement and control system for industrial forestry equipment.  Operationaly I was the system architect, software and hardware developer.  Managing this business included maintaining the R&D budget; utilizing Canadian federal programs such as SR&ED and IRAP."
-    },
-    {// work experience
-      "employer" : "Tom Ford Logging Ltd.",
-      "title" : "Supervisor, Industrial Computer Tech.",
-      "location" : "Williams Lake,BC",
-      "dates" : "May, 1999 - February, 2003",
-      "description" : "Supervise logging operations, administer and maintain measurement and control computers on board heavy equipment."
-    },
-    {// work experience
-      "employer" : "Tom Ford Logging Ltd.",
-      "title" : "Heavy Equipment Operator",
-      "dates" : "June, 1985 - March, 1996",
-      "location" : "Williams Lake",
-      "description" : "Operating Skidders, Dozers and Log loaders."
-    }
-  ],
-  "display": function(){
-    // Iterate through work array and setup
-    //  their boxes
-    this.jobs.forEach(function(job){
-      $("#sub-work").append(HTMLworkStart);
-      $(".work-entry").addClass("box");
-      var formattedEmployer = HTMLworkEmployer.replace(data,job.employer);
-      var formattedTitle = HTMLworkTitle.replace(data,job.title.bold());
-      var formattedDates = HTMLworkDates.replace(data,job.dates);
-      var formattedDescrip = HTMLworkDescription.replace(data,job.description);
-      var formattedConcat = formattedEmployer + formattedTitle + formattedDates + formattedDescrip;
-      $(".work-entry:last").append(formattedConcat);
-    });
+  "jobs" : [{// work experience
+    "employer" : "Williams Lake Fire Department",
+    "title" : "Firefighter",
+    "location" : "Williams Lake,BC",
+    "dates" : "March, 2011 - in progress",
+    "description" : "Professional Firefighter, NFPA 1001 certification."
+  },
+  {// work experience
+    "employer" : "Grindcom (Self-Employed)",
+    "title" : "CEO, System Architect",
+    "location" : "Williams Lake,BC",
+    "dates" : "March, 2006 - June, 2015",
+    "description" : "Grindcom was focused on research and development of a measurement and control system for industrial forestry equipment.  Operationaly I was the system architect, software and hardware developer.  Managing this business included maintaining the R&D budget; utilizing Canadian federal programs such as SR&ED and IRAP."
+  },
+  {// work experience
+    "employer" : "Tom Ford Logging Ltd.",
+    "title" : "Supervisor, Industrial Computer Tech.",
+    "location" : "Williams Lake,BC",
+    "dates" : "May, 1999 - February, 2003",
+    "description" : "Supervise logging operations, administer and maintain measurement and control computers on board heavy equipment."
+  },
+  {// work experience
+    "employer" : "Tom Ford Logging Ltd.",
+    "title" : "Heavy Equipment Operator",
+    "dates" : "June, 1985 - March, 1996",
+    "location" : "Williams Lake",
+    "description" : "Operating Skidders, Dozers and Log loaders."
   }
+],
+"display": function(){
+  // Iterate through work array and setup
+  //  their boxes
+  this.jobs.forEach(function(job){
+    $("#sub-work").append(HTMLworkStart);
+    $(".work-entry").addClass("box");
+    var formattedEmployer = HTMLworkEmployer.replace(data,job.employer);
+    var formattedTitle = HTMLworkTitle.replace(data,job.title.bold());
+    var formattedDates = HTMLworkDates.replace(data,job.dates);
+    var formattedDescrip = HTMLworkDescription.replace(data,job.description);
+    var formattedConcat = formattedEmployer + formattedTitle + formattedDates + formattedDescrip;
+    $(".work-entry:last").append(formattedConcat);
+  });
+}
 };
 
 //
@@ -288,7 +286,7 @@ var projects = {
       //
       if(project.images.length > 0){
         project.images.forEach(function(image){
-            frmImage += devTemplate.replace(data,image);
+          frmImage += devTemplate.replace(data,image);
         });
       }
       // Combine all formatted strings
