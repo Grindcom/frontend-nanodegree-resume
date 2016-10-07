@@ -289,7 +289,6 @@ var projects = {
       if(project.images.length > 0){
         project.images.forEach(function(image){
             frmImage += devTemplate.replace(data,image);
-            console.log(frmImage);
         });
       }
       // Combine all formatted strings

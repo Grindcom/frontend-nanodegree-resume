@@ -65,6 +65,7 @@ header, nav, footer, section, article, div {
   border-radius: 12px;
   box-shadow: 1px 1px 5px #7d97ad;
   overflow: hidden;
+  align-content: center;
 }
 
 .box-education{
