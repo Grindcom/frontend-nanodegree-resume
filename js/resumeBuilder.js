@@ -403,6 +403,16 @@ $(document).ready(function(){
       }
     });
   });
+  //
+  // Hover over functions
+  //  Shake visible divs
+  //
+  // $('#theElement').effect('shake', 100);
+  $('#work-h2, #project-h2, #education-h2').mouseover(function(){
+        console.log("hello");
+    $('#skills').effect('shake');
+
+  });
 });
 //
 // Add Internationalize button
