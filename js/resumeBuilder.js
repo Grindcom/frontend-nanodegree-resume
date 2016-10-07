@@ -81,22 +81,14 @@ var bio = {
       });
     }
     //
-    // Add Contact information to top header
+    // Add Contact information to top header and footer
     //
     $("#topContacts").insertAfter("#skills");
-    $("#topContacts").append(formattedMobile);
-    $("#topContacts").append(formattedEmail);
-    $("#topContacts").append(formattedGit);
-    $("#topContacts").append(formattedLin);
-    $("#topContacts").append(formattedLocation);
-    //
-    // Add Contact information to footer contacts
-    //
-    $("#footerContacts").append(formattedMobile);
-    $("#footerContacts").append(formattedEmail);
-    $("#footerContacts").append(formattedGit);
-    $("#footerContacts").append(formattedLin);
-    $("#footerContacts").append(formattedLocation);
+    $("#topContacts, #footerContacts").append(formattedMobile);
+    $("#topContacts, #footerContacts").append(formattedEmail);
+    $("#topContacts, #footerContacts").append(formattedGit);
+    $("#topContacts, #footerContacts").append(formattedLin);
+    $("#topContacts, #footerContacts").append(formattedLocation);
   }
 };
 //
