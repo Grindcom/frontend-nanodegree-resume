@@ -38,7 +38,7 @@ header, nav, footer, section, article, div {
 
 .row{
   justify-content: center;
-    padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .row-h2, .row-h3{
@@ -49,7 +49,7 @@ header, nav, footer, section, article, div {
 
 .row-h2{
   box-shadow: 5px -2px 4px 2px #7d97ad;
-  box-shadow: 1px 1px 5px #7d97ad;
+  /*box-shadow: 1px 1px 5px #7d97ad;*/
   justify-content: space-between;
 }
 
@@ -263,13 +263,19 @@ span {
 /*My Settings*/
 #skills{
   /*make list horizontal*/
-  display: inline;
+  /*display: inline;*/
+  box-shadow: 1px 1px 5px #7d97ad;
 }
 
 .flex-item{
   /*make list horizontal*/
   display: inline;
   list-style-type: none;
+}
+
+.header-role{
+  font-size: 1.5em;
+  color: #236af5;
 }
 
 /* Media queries to handle various device widths */

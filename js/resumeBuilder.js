@@ -16,8 +16,8 @@ var newEmail = oldEmail.replace("grindcom","facet-it");
 // Set up name and role variables
 var myname = firstName + " " + lastName + " B.sc.";
 var desiredRole = "Front-end Developer";
-var skills = ["Programming","Problem solving","C","C++","C#","Java","JavaScript","HTML","CSS"];
-var message = "Thanks for checking out my Resume'.  As you can see I am fairly new to the field of Front-end developer, but I have a strong background in several other programming languages.  Combining that with a diverse range of real-world experience gives me a unique perspective on any new job or project.";
+var skills = ["Git","C","C++","C#","Java","JavaScript","HTML","CSS","Programming","Problem solving"];
+var message = "Thanks for checking out my Resume'.  I have a strong background in several programming languages and I constantly seek experience in new ones.  Combine that with a diverse range of real-world experiences and I have a unique perspective on any new job or project.";
 
 /**************************************************
 *
@@ -44,6 +44,8 @@ var bio = {
     // format bio
     var formattedName = HTMLheaderName.replace("%data%",this.name);
     var formattedRole = HTMLheaderRole.replace("%data%",this.role);
+    // Add header-role class name to span to manipulate font
+    formattedRole = formattedRole.replace("<span>",'<span class="header-role">');
     var formattedMessage = HTMLwelcomeMsg.replace("%data%",this.welcomeMessage);
     var formattedPic = HTMLbioPic.replace("%data%",this.biopic);
     // Set up Contacts
