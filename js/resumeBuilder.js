@@ -102,101 +102,93 @@ var education = {
     'majors' : ["Computer Engineering Technology",""],
     'dates' : "March, 2003 to February, 2006",
     'url' : "http://www.devry.edu/degree-programs/engineering-information-sciences/computer-engineering-technology.html"
-  },
-  {// School attended
+  },{// School attended
     'name' : "University of Norther British Columbia",
     'location' : "Prince George, BC",
     'degree' : "",
     'majors' : ["Computer Science",""],
     'dates' : "September, 1997 to January, 1999",
     'url': "http://www.unbc.ca"
-  },
-  {// School attended
+  },{// School attended
     'name' : "Okanagan University Collage",
     'location' : "Kelowna, BC",
     'degree' : "",
     'majors' : ["General Studies",""],
     'dates' : "June, 1996 to May, 1997",
     'url': "http://www.ouc.bc.ca"
-  }
-],
-'onlineCourses' : [{// Online course
+  }],
+  'onlineCourses' : [{// Online course
     'title' : "How to Use Git and GitHub",
     'school' : "Udacity",
     'dates' : "September, 2016",
     'url' : "https://www.udacity.com/course/how-to-use-git-and-github--ud775"
-  },
-  {// Online course
+  },  {// Online course
     'title' : "Responsive Web Design Fundamentals",
     'school' : "Udacity",
     'dates' : "September, 2016",
     'url' : "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
-  },
-  {// Online course
+  },{// Online course
     'title' : "JavaScript Basics",
     'school' : "Udacity",
     'dates' : "September, 2016",
     'url' : "https://www.udacity.com/course/javascript-basics--ud804"
-  },
-  {// Online course
+  },{// Online course
     'title' : "Intro to HTML and CSS",
     'school' : "Udacity",
     'dates' : "September, 2016",
     'url' : "https://www.udacity.com/course/intro-to-html-and-css--ud304"
-  },
-  {// Online course
+  },{// Online course
     'title' : "Responsive Images",
     'school' : "Udacity",
     'dates' : "September, 2016",
     'url' : "https://www.udacity.com/course/responsive-images--ud882"
-  }
-],
-'display': function(){
-  //
-  // Display schools
-  //
-  if(this.schools.length > 0){
-    // if there are schools add an h3 row
-    var HTMLschoolHeader = '<h3 id="schoolHeader" class="row-h3">Schools</h3>';
-    $('#sub-education').append(HTMLschoolHeader);
-  }
-  this.schools.forEach(function(school){
-    $('#sub-education').append(HTMLschoolStart);
-    $('.education-entry').addClass('box-education');
-    // format education
-    var formattedName = HTMLschoolName.replace(data,school.name);
-    formattedName = formattedName.replace('#',school.url);
-    var formattedDegree = HTMLschoolDegree.replace(data,school.degree);
-    var formattedDates = HTMLschoolDates.replace(data,school.dates);
-    var formattedLocation = HTMLschoolLocation.replace(data,school.location);
-    var formattedMajor = HTMLschoolMajor.replace(data,school.majors);
+  }],
+  'display': function(){
     //
-    var concatAll = formattedName + formattedDegree + formattedDates + formattedLocation + formattedMajor;
+    // Display schools
     //
-    $('.education-entry:last').append(concatAll);
-  });
-  //
-  // Display online courses
-  //
-  if(this.onlineCourses.length > 0){
-    //if there are courses add an h3 row
-    HTMLonlineClasses = HTMLonlineClasses.replace('<h3>','<h3 id="onlineHeader" class="row-h3">');
-    $('#sub-education').append(HTMLonlineClasses);
+    if(this.schools.length > 0){
+      // if there are schools add an h3 row
+      var HTMLschoolHeader = '<h3 id="schoolHeader" class="row-h3">Schools</h3>';
+      $('#sub-education').append(HTMLschoolHeader);
+    }
+    this.schools.forEach(function(school){
+      $('#sub-education').append(HTMLschoolStart);
+      $('.education-entry').addClass('box-education');
+      // format education
+      var formattedName = HTMLschoolName.replace(data,school.name);
+      formattedName = formattedName.replace('#',school.url);
+      var formattedDegree = HTMLschoolDegree.replace(data,school.degree);
+      var formattedDates = HTMLschoolDates.replace(data,school.dates);
+      var formattedLocation = HTMLschoolLocation.replace(data,school.location);
+      var formattedMajor = HTMLschoolMajor.replace(data,school.majors);
+      //
+      var concatAll = formattedName + formattedDegree + formattedDates + formattedLocation + formattedMajor;
+      //
+      $('.education-entry:last').append(concatAll);
+    });
+    //
+    // Display online courses
+    //
+    if(this.onlineCourses.length > 0){
+      //if there are courses add an h3 row
+      HTMLonlineClasses = HTMLonlineClasses.replace('<h3>','<h3 id="onlineHeader" class="row-h3">');
+      $('#sub-education').append(HTMLonlineClasses);
+    }
+    // Iterate through the online array and set up
+    //  the course boxes.
+    this.onlineCourses.forEach(function(course){
+      var HTMLonlineStart = '<div class="online-entry box-online"></div>';
+      $('#sub-education').append(HTMLonlineStart);
+      //
+      var formattedOnTitle = HTMLonlineTitle.replace(data,course.title);
+      formattedOnTitle = formattedOnTitle.replace('#',course.url);
+      var formattedOnSchool = HTMLonlineSchool.replace(data,course.school);
+      var formattedOnDates = HTMLonlineDates.replace(data,course.dates);
+      var concatAll = formattedOnTitle + formattedOnSchool + formattedOnDates;
+      $('.online-entry:last').append(concatAll);
+    });
   }
-  // Iterate through the online array and set up
-  //  the course boxes.
-  this.onlineCourses.forEach(function(course){
-    var HTMLonlineStart = '<div class="online-entry box-online"></div>';
-    $('#sub-education').append(HTMLonlineStart);
-    //
-    var formattedOnTitle = HTMLonlineTitle.replace(data,course.title);
-    formattedOnTitle = formattedOnTitle.replace('#',course.url);
-    var formattedOnSchool = HTMLonlineSchool.replace(data,course.school);
-    var formattedOnDates = HTMLonlineDates.replace(data,course.dates);
-    var concatAll = formattedOnTitle + formattedOnSchool + formattedOnDates;
-    $('.online-entry:last').append(concatAll);
-  });
-}
 };
 //
 // Work object
@@ -208,43 +200,39 @@ var work = {
     'location' : "Williams Lake,BC",
     'dates' : "March, 2011 - in progress",
     'description' : "Professional Firefighter, NFPA 1001 certification."
-  },
-  {// work experience
+  },{// work experience
     'employer' : "Grindcom (Self-Employed)",
     'title' : "CEO, System Architect",
     'location' : "Williams Lake,BC",
     'dates' : "March, 2006 - June, 2015",
     'description' : "Grindcom was focused on research and development of a measurement and control system for industrial forestry equipment.  Operationaly I was the system architect, software and hardware developer.  Managing this business included maintaining the R&D budget; utilizing Canadian federal programs such as SR&ED and IRAP."
-  },
-  {// work experience
+  },{// work experience
     'employer' : "Tom Ford Logging Ltd.",
     'title' : "Supervisor, Industrial Computer Tech.",
     'location' : "Williams Lake,BC",
     'dates' : "May, 1999 - February, 2003",
     'description' : "Supervise logging operations, administer and maintain measurement and control computers on board heavy equipment."
-  },
-  {// work experience
+  },{// work experience
     'employer' : "Tom Ford Logging Ltd.",
     'title' : "Heavy Equipment Operator",
     'dates' : "June, 1985 - March, 1996",
     'location' : "Williams Lake",
     'description' : "Operating Skidders, Dozers and Log loaders."
+  }],
+  'display': function(){
+    // Iterate through work array and setup
+    //  their boxes
+    this.jobs.forEach(function(job){
+      $('#sub-work').append(HTMLworkStart);
+      $('.work-entry').addClass('box');
+      var formattedEmployer = HTMLworkEmployer.replace(data,job.employer);
+      var formattedTitle = HTMLworkTitle.replace(data,job.title.bold());
+      var formattedDates = HTMLworkDates.replace(data,job.dates);
+      var formattedDescrip = HTMLworkDescription.replace(data,job.description);
+      var formattedConcat = formattedEmployer + formattedTitle + formattedDates + formattedDescrip;
+      $('.work-entry:last').append(formattedConcat);
+    });
   }
-],
-'display': function(){
-  // Iterate through work array and setup
-  //  their boxes
-  this.jobs.forEach(function(job){
-    $('#sub-work').append(HTMLworkStart);
-    $('.work-entry').addClass('box');
-    var formattedEmployer = HTMLworkEmployer.replace(data,job.employer);
-    var formattedTitle = HTMLworkTitle.replace(data,job.title.bold());
-    var formattedDates = HTMLworkDates.replace(data,job.dates);
-    var formattedDescrip = HTMLworkDescription.replace(data,job.description);
-    var formattedConcat = formattedEmployer + formattedTitle + formattedDates + formattedDescrip;
-    $('.work-entry:last').append(formattedConcat);
-  });
-}
 };
 
 //
@@ -294,7 +282,6 @@ var projects = {
       $('.project-entry:last').append(frmConcat);
     });
   }
-
 };
 
 /**************************************************
