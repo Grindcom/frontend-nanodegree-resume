@@ -11,6 +11,11 @@ var lastName = "Ford";
 var oldEmail = "ford@grindcom.ca";
 var newEmail = oldEmail.replace("grindcom","facet-it");
 //
+// Used multiple times to replace div information
+//
+var data = "%data%";
+
+//
 // Set up Header objecst
 //
 // Set up name and role variables
@@ -42,18 +47,18 @@ var bio = {
   "biopic" : "./images/greg_casual-800x350_large_1x.jpg",
   display: function(){
     // format bio
-    var formattedName = HTMLheaderName.replace("%data%",this.name);
-    var formattedRole = HTMLheaderRole.replace("%data%",this.role);
+    var formattedName = HTMLheaderName.replace(data,this.name);
+    var formattedRole = HTMLheaderRole.replace(data,this.role);
     // Add header-role class name to span to manipulate font
     formattedRole = formattedRole.replace("<span>",'<span class="header-role">');
-    var formattedMessage = HTMLwelcomeMsg.replace("%data%",this.welcomeMessage);
-    var formattedPic = HTMLbioPic.replace("%data%",this.biopic);
+    var formattedMessage = HTMLwelcomeMsg.replace(data,this.welcomeMessage);
+    var formattedPic = HTMLbioPic.replace(data,this.biopic);
     // Set up Contacts
-    var formattedEmail = HTMLemail.replace("%data%",this.contacts.email);
-    var formattedMobile = HTMLmobile.replace("%data%",this.contacts.mobile);
-    var formattedGit = HTMLgithub.replace("%data%",this.contacts.github);
-    var formattedLin = HTMLlinkedIn.replace("%data%",this.contacts.linkedin);
-    var formattedLocation = HTMLlocation.replace("%data%",this.contacts.location);
+    var formattedEmail = HTMLemail.replace(data,this.contacts.email);
+    var formattedMobile = HTMLmobile.replace(data,this.contacts.mobile);
+    var formattedGit = HTMLgithub.replace(data,this.contacts.github);
+    var formattedLin = HTMLlinkedIn.replace(data,this.contacts.linkedin);
+    var formattedLocation = HTMLlocation.replace(data,this.contacts.location);
     // Add to header
     //  Use prepend to put it at the start of the header area
     $("#header").append(formattedMessage);
@@ -71,7 +76,7 @@ var bio = {
       //
       //
       bio.skills.forEach(function(skill){
-        var formattedSkill = HTMLskills.replace("%data%",skill);
+        var formattedSkill = HTMLskills.replace(data,skill);
         $("#skills:last").append(formattedSkill);
       });
     }
@@ -169,12 +174,12 @@ var education = {
       $("#sub-education").append(HTMLschoolStart);
       $(".education-entry").addClass("box-education");
       // format education
-      var formattedName = HTMLschoolName.replace("%data%",school.name);
+      var formattedName = HTMLschoolName.replace(data,school.name);
       formattedName = formattedName.replace("#",school.url);
-      var formattedDegree = HTMLschoolDegree.replace("%data%",school.degree);
-      var formattedDates = HTMLschoolDates.replace("%data%",school.dates);
-      var formattedLocation = HTMLschoolLocation.replace("%data%",school.location);
-      var formattedMajor = HTMLschoolMajor.replace("%data%",school.majors);
+      var formattedDegree = HTMLschoolDegree.replace(data,school.degree);
+      var formattedDates = HTMLschoolDates.replace(data,school.dates);
+      var formattedLocation = HTMLschoolLocation.replace(data,school.location);
+      var formattedMajor = HTMLschoolMajor.replace(data,school.majors);
       //
       var concatAll = formattedName + formattedDegree + formattedDates + formattedLocation + formattedMajor;
       //
@@ -194,10 +199,10 @@ var education = {
       var HTMLonlineStart = '<div class="online-entry box-online"></div>';
       $("#sub-education").append(HTMLonlineStart);
       //
-      var formattedOnTitle = HTMLonlineTitle.replace("%data%",course.title);
+      var formattedOnTitle = HTMLonlineTitle.replace(data,course.title);
       formattedOnTitle = formattedOnTitle.replace("#",course.url);
-      var formattedOnSchool = HTMLonlineSchool.replace("%data%",course.school);
-      var formattedOnDates = HTMLonlineDates.replace("%data%",course.dates);
+      var formattedOnSchool = HTMLonlineSchool.replace(data,course.school);
+      var formattedOnDates = HTMLonlineDates.replace(data,course.dates);
       var concatAll = formattedOnTitle + formattedOnSchool + formattedOnDates;
       $(".online-entry:last").append(concatAll);
     });
@@ -243,10 +248,10 @@ var work = {
     this.jobs.forEach(function(job){
       $("#sub-work").append(HTMLworkStart);
       $(".work-entry").addClass("box");
-      var formattedEmployer = HTMLworkEmployer.replace("%data%",job.employer);
-      var formattedTitle = HTMLworkTitle.replace("%data%",job.title.bold());
-      var formattedDates = HTMLworkDates.replace("%data%",job.dates);
-      var formattedDescrip = HTMLworkDescription.replace("%data%",job.description);
+      var formattedEmployer = HTMLworkEmployer.replace(data,job.employer);
+      var formattedTitle = HTMLworkTitle.replace(data,job.title.bold());
+      var formattedDates = HTMLworkDates.replace(data,job.dates);
+      var formattedDescrip = HTMLworkDescription.replace(data,job.description);
       var formattedConcat = formattedEmployer + formattedTitle + formattedDates + formattedDescrip;
       $(".work-entry:last").append(formattedConcat);
     });
@@ -281,15 +286,15 @@ var projects = {
       // Add the box class to surround the project entry
       $(".project-entry").addClass("box");
       // Add title div
-      var frmTitle = HTMLprojectTitle.replace("%data%",project.title);
+      var frmTitle = HTMLprojectTitle.replace(data,project.title);
       // add the href link to title div
       frmTitle = frmTitle.replace("#",project.giturl);
       // Add project dates
-      var frmDate = HTMLprojectDates.replace("%data%",project.dates);
+      var frmDate = HTMLprojectDates.replace(data,project.dates);
       // Add description
-      var frmDescrip = HTMLprojectDescription.replace("%data%",project.description);
+      var frmDescrip = HTMLprojectDescription.replace(data,project.description);
       // Add first image of array
-      var frmImage = HTMLprojectImage.replace("%data%",project.images[0].url);
+      var frmImage = HTMLprojectImage.replace(data,project.images[0].url);
       // Add the css to the project picture
       frmImage = frmImage.replace(">", 'class="projectpic">');
       // Combine all formatted strings
