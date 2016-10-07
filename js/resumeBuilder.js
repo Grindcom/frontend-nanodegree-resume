@@ -96,108 +96,108 @@ var bio = {
 //
 var education = {
   "schools" : [{// School attended
-      "name" : "Devry University, Calgary campus",
-      "location" : "Calgary, AB",
-      "degree" : "B.Sc.",
-      "majors" : ["Computer Engineering Technology",""],
-      "dates" : "March, 2003 to February, 2006",
-      "url" : "http://www.devry.edu/degree-programs/engineering-information-sciences/computer-engineering-technology.html"
-    },
-    {// School attended
-      "name" : "University of Norther British Columbia",
-      "location" : "Prince George, BC",
-      "degree" : "",
-      "majors" : ["Computer Science",""],
-      "dates" : "September, 1997 to January, 1999",
-      "url": "http://www.unbc.ca"
-    },
-    {// School attended
-      "name" : "Okanagan University Collage",
-      "location" : "Kelowna, BC",
-      "degree" : "",
-      "majors" : ["General Studies",""],
-      "dates" : "June, 1996 to May, 1997",
-      "url": "http://www.ouc.bc.ca"
-    }
-  ],
-  "onlineCourses" : [
-    {// Online course
-      "title" : "How to Use Git and GitHub",
-      "school" : "Udacity",
-      "dates" : "September, 2016",
-      "url" : "https://www.udacity.com/course/how-to-use-git-and-github--ud775"
-    },
-    {// Online course
-      "title" : "Responsive Web Design Fundamentals",
-      "school" : "Udacity",
-      "dates" : "September, 2016",
-      "url" : "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
-    },
-    {// Online course
-      "title" : "JavaScript Basics",
-      "school" : "Udacity",
-      "dates" : "September, 2016",
-      "url" : "https://www.udacity.com/course/javascript-basics--ud804"
-    },
-    {// Online course
-      "title" : "Intro to HTML and CSS",
-      "school" : "Udacity",
-      "dates" : "September, 2016",
-      "url" : "https://www.udacity.com/course/intro-to-html-and-css--ud304"
-    },
-    {// Online course
-      "title" : "Responsive Images",
-      "school" : "Udacity",
-      "dates" : "September, 2016",
-      "url" : "https://www.udacity.com/course/responsive-images--ud882"
-    }
-  ],
-  "display": function(){
-    //
-    // Display schools
-    //
-    if(this.schools.length > 0){
-      // if there are schools add an h3 row
-      var HTMLschoolHeader = '<h3 id="schoolHeader" class="row-h3">Schools</h3>';
-      $("#sub-education").append(HTMLschoolHeader);
-    }
-    this.schools.forEach(function(school){
-      $("#sub-education").append(HTMLschoolStart);
-      $(".education-entry").addClass("box-education");
-      // format education
-      var formattedName = HTMLschoolName.replace(data,school.name);
-      formattedName = formattedName.replace("#",school.url);
-      var formattedDegree = HTMLschoolDegree.replace(data,school.degree);
-      var formattedDates = HTMLschoolDates.replace(data,school.dates);
-      var formattedLocation = HTMLschoolLocation.replace(data,school.location);
-      var formattedMajor = HTMLschoolMajor.replace(data,school.majors);
-      //
-      var concatAll = formattedName + formattedDegree + formattedDates + formattedLocation + formattedMajor;
-      //
-      $(".education-entry:last").append(concatAll);
-    });
-    //
-    // Display online courses
-    //
-    if(this.onlineCourses.length > 0){
-      //if there are courses add an h3 row
-      HTMLonlineClasses = HTMLonlineClasses.replace("<h3>",'<h3 id="onlineHeader" class="row-h3">');
-      $("#sub-education").append(HTMLonlineClasses);
-    }
-    // Iterate through the online array and set up
-    //  the course boxes.
-    this.onlineCourses.forEach(function(course){
-      var HTMLonlineStart = '<div class="online-entry box-online"></div>';
-      $("#sub-education").append(HTMLonlineStart);
-      //
-      var formattedOnTitle = HTMLonlineTitle.replace(data,course.title);
-      formattedOnTitle = formattedOnTitle.replace("#",course.url);
-      var formattedOnSchool = HTMLonlineSchool.replace(data,course.school);
-      var formattedOnDates = HTMLonlineDates.replace(data,course.dates);
-      var concatAll = formattedOnTitle + formattedOnSchool + formattedOnDates;
-      $(".online-entry:last").append(concatAll);
-    });
+    "name" : "Devry University, Calgary campus",
+    "location" : "Calgary, AB",
+    "degree" : "B.Sc.",
+    "majors" : ["Computer Engineering Technology",""],
+    "dates" : "March, 2003 to February, 2006",
+    "url" : "http://www.devry.edu/degree-programs/engineering-information-sciences/computer-engineering-technology.html"
+  },
+  {// School attended
+    "name" : "University of Norther British Columbia",
+    "location" : "Prince George, BC",
+    "degree" : "",
+    "majors" : ["Computer Science",""],
+    "dates" : "September, 1997 to January, 1999",
+    "url": "http://www.unbc.ca"
+  },
+  {// School attended
+    "name" : "Okanagan University Collage",
+    "location" : "Kelowna, BC",
+    "degree" : "",
+    "majors" : ["General Studies",""],
+    "dates" : "June, 1996 to May, 1997",
+    "url": "http://www.ouc.bc.ca"
   }
+],
+"onlineCourses" : [
+  {// Online course
+    "title" : "How to Use Git and GitHub",
+    "school" : "Udacity",
+    "dates" : "September, 2016",
+    "url" : "https://www.udacity.com/course/how-to-use-git-and-github--ud775"
+  },
+  {// Online course
+    "title" : "Responsive Web Design Fundamentals",
+    "school" : "Udacity",
+    "dates" : "September, 2016",
+    "url" : "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
+  },
+  {// Online course
+    "title" : "JavaScript Basics",
+    "school" : "Udacity",
+    "dates" : "September, 2016",
+    "url" : "https://www.udacity.com/course/javascript-basics--ud804"
+  },
+  {// Online course
+    "title" : "Intro to HTML and CSS",
+    "school" : "Udacity",
+    "dates" : "September, 2016",
+    "url" : "https://www.udacity.com/course/intro-to-html-and-css--ud304"
+  },
+  {// Online course
+    "title" : "Responsive Images",
+    "school" : "Udacity",
+    "dates" : "September, 2016",
+    "url" : "https://www.udacity.com/course/responsive-images--ud882"
+  }
+],
+"display": function(){
+  //
+  // Display schools
+  //
+  if(this.schools.length > 0){
+    // if there are schools add an h3 row
+    var HTMLschoolHeader = '<h3 id="schoolHeader" class="row-h3">Schools</h3>';
+    $("#sub-education").append(HTMLschoolHeader);
+  }
+  this.schools.forEach(function(school){
+    $("#sub-education").append(HTMLschoolStart);
+    $(".education-entry").addClass("box-education");
+    // format education
+    var formattedName = HTMLschoolName.replace(data,school.name);
+    formattedName = formattedName.replace("#",school.url);
+    var formattedDegree = HTMLschoolDegree.replace(data,school.degree);
+    var formattedDates = HTMLschoolDates.replace(data,school.dates);
+    var formattedLocation = HTMLschoolLocation.replace(data,school.location);
+    var formattedMajor = HTMLschoolMajor.replace(data,school.majors);
+    //
+    var concatAll = formattedName + formattedDegree + formattedDates + formattedLocation + formattedMajor;
+    //
+    $(".education-entry:last").append(concatAll);
+  });
+  //
+  // Display online courses
+  //
+  if(this.onlineCourses.length > 0){
+    //if there are courses add an h3 row
+    HTMLonlineClasses = HTMLonlineClasses.replace("<h3>",'<h3 id="onlineHeader" class="row-h3">');
+    $("#sub-education").append(HTMLonlineClasses);
+  }
+  // Iterate through the online array and set up
+  //  the course boxes.
+  this.onlineCourses.forEach(function(course){
+    var HTMLonlineStart = '<div class="online-entry box-online"></div>';
+    $("#sub-education").append(HTMLonlineStart);
+    //
+    var formattedOnTitle = HTMLonlineTitle.replace(data,course.title);
+    formattedOnTitle = formattedOnTitle.replace("#",course.url);
+    var formattedOnSchool = HTMLonlineSchool.replace(data,course.school);
+    var formattedOnDates = HTMLonlineDates.replace(data,course.dates);
+    var concatAll = formattedOnTitle + formattedOnSchool + formattedOnDates;
+    $(".online-entry:last").append(concatAll);
+  });
+}
 };
 //
 // Work object
@@ -257,17 +257,13 @@ var projects = {
     "title" : "Portfolio",
     "dates" : "September, 2016 - September, 2016",
     "description" : "A portfolio of projects, created for the Front End Developer nanodegree.",
-    "images" : [{
-      "url" :"./images/pexels-photo-255x150_thumb_1x.jpg"
-    }],
+    "images" : ["./images/pexels-photo-255x150_thumb_1x.jpg","./images/PuppiesOn_theRun-255x150_thumb_1x.jpg"],
     "giturl" : "https://github.com/Grindcom/udacity-front-end-dev-project1"
   },{// Project
     "title" : "Resume'",
     "dates" : "September, 2016 - September, 2016",
     "description" : "A Resume' of projects, created for the UDacity Front End Developer nanodegree. It serves as a sample of my developer skill set - HTML, CSS and JavaScript.",
-    "images" : [{
-      "url" :"./images/pexels-photo-255x150_thumb_1x.jpg"
-    }],
+    "images" : ["./images/pexels-photo-255x150_thumb_1x.jpg"],
     "giturl" : "https://github.com/Grindcom/frontend-nanodegree-resume"
   }],
   "display":function(){
@@ -284,10 +280,18 @@ var projects = {
       var frmDate = HTMLprojectDates.replace(data,project.dates);
       // Add description
       var frmDescrip = HTMLprojectDescription.replace(data,project.description);
-      // Add first image of array
-      var frmImage = HTMLprojectImage.replace(data,project.images[0].url);
       // Add the css to the project picture
-      frmImage = frmImage.replace(">", 'class="projectpic">');
+      var devTemplate = HTMLprojectImage.replace(">", 'class="projectpic">');
+      // If the image array has any values, iterate through
+      //  them and add them to the project images
+      var frmImage = "";
+      //
+      if(project.images.length > 0){
+        project.images.forEach(function(image){
+            frmImage += devTemplate.replace(data,image);
+            console.log(frmImage);
+        });
+      }
       // Combine all formatted strings
       var frmConcat = frmTitle + frmDate + frmDescrip + frmImage;
       $(".project-entry:last").append(frmConcat);
