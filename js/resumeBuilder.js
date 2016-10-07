@@ -99,7 +99,7 @@ var education = {
       "name" : "Devry University, Calgary campus",
       "location" : "Calgary, AB",
       "degree" : "B.Sc.",
-      "majors" : "Computer Engineering Technology",
+      "majors" : ["Computer Engineering Technology",""],
       "dates" : "March, 2003 to February, 2006",
       "url" : "http://www.devry.edu/degree-programs/engineering-information-sciences/computer-engineering-technology.html"
     },
@@ -107,7 +107,7 @@ var education = {
       "name" : "University of Norther British Columbia",
       "location" : "Prince George, BC",
       "degree" : "",
-      "majors" : "Computer Science",
+      "majors" : ["Computer Science",""],
       "dates" : "September, 1997 to January, 1999",
       "url": "http://www.unbc.ca"
     },
@@ -115,7 +115,7 @@ var education = {
       "name" : "Okanagan University Collage",
       "location" : "Kelowna, BC",
       "degree" : "",
-      "majors" : "General Studies",
+      "majors" : ["General Studies",""],
       "dates" : "June, 1996 to May, 1997",
       "url": "http://www.ouc.bc.ca"
     }
