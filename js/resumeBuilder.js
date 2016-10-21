@@ -244,7 +244,7 @@ var projects = {
     'dates' : "September, 2016 - September, 2016",
     'description' : "A portfolio of projects, created for the Front End Developer nanodegree.",
     'images' : ["./images/pexels-photo-255x150_thumb_1x.jpg","./images/PuppiesOn_theRun-255x150_thumb_1x.jpg"],
-    'giturl' : "https://github.com/Grindcom/udacity-front-end-dev-project1"
+    'giturl' : "https://github.com/Grindcom/portfolio"
   },{// Project
     'title' : "Resume'",
     'dates' : "September, 2016 - September, 2016",
