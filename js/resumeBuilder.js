@@ -96,6 +96,14 @@ var bio = {
 //
 var education = {
   'schools' : [{// School attended
+    'name' : "UDacity",
+    'location' : "-",
+    'degree' : "Nanodegree, On Line",
+    'majors' : "Front-end Developer",
+    'dates' : "inprogress",
+    'url' : "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?v=fe1"
+  },{
+    // School attended
     'name' : "Devry University, Calgary campus",
     'location' : "Calgary, AB",
     'degree' : "B.Sc.",
@@ -240,6 +248,12 @@ var work = {
 //
 var projects = {
   'projects' : [{// Project
+    'title': "Arcade Game Remix",
+    'dates': "October, 2016 - November, 2016",
+    'description': "A tribute to Frogger.  A fun little app where the player dodges ugly bugs to get to the safety of the river.  This project is an example of using JavaScript for user interaction. (Play it here: https://grindcom.github.io/frontend-nanodegree-arcade-game/)",
+    'images': ["./images/enemy-bug-2.png"],
+    'giturl': "https://github.com/Grindcom/frontend-nanodegree-arcade-game"
+  },{// Project
     'title' : "Portfolio",
     'dates' : "September, 2016 - September, 2016",
     'description' : "A portfolio of projects, created for the Front End Developer nanodegree.",
