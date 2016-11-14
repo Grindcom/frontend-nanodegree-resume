@@ -2,6 +2,7 @@
 * Code to build the resume will go here.
 * Written by Greg Ford, B.Sc.
 *   Oct. 2016
+*   Updated: Nov. 2016
 */
 // How to use variables and print to console
 var firstName = "Greg";
@@ -33,6 +34,7 @@ var message = "Thanks for checking out my Resume'.  I have a strong background i
 // Set up bio object
 //
 var bio = {
+  // TODO: Place in Model
   'name' : myname,
   'role' : desiredRole,
   'contacts' : {
@@ -42,9 +44,11 @@ var bio = {
     'linkedin' : "gtford",// replace twitter
     'location' : "Williams Lake, BC"
   },
+  // TODO: Place in Model
   'welcomeMessage' : message,
   'skills' : skills,
   'biopic' : "./images/greg_casual-800x350_large_1x.jpg",
+  // TODO: Place in View
   display: function(){
     // format bio
     var formattedName = HTMLheaderName.replace(data,this.name);
@@ -83,6 +87,7 @@ var bio = {
     //
     // Add Contact information to top header and footer
     //
+    // TODO: Place in View
     $('#topContacts').insertAfter('#skills');
     $('#topContacts, #footerContacts').append(formattedMobile);
     $('#topContacts, #footerContacts').append(formattedEmail);
@@ -94,7 +99,9 @@ var bio = {
 //
 // Education object
 //
+// TODO: Separate education object into two Models (School and Online) and View components
 var education = {
+  // TODO: Place in School Model
   'schools' : [{// School attended
     'name' : "UDacity",
     'location' : "-",
@@ -103,6 +110,7 @@ var education = {
     'dates' : "inprogress",
     'url' : "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?v=fe1"
   },{
+    // TODO: Place in School Model
     // School attended
     'name' : "Devry University, Calgary campus",
     'location' : "Calgary, AB",
@@ -111,6 +119,7 @@ var education = {
     'dates' : "March, 2003 to February, 2006",
     'url' : "http://www.devry.edu/degree-programs/engineering-information-sciences/computer-engineering-technology.html"
   },{// School attended
+    // TODO: Place in School Model
     'name' : "University of Norther British Columbia",
     'location' : "Prince George, BC",
     'degree' : "",
@@ -118,6 +127,7 @@ var education = {
     'dates' : "September, 1997 to January, 1999",
     'url': "http://www.unbc.ca"
   },{// School attended
+    // TODO: Place in School Model
     'name' : "Okanagan University Collage",
     'location' : "Kelowna, BC",
     'degree' : "",
@@ -125,6 +135,7 @@ var education = {
     'dates' : "June, 1996 to May, 1997",
     'url': "http://www.ouc.bc.ca"
   }],
+  // TODO: Place in online Model
   'onlineCourses' : [{// Online course
     'title' : "How to Use Git and GitHub",
     'school' : "Udacity",
@@ -151,6 +162,7 @@ var education = {
     'dates' : "September, 2016",
     'url' : "https://www.udacity.com/course/responsive-images--ud882"
   }],
+  // TODO: Place in view
   'display': function(){
     //
     // Display schools
@@ -201,7 +213,9 @@ var education = {
 //
 // Work object
 //
+// TODO: Split the work object into Model and Views
 var work = {
+  // TODO: Place in Model
   'jobs' : [{// work experience
     'employer' : "Williams Lake Fire Department",
     'title' : "Firefighter",
@@ -227,6 +241,7 @@ var work = {
     'location' : "Williams Lake",
     'description' : "Operating Skidders, Dozers and Log loaders."
   }],
+  // TODO: Place in View
   'display': function(){
     // Iterate through work array and setup
     //  their boxes
@@ -246,7 +261,9 @@ var work = {
 //
 // Projects object
 //
+// TODO: Separate projects into Model and View
 var projects = {
+  // TODO: Place in Model
   'projects' : [{// Project
     'title': "Arcade Game Remix",
     'dates': "October, 2016 - November, 2016",
@@ -266,6 +283,7 @@ var projects = {
     'images' : ["./images/pexels-photo-255x150_thumb_1x.jpg"],
     'giturl' : "https://github.com/Grindcom/frontend-nanodegree-resume"
   }],
+  // TODO: Place in view
   'display':function(){
     // iterate through all projects and place them in the projects div
     projects.projects.forEach(function(project){
@@ -306,12 +324,14 @@ var projects = {
 //
 // Add bio
 //
+// TODO: Add to Octopus
 bio.display();
 
 //
 // Add work experience
 //  Make sure there are jobs first, then call work display
 //
+// TODO: Add to Octopus
 if(work.jobs.length > 0){
   work.display();
 }
@@ -320,6 +340,7 @@ if(work.jobs.length > 0){
 // Add projects
 //  Make sure there is something in projects first
 //
+// TODO: Add to Octopus
 if(projects.projects.length > 0 ){
   projects.display();
 }
@@ -328,18 +349,21 @@ if(projects.projects.length > 0 ){
 // Add Education
 //  Make sure there is something to display before calling function
 //
+// TODO: Add to Octopus
 if((education.schools.length > 0) || (education.onlineCourses.length > 0) ){
   education.display();
 }
 //
 // Add maps
-//
+
+// TODO: Add to view. Call from Octopus
 $('#mapDiv').append(googleMap);
 // add the row-h2 css to mapDiv
 $('#mapDiv').children('h2').addClass('row-h2');
 //
 // Initialize view
 //
+// TODO: This could be replaced by the IIEF that will be used here.
 window.addEventListener('load',initializeView);
 function initializeView(){
   // Cause a click event on the project-h2
@@ -356,6 +380,7 @@ function initializeView(){
 //
 // Show/Hide Sections
 //
+// TODO: Add to view , call from Octopus
 $(document).ready(function(){
   // Work header click event handler
   $('#work-h2').click(function(event){
@@ -431,6 +456,7 @@ $(document).ready(function(){
 //
 // Add Internationalize button
 //
+// TODO: Add to view
 $('#main').append(internationalizeButton);
 function inName(intName){
   var tmpName = intName.split(' ');
