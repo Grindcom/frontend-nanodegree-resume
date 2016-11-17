@@ -33,23 +33,254 @@ var message = "Thanks for checking out my Resume'.  I have a strong background i
 //
 // Set up bio object
 //
-var bio = {
-  // TODO: Place in Model
+var bioModel = {
   'name' : myname,
   'role' : desiredRole,
   'contacts' : {
     'mobile' : "250-305-8802",
     'email' : oldEmail,
     'github' : "Grindcom",
-    'linkedin' : "gtford",// replace twitter
+    'linkedin' : "gtford",
     'location' : "Williams Lake, BC"
   },
-  // TODO: Place in Model
   'welcomeMessage' : message,
   'skills' : skills,
   'biopic' : "./images/greg_casual-800x350_large_1x.jpg",
-  // TODO: Place in View
+
+};
+//
+// Education MODEL
+//
+var educationModel = {
+  'schools' : [{// School attended
+    'name' : "UDacity",
+    'location' : "-",
+    'degree' : "Nanodegree, On Line",
+    'majors' : "Front-end Developer",
+    'dates' : "inprogress",
+    'url' : "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?v=fe1"
+  },{
+    // School attended
+    'name' : "Devry University, Calgary campus",
+    'location' : "Calgary, AB",
+    'degree' : "B.Sc.",
+    'majors' : ["Computer Engineering Technology",""],
+    'dates' : "March, 2003 to February, 2006",
+    'url' : "http://www.devry.edu/degree-programs/engineering-information-sciences/computer-engineering-technology.html"
+  },{// School attended
+    'name' : "University of Norther British Columbia",
+    'location' : "Prince George, BC",
+    'degree' : "",
+    'majors' : ["Computer Science",""],
+    'dates' : "September, 1997 to January, 1999",
+    'url': "http://www.unbc.ca"
+  },{// School attended
+    'name' : "Okanagan University Collage",
+    'location' : "Kelowna, BC",
+    'degree' : "",
+    'majors' : ["General Studies",""],
+    'dates' : "June, 1996 to May, 1997",
+    'url': "http://www.ouc.bc.ca"
+  }],
+  'onlineCourses' : [{// Online course
+    'title' : "How to Use Git and GitHub",
+    'school' : "Udacity",
+    'dates' : "September, 2016",
+    'url' : "https://www.udacity.com/course/how-to-use-git-and-github--ud775"
+  },  {// Online course
+    'title' : "Responsive Web Design Fundamentals",
+    'school' : "Udacity",
+    'dates' : "September, 2016",
+    'url' : "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
+  },{// Online course
+    'title' : "JavaScript Basics",
+    'school' : "Udacity",
+    'dates' : "September, 2016",
+    'url' : "https://www.udacity.com/course/javascript-basics--ud804"
+  },{// Online course
+    'title' : "Intro to HTML and CSS",
+    'school' : "Udacity",
+    'dates' : "September, 2016",
+    'url' : "https://www.udacity.com/course/intro-to-html-and-css--ud304"
+  },{// Online course
+    'title' : "Responsive Images",
+    'school' : "Udacity",
+    'dates' : "September, 2016",
+    'url' : "https://www.udacity.com/course/responsive-images--ud882"
+  }],
+
+};
+//
+// Work MODEL
+//
+var workModel = {
+  'jobs' : [{// work experience
+    'employer' : "Williams Lake Fire Department",
+    'title' : "Firefighter",
+    'location' : "Williams Lake,BC",
+    'dates' : "March, 2011 - in progress",
+    'description' : "Professional Firefighter, NFPA 1001 certification."
+  },{// work experience
+    'employer' : "Grindcom (Self-Employed)",
+    'title' : "CEO, System Architect",
+    'location' : "Williams Lake,BC",
+    'dates' : "March, 2006 - June, 2015",
+    'description' : "Grindcom was focused on research and development of a measurement and control system for industrial forestry equipment.  Operationaly I was the system architect, software and hardware developer.  Managing this business included maintaining the R&D budget; utilizing Canadian federal programs such as SR&ED and IRAP."
+  },{// work experience
+    'employer' : "Tom Ford Logging Ltd.",
+    'title' : "Supervisor, Industrial Computer Tech.",
+    'location' : "Williams Lake,BC",
+    'dates' : "May, 1999 - February, 2003",
+    'description' : "Supervise logging operations, administer and maintain measurement and control computers on board heavy equipment."
+  },{// work experience
+    'employer' : "Tom Ford Logging Ltd.",
+    'title' : "Heavy Equipment Operator",
+    'dates' : "June, 1985 - March, 1996",
+    'location' : "Williams Lake",
+    'description' : "Operating Skidders, Dozers and Log loaders."
+  }],
+
+};
+
+//
+// Projects object
+//
+var projects = {
+  'projects' : [{// Project
+    'title': "Arcade Game Remix",
+    'dates': "October, 2016 - November, 2016",
+    'description': "A tribute to Frogger.  A fun little app where the player dodges ugly bugs to get to the safety of the river.  This project is an example of using JavaScript for user interaction. (Play it here: https://grindcom.github.io/frontend-nanodegree-arcade-game/)",
+    'images': ["./images/enemy-bug-2.png"],
+    'giturl': "https://github.com/Grindcom/frontend-nanodegree-arcade-game"
+  },{// Project
+    'title' : "Portfolio",
+    'dates' : "September, 2016 - September, 2016",
+    'description' : "A portfolio of projects, created for the Front End Developer nanodegree.",
+    'images' : ["./images/pexels-photo-255x150_thumb_1x.jpg","./images/PuppiesOn_theRun-255x150_thumb_1x.jpg"],
+    'giturl' : "https://github.com/Grindcom/portfolio"
+  },{// Project
+    'title' : "Resume'",
+    'dates' : "September, 2016 - September, 2016",
+    'description' : "A Resume' of projects, created for the UDacity Front End Developer nanodegree. It serves as a sample of my developer skill set - HTML, CSS and JavaScript.",
+    'images' : ["./images/pexels-photo-255x150_thumb_1x.jpg"],
+    'giturl' : "https://github.com/Grindcom/frontend-nanodegree-resume"
+  }],
+
+};
+
+/**************************************************
+*
+*          OPERATIONS
+*
+****************************************************/
+//
+// Add bio
+//
+var bio = {
+  init = function(){
+    //
+    // Add work experience
+    //  Make sure there are jobs first, then call work display
+    //
+    if(work.jobs.length > 0){
+      work.display();
+    }
+    //
+    // Add projects
+    //  Make sure there is something in projects first
+    //
+    if(projects.projects.length > 0 ){
+      projects.display();
+    }
+    //
+    // Add Education
+    //  Make sure there is something to display before calling function
+    //
+    if((education.schools.length > 0) || (education.onlineCourses.length > 0) ){
+      education.display();
+    }
+  },
+  display = function(){
+
+  }
+};
+
+
+
+
+
+
+
+//
+// Initialize view
+//
+// TODO: This could be replaced by the IIEF that will be used here.
+window.addEventListener('load',initializeView);
+function initializeView(){
+  // Cause a click event on the project-h2
+  $('#project-h2').click();
+  // Cause a click event on the education-h2
+  $('#education-h2').click();
+}
+//
+// Log mouse clicks
+//
+// $(document).click(function(loc){
+//   logClicks(loc.pageX,loc.pageY);
+// });
+//
+// Show/Hide Sections
+//
+// TODO: Decide whether to use this for calling init.octopus
+$(document).ready(
+});
+
+/************************************************
+*
+*   REFACTOR
+*
+*/
+//
+// Main VIEW
+//
+var mainView = {
+  init: function(){
+    //
+    // Hover over functions
+    //  Shake visible divs
+    //
+    // $('#theElement').effect('shake', 100);
+    $('#work-h2, #project-h2, #education-h2').mouseover(function(){
+      console.log("hello");
+      $('#skills').effect('shake');
+
+    });
+    //
+    // Add maps
+    $('#mapDiv').append(googleMap);
+    // add the row-h2 css to mapDiv
+    $('#mapDiv').children('h2').addClass('row-h2');
+  },
+  addIntButton = function (){
+    // Add Internationalize button
+    $('#main').append(internationalizeButton);
+    function inName(intName){
+      var tmpName = intName.split(' ');
+      tmpName[0] = tmpName[0][0].toUpperCase() + tmpName[0].slice(1);
+      intName = tmpName[0] + ' ' + tmpName[1].toUpperCase();
+      return intName;
+    }
+  },
   display: function(){
+
+  }
+};
+//
+// Bio VIEW
+//
+var bioView = {
+  // TODO: Refactor init function
+  init: function(){
     // format bio
     var formattedName = HTMLheaderName.replace(data,this.name);
     var formattedRole = HTMLheaderRole.replace(data,this.role);
@@ -94,76 +325,38 @@ var bio = {
     $('#topContacts, #footerContacts').append(formattedGit);
     $('#topContacts, #footerContacts').append(formattedLin);
     $('#topContacts, #footerContacts').append(formattedLocation);
+  },
+  display: function(){
+
   }
 };
 //
-// Education object
+// EDUCATION VIEW
 //
-// TODO: Separate education object into two Models (School and Online) and View components
-var education = {
-  // TODO: Place in School Model
-  'schools' : [{// School attended
-    'name' : "UDacity",
-    'location' : "-",
-    'degree' : "Nanodegree, On Line",
-    'majors' : "Front-end Developer",
-    'dates' : "inprogress",
-    'url' : "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?v=fe1"
-  },{
-    // TODO: Place in School Model
-    // School attended
-    'name' : "Devry University, Calgary campus",
-    'location' : "Calgary, AB",
-    'degree' : "B.Sc.",
-    'majors' : ["Computer Engineering Technology",""],
-    'dates' : "March, 2003 to February, 2006",
-    'url' : "http://www.devry.edu/degree-programs/engineering-information-sciences/computer-engineering-technology.html"
-  },{// School attended
-    // TODO: Place in School Model
-    'name' : "University of Norther British Columbia",
-    'location' : "Prince George, BC",
-    'degree' : "",
-    'majors' : ["Computer Science",""],
-    'dates' : "September, 1997 to January, 1999",
-    'url': "http://www.unbc.ca"
-  },{// School attended
-    // TODO: Place in School Model
-    'name' : "Okanagan University Collage",
-    'location' : "Kelowna, BC",
-    'degree' : "",
-    'majors' : ["General Studies",""],
-    'dates' : "June, 1996 to May, 1997",
-    'url': "http://www.ouc.bc.ca"
-  }],
-  // TODO: Place in online Model
-  'onlineCourses' : [{// Online course
-    'title' : "How to Use Git and GitHub",
-    'school' : "Udacity",
-    'dates' : "September, 2016",
-    'url' : "https://www.udacity.com/course/how-to-use-git-and-github--ud775"
-  },  {// Online course
-    'title' : "Responsive Web Design Fundamentals",
-    'school' : "Udacity",
-    'dates' : "September, 2016",
-    'url' : "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
-  },{// Online course
-    'title' : "JavaScript Basics",
-    'school' : "Udacity",
-    'dates' : "September, 2016",
-    'url' : "https://www.udacity.com/course/javascript-basics--ud804"
-  },{// Online course
-    'title' : "Intro to HTML and CSS",
-    'school' : "Udacity",
-    'dates' : "September, 2016",
-    'url' : "https://www.udacity.com/course/intro-to-html-and-css--ud304"
-  },{// Online course
-    'title' : "Responsive Images",
-    'school' : "Udacity",
-    'dates' : "September, 2016",
-    'url' : "https://www.udacity.com/course/responsive-images--ud882"
-  }],
-  // TODO: Place in view
-  'display': function(){
+educationView = {
+  // TODO: REFACTOR init function
+  init: function(){
+    // Education header click event handler
+    $('#education-h2').click(function(event){
+      // Show or hide education sub zone
+      $('#sub-education').slideToggle(function(){
+        // Get the value of the :visible object
+        var isVis = $('#sub-education').is(':visible');
+        // get the a element for this
+        var arrow = $('#education-h2').children('a');
+        // if visible
+        if(isVis){
+          // Set h2 to up arrow
+          arrow.removeClass('entypo-down-open-mini');
+          arrow.addClass('entypo-up-open-mini');
+        }else {// if not visible
+          // Set h2 to have a down arrow
+          arrow.removeClass('entypo-up-open-mini');
+          arrow.addClass('entypo-down-open-mini');
+        }
+      });
+    });
+
     //
     // Display schools
     //
@@ -208,41 +401,37 @@ var education = {
       var concatAll = formattedOnTitle + formattedOnSchool + formattedOnDates;
       $('.online-entry:last').append(concatAll);
     });
+  },
+  display: function(){
+
   }
 };
 //
-// Work object
+// Work VIEW
 //
-// TODO: Split the work object into Model and Views
-var work = {
-  // TODO: Place in Model
-  'jobs' : [{// work experience
-    'employer' : "Williams Lake Fire Department",
-    'title' : "Firefighter",
-    'location' : "Williams Lake,BC",
-    'dates' : "March, 2011 - in progress",
-    'description' : "Professional Firefighter, NFPA 1001 certification."
-  },{// work experience
-    'employer' : "Grindcom (Self-Employed)",
-    'title' : "CEO, System Architect",
-    'location' : "Williams Lake,BC",
-    'dates' : "March, 2006 - June, 2015",
-    'description' : "Grindcom was focused on research and development of a measurement and control system for industrial forestry equipment.  Operationaly I was the system architect, software and hardware developer.  Managing this business included maintaining the R&D budget; utilizing Canadian federal programs such as SR&ED and IRAP."
-  },{// work experience
-    'employer' : "Tom Ford Logging Ltd.",
-    'title' : "Supervisor, Industrial Computer Tech.",
-    'location' : "Williams Lake,BC",
-    'dates' : "May, 1999 - February, 2003",
-    'description' : "Supervise logging operations, administer and maintain measurement and control computers on board heavy equipment."
-  },{// work experience
-    'employer' : "Tom Ford Logging Ltd.",
-    'title' : "Heavy Equipment Operator",
-    'dates' : "June, 1985 - March, 1996",
-    'location' : "Williams Lake",
-    'description' : "Operating Skidders, Dozers and Log loaders."
-  }],
-  // TODO: Place in View
-  'display': function(){
+var workView = {
+  // TODO: Refactor init function
+  init: function(){
+    // Work header click event handler
+    $('#work-h2').click(function(event){
+      // Show or hide Work sub zone
+      $('#sub-work').slideToggle(function(){
+        // Get the value of the :visible object
+        var isVis = $('#sub-work').is(':visible');
+        // get the a element for this
+        var arrow = $('#work-h2').children('a');
+        // if visible
+        if(isVis){
+          // Set h2 to up arrow
+          arrow.removeClass('entypo-down-open-mini');
+          arrow.addClass('entypo-up-open-mini');
+        }else {// if not visible
+          // Set h2 to have a down arrow
+          arrow.removeClass('entypo-up-open-mini');
+          arrow.addClass('entypo-down-open-mini');
+        }
+      });
+    });
     // Iterate through work array and setup
     //  their boxes
     this.jobs.forEach(function(job){
@@ -255,36 +444,37 @@ var work = {
       var formattedConcat = formattedEmployer + formattedTitle + formattedDates + formattedDescrip;
       $('.work-entry:last').append(formattedConcat);
     });
+  },
+  display: function(){
+
   }
 };
-
 //
-// Projects object
+// Projects VIEW
 //
-// TODO: Separate projects into Model and View
-var projects = {
-  // TODO: Place in Model
-  'projects' : [{// Project
-    'title': "Arcade Game Remix",
-    'dates': "October, 2016 - November, 2016",
-    'description': "A tribute to Frogger.  A fun little app where the player dodges ugly bugs to get to the safety of the river.  This project is an example of using JavaScript for user interaction. (Play it here: https://grindcom.github.io/frontend-nanodegree-arcade-game/)",
-    'images': ["./images/enemy-bug-2.png"],
-    'giturl': "https://github.com/Grindcom/frontend-nanodegree-arcade-game"
-  },{// Project
-    'title' : "Portfolio",
-    'dates' : "September, 2016 - September, 2016",
-    'description' : "A portfolio of projects, created for the Front End Developer nanodegree.",
-    'images' : ["./images/pexels-photo-255x150_thumb_1x.jpg","./images/PuppiesOn_theRun-255x150_thumb_1x.jpg"],
-    'giturl' : "https://github.com/Grindcom/portfolio"
-  },{// Project
-    'title' : "Resume'",
-    'dates' : "September, 2016 - September, 2016",
-    'description' : "A Resume' of projects, created for the UDacity Front End Developer nanodegree. It serves as a sample of my developer skill set - HTML, CSS and JavaScript.",
-    'images' : ["./images/pexels-photo-255x150_thumb_1x.jpg"],
-    'giturl' : "https://github.com/Grindcom/frontend-nanodegree-resume"
-  }],
-  // TODO: Place in view
-  'display':function(){
+var projectsView = {
+  // TODO: Refactor init function
+  init: function(){
+    // Project header click event handler
+    $('#project-h2').click(function(event){
+      // Show or hide project sub zone
+      $('#sub-projects').slideToggle(function(){
+        // Get the value of the :visible object
+        var isVis = $('#sub-projects').is(':visible');
+        // get the a element for this
+        var arrow = $('#project-h2').children('a');
+        // if visible
+        if(isVis){
+          // Set h2 to up arrow
+          arrow.removeClass('entypo-down-open-mini');
+          arrow.addClass('entypo-up-open-mini');
+        }else {// if not visible
+          // Set h2 to have a down arrow
+          arrow.removeClass('entypo-up-open-mini');
+          arrow.addClass('entypo-down-open-mini');
+        }
+      });
+    });
     // iterate through all projects and place them in the projects div
     projects.projects.forEach(function(project){
       $('#sub-projects').append(HTMLprojectStart);
@@ -313,154 +503,8 @@ var projects = {
       var frmConcat = frmTitle + frmDate + frmDescrip + frmImage;
       $('.project-entry:last').append(frmConcat);
     });
+  },
+  display: function(){
+    
   }
 };
-
-/**************************************************
-*
-*          OPERATIONS
-*
-****************************************************/
-//
-// Add bio
-//
-// TODO: Add to Octopus
-bio.display();
-
-//
-// Add work experience
-//  Make sure there are jobs first, then call work display
-//
-// TODO: Add to Octopus
-if(work.jobs.length > 0){
-  work.display();
-}
-
-//
-// Add projects
-//  Make sure there is something in projects first
-//
-// TODO: Add to Octopus
-if(projects.projects.length > 0 ){
-  projects.display();
-}
-
-//
-// Add Education
-//  Make sure there is something to display before calling function
-//
-// TODO: Add to Octopus
-if((education.schools.length > 0) || (education.onlineCourses.length > 0) ){
-  education.display();
-}
-//
-// Add maps
-
-// TODO: Add to view. Call from Octopus
-$('#mapDiv').append(googleMap);
-// add the row-h2 css to mapDiv
-$('#mapDiv').children('h2').addClass('row-h2');
-//
-// Initialize view
-//
-// TODO: This could be replaced by the IIEF that will be used here.
-window.addEventListener('load',initializeView);
-function initializeView(){
-  // Cause a click event on the project-h2
-  $('#project-h2').click();
-  // Cause a click event on the education-h2
-  $('#education-h2').click();
-}
-//
-// Log mouse clicks
-//
-// $(document).click(function(loc){
-//   logClicks(loc.pageX,loc.pageY);
-// });
-//
-// Show/Hide Sections
-//
-// TODO: Add to view , call from Octopus
-$(document).ready(function(){
-  // Work header click event handler
-  $('#work-h2').click(function(event){
-    // Show or hide Work sub zone
-    $('#sub-work').slideToggle(function(){
-      // Get the value of the :visible object
-      var isVis = $('#sub-work').is(':visible');
-      // get the a element for this
-      var arrow = $('#work-h2').children('a');
-      // if visible
-      if(isVis){
-        // Set h2 to up arrow
-        arrow.removeClass('entypo-down-open-mini');
-        arrow.addClass('entypo-up-open-mini');
-      }else {// if not visible
-        // Set h2 to have a down arrow
-        arrow.removeClass('entypo-up-open-mini');
-        arrow.addClass('entypo-down-open-mini');
-      }
-    });
-  });
-  // Project header click event handler
-  $('#project-h2').click(function(event){
-    // Show or hide project sub zone
-    $('#sub-projects').slideToggle(function(){
-      // Get the value of the :visible object
-      var isVis = $('#sub-projects').is(':visible');
-      // get the a element for this
-      var arrow = $('#project-h2').children('a');
-      // if visible
-      if(isVis){
-        // Set h2 to up arrow
-        arrow.removeClass('entypo-down-open-mini');
-        arrow.addClass('entypo-up-open-mini');
-      }else {// if not visible
-        // Set h2 to have a down arrow
-        arrow.removeClass('entypo-up-open-mini');
-        arrow.addClass('entypo-down-open-mini');
-      }
-    });
-  });
-  // Education header click event handler
-  $('#education-h2').click(function(event){
-    // Show or hide education sub zone
-    $('#sub-education').slideToggle(function(){
-      // Get the value of the :visible object
-      var isVis = $('#sub-education').is(':visible');
-      // get the a element for this
-      var arrow = $('#education-h2').children('a');
-      // if visible
-      if(isVis){
-        // Set h2 to up arrow
-        arrow.removeClass('entypo-down-open-mini');
-        arrow.addClass('entypo-up-open-mini');
-      }else {// if not visible
-        // Set h2 to have a down arrow
-        arrow.removeClass('entypo-up-open-mini');
-        arrow.addClass('entypo-down-open-mini');
-      }
-    });
-  });
-  //
-  // Hover over functions
-  //  Shake visible divs
-  //
-  // $('#theElement').effect('shake', 100);
-  $('#work-h2, #project-h2, #education-h2').mouseover(function(){
-        console.log("hello");
-    $('#skills').effect('shake');
-
-  });
-});
-//
-// Add Internationalize button
-//
-// TODO: Add to view
-$('#main').append(internationalizeButton);
-function inName(intName){
-  var tmpName = intName.split(' ');
-  tmpName[0] = tmpName[0][0].toUpperCase() + tmpName[0].slice(1);
-  intName = tmpName[0] + ' ' + tmpName[1].toUpperCase();
-  return intName;
-}
