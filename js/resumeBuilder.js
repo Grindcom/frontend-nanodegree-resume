@@ -55,7 +55,7 @@ $(function(){
   // Education MODEL
   //
   var educationModel = {
-    'schools' : [{// School attended
+    schools : [{// School attended
       'name' : "UDacity",
       'location' : "-",
       'degree' : "Nanodegree, On Line",
@@ -85,7 +85,7 @@ $(function(){
       'dates' : "June, 1996 to May, 1997",
       'url': "http://www.ouc.bc.ca"
     }],
-    'onlineCourses' : [{// Online course
+    onlineCourses : [{// Online course
       'title' : "How to Use Git and GitHub",
       'school' : "Udacity",
       'dates' : "September, 2016",
@@ -117,7 +117,7 @@ $(function(){
   // Work MODEL
   //
   var workModel = {
-    'jobs' : [{// work experience
+    jobs : [{// work experience
       'employer' : "Williams Lake Fire Department",
       'title' : "Firefighter",
       'location' : "Williams Lake,BC",
@@ -148,8 +148,8 @@ $(function(){
   //
   // Projects object
   //
-  var projects = {
-    'projects' : [{// Project
+  var projectsModel = {
+    projects : [{// Project
       'title': "Arcade Game Remix",
       'dates': "October, 2016 - November, 2016",
       'description': "A tribute to Frogger.  A fun little app where the player dodges ugly bugs to get to the safety of the river.  This project is an example of using JavaScript for user interaction. (Play it here: https://grindcom.github.io/frontend-nanodegree-arcade-game/)",
@@ -185,22 +185,25 @@ $(function(){
       // Add work experience
       //  Make sure there are jobs first, then call work display
       //
-      if(work.jobs.length > 0){
-        work.display();
+      if(workModel.length > 0){
+        console.log(" Init workView");
+        workView.init();
       }
       //
       // Add projects
       //  Make sure there is something in projects first
       //
-      if(projects.projects.length > 0 ){
-        projects.display();
+      if(projectsModel.length > 0 ){
+        console.log(" Init projectsView");
+        projectsView.init();
       }
       //
       // Add Education
       //  Make sure there is something to display before calling function
       //
-      if((education.schools.length > 0) || (education.onlineCourses.length > 0) ){
-        education.display();
+      if((educationModel.schools.length > 0) || (educationModel.onlineCourses.length > 0) ){
+        console.log(" Init educationView");
+        educationView.init(educationModel.schools, educationModel.onlineCourses);
       }
     },
     display: function(){
@@ -331,7 +334,9 @@ $(function(){
   //
   educationView = {
     // TODO: REFACTOR init function
-    init: function(){
+    init: function(schoolsArr, onlineCoursesArr){
+      var schools = schoolsArr;
+      var onlineCourses = onlineCoursesArr;
       // Education header click event handler
       $('#education-h2').click(function(event){
         // Show or hide education sub zone
@@ -356,12 +361,13 @@ $(function(){
       //
       // Display schools
       //
-      if(this.schools.length > 0){
+      // TODO: call octopus for schools array
+      if(schools.length > 0){
         // if there are schools add an h3 row
         var HTMLschoolHeader = '<h3 id="schoolHeader" class="row-h3">Schools</h3>';
         $('#sub-education').append(HTMLschoolHeader);
       }
-      this.schools.forEach(function(school){
+      schools.forEach(function(school){
         $('#sub-education').append(HTMLschoolStart);
         $('.education-entry').addClass('box-education');
         // format education
@@ -379,14 +385,16 @@ $(function(){
       //
       // Display online courses
       //
-      if(this.onlineCourses.length > 0){
+      // TODO: Call octopus for online courses array
+      if(onlineCourses.length > 0){
         //if there are courses add an h3 row
         HTMLonlineClasses = HTMLonlineClasses.replace('<h3>','<h3 id="onlineHeader" class="row-h3">');
         $('#sub-education').append(HTMLonlineClasses);
       }
       // Iterate through the online array and set up
       //  the course boxes.
-      this.onlineCourses.forEach(function(course){
+      // TODO: This will require the online courses array
+      onlineCourses.forEach(function(course){
         var HTMLonlineStart = '<div class="online-entry box-online"></div>';
         $('#sub-education').append(HTMLonlineStart);
         //
