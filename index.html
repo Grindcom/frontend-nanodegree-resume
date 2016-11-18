@@ -45,8 +45,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     resume below. You can pretty easily figure out what each section will
     display by looking at the id or at what's written between the <h2> tags.
   -->
-  <div id="header" class="center-content clear-fix">Hello
-    <ul id="topContacts" class="flex-box row">there</ul>
+  <div id="header" class="center-content clear-fix">
+    <ul id="topContacts1" class="flex-box row"></ul>
   </div>
   <div style="clear: both;"></div>
   <div id="workExperience" class="gray row">
@@ -136,28 +136,30 @@ course.
 an opening and closing set of slash asterisks for block comments.
 */
 
-
-if(document.getElementsByClassName('flex-item').length === 0) {
-  document.getElementById('topContacts').style.display = 'none';
-}
-if(document.getElementsByTagName('h1').length === 0) {
-  document.getElementById('header').style.display = 'none';
-}
-if(document.getElementsByClassName('work-entry').length === 0) {
-  document.getElementById('workExperience').style.display = 'none';
-}
-if(document.getElementsByClassName('project-entry').length === 0) {
-  document.getElementById('projects').style.display = 'none';
-}
-if(document.getElementsByClassName('education-entry').length === 0) {
-  document.getElementById('education').style.display = 'none';
-}
-if(document.getElementsByClassName('flex-item').length === 0) {
-  document.getElementById('lets-connect').style.display = 'none';
-}
-if(document.getElementById('map') === null) {
-  document.getElementById('mapDiv').style.display = 'none';
-}
+// 
+// if(document.getElementsByClassName('flex-item').length === 0) {
+//   console.log("Flex item is 0");
+//   document.getElementById('topContacts').style.display = 'none';
+// }
+// if(document.getElementsByTagName('h1').length === 0) {
+//   console.log("h1 is 0");
+//   document.getElementById('header').style.display = 'none';
+// }
+// if(document.getElementsByClassName('work-entry').length === 0) {
+//   document.getElementById('workExperience').style.display = 'none';
+// }
+// if(document.getElementsByClassName('project-entry').length === 0) {
+//   document.getElementById('projects').style.display = 'none';
+// }
+// if(document.getElementsByClassName('education-entry').length === 0) {
+//   document.getElementById('education').style.display = 'none';
+// }
+// if(document.getElementsByClassName('flex-item').length === 0) {
+//   document.getElementById('lets-connect').style.display = 'none';
+// }
+// if(document.getElementById('map') === null) {
+//   document.getElementById('mapDiv').style.display = 'none';
+// }
 </script>
 </body>
 </html>

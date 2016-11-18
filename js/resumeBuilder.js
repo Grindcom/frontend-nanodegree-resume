@@ -350,12 +350,12 @@ $(function(){
       // Add Contact information to top header and footer
       //
       // TODO: Place in View
-      $('#topContacts').insertAfter('#skills');
-      $('#topContacts, #footerContacts').append(formattedMobile);
-      $('#topContacts, #footerContacts').append(formattedEmail);
-      $('#topContacts, #footerContacts').append(formattedGit);
-      $('#topContacts, #footerContacts').append(formattedLin);
-      $('#topContacts, #footerContacts').append(formattedLocation);
+      $('#topContacts1').insertAfter('#skills');
+      $('#topContacts1, #footerContacts').append(formattedMobile);
+      $('#topContacts1, #footerContacts').append(formattedEmail);
+      $('#topContacts1, #footerContacts').append(formattedGit);
+      $('#topContacts1, #footerContacts').append(formattedLin);
+      $('#topContacts1, #footerContacts').append(formattedLocation);
       //
       console.log("  End bioView init");
     },
