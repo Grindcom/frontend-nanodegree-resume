@@ -6,7 +6,7 @@
 */
 'use strict';
 // Run immediately
-var resumeBuilder = (function(){
+$(function(){
 
   // How to use variables and print to console
   var firstName = "Greg";
@@ -182,6 +182,7 @@ var resumeBuilder = (function(){
   //
   var octopus = {
     init: function(){
+      console.log("Init Octopus");
       // mainView.init();
       bioView.init();
       //
@@ -215,6 +216,18 @@ var resumeBuilder = (function(){
     getBioSkills: function(){
       return bioModel.skills;
     },
+    getBioName: function(){
+      return bioModel.name;
+    },
+    getBioRole: function(){
+      return bioModel.role;
+    },
+    getBioWelcomeMessage: function(){
+      return bioModel.welcomeMessage;
+    },
+    getBioPic: function(){
+      return bioModel.biopic;
+    },
     display: function(){
 
     }
@@ -240,8 +253,7 @@ var resumeBuilder = (function(){
   // Show/Hide Sections
   //
   // TODO: Decide whether to use this for calling init.octopus
-  // $(document).ready(
-  // });
+
 
   /************************************************
   *
@@ -266,7 +278,7 @@ var resumeBuilder = (function(){
       });
       //
       // Add maps
-      this.addMaps();
+      // this.addMaps();
     },
     addMaps: function(){
       $('#mapDiv').append(googleMap);
@@ -293,9 +305,13 @@ var resumeBuilder = (function(){
   var bioView = {
     // TODO: Refactor init function
     init: function(){
-      console.log("Init Bio View");
+      console.log("Init Bio View...");
+      this.biopic = octopus.getBioPic();
+      this.name = octopus.getBioName();
+      this.role = octopus.getBioRole();
       this.contacts = octopus.getBioContacts();
       this.skills = octopus.getBioSkills();
+      this.welcomeMessage = octopus.getBioWelcomeMessage();
       // format bio
       var formattedName = HTMLheaderName.replace(data,this.name);
       var formattedRole = HTMLheaderRole.replace(data,this.role);
@@ -340,6 +356,8 @@ var resumeBuilder = (function(){
       $('#topContacts, #footerContacts').append(formattedGit);
       $('#topContacts, #footerContacts').append(formattedLin);
       $('#topContacts, #footerContacts').append(formattedLocation);
+      //
+      console.log("  End bioView init");
     },
     display: function(){
 
@@ -533,5 +551,9 @@ var resumeBuilder = (function(){
   };
   //
   // Initialize the octopus
-  octopus.init();
+  console.log("Before init octopus");
+
+  $(document).ready(
+    octopus.init();
+  );
 });
