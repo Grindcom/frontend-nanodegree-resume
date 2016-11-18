@@ -4,8 +4,9 @@
 *   Oct. 2016
 *   Updated: Nov. 2016
 */
+'use strict';
 // Run immediately
-$(function(){
+var resumeBuilder = (function(){
 
   // How to use variables and print to console
   var firstName = "Greg";
@@ -25,7 +26,7 @@ $(function(){
   // Set up name and role variables
   var myname = firstName + " " + lastName + " B.sc.";
   var desiredRole = "Front-end Developer";
-  var skills = ["Git","C","C++","C#","Java","JavaScript","HTML","CSS","Programming","Problem solving"];
+  // var skills = ;
   var message = "Thanks for checking out my Resume'.  I have a strong background in several programming languages and I constantly seek experience in new ones.  Combine that with a diverse range of real-world experiences and I have a unique perspective on any new job or project.";
 
   /**************************************************
@@ -37,18 +38,18 @@ $(function(){
   // Set up bio object
   //
   var bioModel = {
-    'name' : myname,
-    'role' : desiredRole,
-    'contacts' : {
-      'mobile' : "250-305-8802",
-      'email' : oldEmail,
-      'github' : "Grindcom",
-      'linkedin' : "gtford",
-      'location' : "Williams Lake, BC"
+    name : myname,
+    role : desiredRole,
+    contacts : {
+      mobile : "250-305-8802",
+      email : oldEmail,
+      github : "Grindcom",
+      linkedin : "gtford",
+      location : "Williams Lake, BC"
     },
-    'welcomeMessage' : message,
-    'skills' : skills,
-    'biopic' : "./images/greg_casual-800x350_large_1x.jpg",
+    welcomeMessage : message,
+    skills : ["Git","C","C++","C#","Java","JavaScript","HTML","CSS","Programming","Problem solving"],
+    biopic : "./images/greg_casual-800x350_large_1x.jpg",
 
   };
   //
@@ -181,14 +182,15 @@ $(function(){
   //
   var octopus = {
     init: function(){
-      mainView.init();
+      // mainView.init();
+      bioView.init();
       //
       // Add work experience
       //  Make sure there are jobs first, then call work display
       //
       if(workModel.length > 0){
         console.log(" Init workView");
-        workView.init();
+        // workView.init();
       }
       //
       // Add projects
@@ -196,7 +198,7 @@ $(function(){
       //
       if(projectsModel.length > 0 ){
         console.log(" Init projectsView");
-        projectsView.init();
+        // projectsView.init();
       }
       //
       // Add Education
@@ -204,8 +206,14 @@ $(function(){
       //
       if((educationModel.schools.length > 0) || (educationModel.onlineCourses.length > 0) ){
         console.log(" Init educationView");
-        educationView.init(educationModel.schools, educationModel.onlineCourses);
+        // educationView.init(educationModel.schools, educationModel.onlineCourses);
       }
+    },
+    getBioContacts: function(){
+      return bioModel.contacts;
+    },
+    getBioSkills: function(){
+      return bioModel.skills;
     },
     display: function(){
 
@@ -258,6 +266,9 @@ $(function(){
       });
       //
       // Add maps
+      this.addMaps();
+    },
+    addMaps: function(){
       $('#mapDiv').append(googleMap);
       // add the row-h2 css to mapDiv
       $('#mapDiv').children('h2').addClass('row-h2');
@@ -283,6 +294,8 @@ $(function(){
     // TODO: Refactor init function
     init: function(){
       console.log("Init Bio View");
+      this.contacts = octopus.getBioContacts();
+      this.skills = octopus.getBioSkills();
       // format bio
       var formattedName = HTMLheaderName.replace(data,this.name);
       var formattedRole = HTMLheaderRole.replace(data,this.role);
@@ -304,7 +317,7 @@ $(function(){
       $('#header').prepend(formattedPic);
       //
       // If there are skills listed add them
-      if(bio.skills.length > 0)
+      if(this.skills.length > 0)
       {
         // Add skills to html
         $('#header').append(HTMLskillsStart);
@@ -312,7 +325,7 @@ $(function(){
         $('#skills').addClass('row');
         //
         //
-        bio.skills.forEach(function(skill){
+        this.skills.forEach(function(skill){
           var formattedSkill = HTMLskills.replace(data,skill);
           $('#skills:last').append(formattedSkill);
         });
@@ -335,7 +348,7 @@ $(function(){
   //
   // EDUCATION VIEW
   //
-  educationView = {
+  var educationView = {
     // TODO: REFACTOR init function
     init: function(schoolsArr, onlineCoursesArr){
       console.log("Init Education View ");
