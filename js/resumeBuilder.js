@@ -181,6 +181,7 @@ $(function(){
   //
   var octopus = {
     init: function(){
+      mainView.init();
       //
       // Add work experience
       //  Make sure there are jobs first, then call work display
@@ -244,6 +245,7 @@ $(function(){
   //
   var mainView = {
     init: function(){
+      console.log("Init Main View ");
       //
       // Hover over functions
       //  Shake visible divs
@@ -280,6 +282,7 @@ $(function(){
   var bioView = {
     // TODO: Refactor init function
     init: function(){
+      console.log("Init Bio View");
       // format bio
       var formattedName = HTMLheaderName.replace(data,this.name);
       var formattedRole = HTMLheaderRole.replace(data,this.role);
@@ -335,6 +338,7 @@ $(function(){
   educationView = {
     // TODO: REFACTOR init function
     init: function(schoolsArr, onlineCoursesArr){
+      console.log("Init Education View ");
       var schools = schoolsArr;
       var onlineCourses = onlineCoursesArr;
       // Education header click event handler
@@ -416,6 +420,7 @@ $(function(){
   var workView = {
     // TODO: Refactor init function
     init: function(){
+      console.log("Init Work View ");
       // Work header click event handler
       $('#work-h2').click(function(event){
         // Show or hide Work sub zone
@@ -459,6 +464,7 @@ $(function(){
   var projectsView = {
     // TODO: Refactor init function
     init: function(){
+      console.log("Init Projects View ");
       // Project header click event handler
       $('#project-h2').click(function(event){
         // Show or hide project sub zone
