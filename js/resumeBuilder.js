@@ -553,7 +553,7 @@ $(function(){
   // Initialize the octopus
   console.log("Before init octopus");
 
-  $(document).ready(
+  $(document).ready(function(){
     octopus.init();
-  );
+  });
 });
