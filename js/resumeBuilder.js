@@ -112,7 +112,7 @@ $(function(){
       'dates' : "September, 2016",
       'url' : "https://www.udacity.com/course/responsive-images--ud882"
     }],
-
+// TODO: Add a 'Other training' array
   };
   //
   // Work MODEL
@@ -150,7 +150,7 @@ $(function(){
   // Projects object
   //
   var projectsModel = {
-    projects : [{// Project
+     projects : [{// Project
       title: "Arcade Game Remix",
       dates: "October, 2016 - November, 2016",
       description: "A tribute to Frogger.  A fun little app where the player dodges ugly bugs to get to the safety of the river.  This project is an example of using JavaScript for user interaction. (Play it here: https://grindcom.github.io/frontend-nanodegree-arcade-game/)",
@@ -206,8 +206,8 @@ $(function(){
       //  Make sure there is something to display before calling function
       //
       if((educationModel.schools.length > 0) || (educationModel.onlineCourses.length > 0) ){
-        console.log(" Init educationView");
-        // educationView.init(educationModel.schools, educationModel.onlineCourses);
+        console.log("Call Init educationView");
+        educationView.init(educationModel.schools, educationModel.onlineCourses);
       }
     },
     getBioContacts: function(){
@@ -233,6 +233,12 @@ $(function(){
     },
     getProjects: function(){
       return projectsModel.projects;
+    },
+    getSchools: function(){
+      return educationModel.schools;
+    },
+    getOnlineCourses: function(){
+      return educationModel.onlineCourses;
     },
     display: function(){
 
@@ -489,6 +495,9 @@ $(function(){
   var educationView = {
     // TODO: REFACTOR init function
     init: function(schoolsArr, onlineCoursesArr){
+      // Get data that will be used here
+      this.schools = octopus
+      //
       console.log("Init Education View ");
       var schools = schoolsArr;
       var onlineCourses = onlineCoursesArr;
