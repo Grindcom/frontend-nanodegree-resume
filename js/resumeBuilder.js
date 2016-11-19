@@ -290,9 +290,10 @@ $(function(){
       });
       //
       console.log("   Call helperInit");
-      helperInit(octopus);
       // Add maps
-      // this.addMaps();
+      this.addMaps();
+      //
+      helperInit(octopus);
       //
       console.log("   End init main view");
     },
