@@ -183,7 +183,7 @@ $(function(){
   var octopus = {
     init: function(){
       console.log("Init Octopus");
-      // mainView.init();
+      mainView.init();
       bioView.init();
       //
       // Add work experience
@@ -277,7 +277,7 @@ $(function(){
   //
   var mainView = {
     init: function(){
-      console.log("Init Main View ");
+      console.log("   Init Main View ");
       //
       // Hover over functions
       //  Shake visible divs
@@ -289,8 +289,12 @@ $(function(){
 
       });
       //
+      console.log("   Call helperInit");
+      helperInit(octopus);
       // Add maps
       // this.addMaps();
+      //
+      console.log("   End init main view");
     },
     addMaps: function(){
       $('#mapDiv').append(googleMap);

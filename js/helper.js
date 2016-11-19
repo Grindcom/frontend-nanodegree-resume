@@ -108,19 +108,20 @@ var map;    // declares a global map variable
 Start here! initializeMap() is called when page is loaded.
 */
 function initializeMap() {
+  var tmp = this.octopus.getBioContacts();
 
   var locations;
 
   var mapOptions = {
     disableDefaultUI: true
   };
-
+  console.log("    In, initializeMap, line: 118 ");
   /*
   For the map to be displayed, the googleMap var must be
   appended to #mapDiv in resumeBuilder.js.
   */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
-
+console.log("     After Map...");
 
   /*
   locationFinder() returns an array of every location string from the JSONs
@@ -132,8 +133,8 @@ console.log("Location Finder");
     var locations = [];
 
     // adds the single location property from bio to the locations array
-    locations.push((resumeBuilder.octopus.getBioContacts()).location);
-    console.log(" Push Locations");
+    locations.push((Builder.octopus.getBioContacts()).location);
+
     // iterates through school locations and appends each location to
     // the locations array. Note that forEach is used for array iteration
     // as described in the Udacity FEND Style Guide:
@@ -253,3 +254,19 @@ Uncomment the code below when you're ready to implement a Google Map!
 // //   // Make sure the map bounds get updated on page resize
 //  map.fitBounds(mapBounds);
 // });
+//
+// Runs the setup functions on this page.
+//  global is the Builder MOV that calls the function
+function helperInit(global){
+  this.octopus = global;
+  var tmp = this.octopus.getBioName();
+  console.log(" Builder " + tmp);
+  console.log("     Helper Init");
+  window.addEventListener('resize', function(e) {
+  //   // Make sure the map bounds get updated on page resize
+   map.fitBounds(mapBounds);
+  });
+  console.log("     Call initializeMap");
+  //
+  this.initializeMap();
+}
