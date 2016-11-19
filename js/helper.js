@@ -115,7 +115,6 @@ function initializeMap() {
   var mapOptions = {
     disableDefaultUI: true
   };
-  console.log("    In, initializeMap, line: 118 ");
   /*
   For the map to be displayed, the googleMap var must be
   appended to #mapDiv in resumeBuilder.js.
