@@ -189,9 +189,9 @@ $(function(){
       // Add work experience
       //  Make sure there are jobs first, then call work display
       //
-      if(workModel.length > 0){
-        console.log(" Init workView");
-        // workView.init();
+      if(workModel.jobs.length > 0){
+        console.log("Call Init workView");
+        workView.init();
       }
       //
       // Add projects
@@ -227,6 +227,9 @@ $(function(){
     },
     getBioPic: function(){
       return bioModel.biopic;
+    },
+    getWorkJobs: function(){
+      return workModel.jobs;
     },
     display: function(){
 
@@ -364,6 +367,120 @@ $(function(){
     }
   };
   //
+  // Work VIEW
+  //
+  var workView = {
+    // TODO: Refactor init function
+    init: function(){
+      // Get data that this view uses
+      this.jobs = octopus.getWorkJobs();
+      //
+      console.log("  Init Work View ");
+      // Work header click event handler
+      $('#work-h2').click(function(event){
+        // Show or hide Work sub zone
+        $('#sub-work').slideToggle(function(){
+          // Get the value of the :visible object
+          var isVis = $('#sub-work').is(':visible');
+          // get the a element for this
+          var arrow = $('#work-h2').children('a');
+          // if visible
+          if(isVis){
+            // Set h2 to up arrow
+            arrow.removeClass('entypo-down-open-mini');
+            arrow.addClass('entypo-up-open-mini');
+          }else {// if not visible
+            // Set h2 to have a down arrow
+            arrow.removeClass('entypo-up-open-mini');
+            arrow.addClass('entypo-down-open-mini');
+          }
+        });
+      });
+      // Iterate through work array and setup
+      //  their boxes
+      this.jobs.forEach(function(job){
+        $('#sub-work').append(HTMLworkStart);
+        $('.work-entry').addClass('box');
+        var formattedEmployer = HTMLworkEmployer.replace(data,job.employer);
+        var formattedTitle = HTMLworkTitle.replace(data,job.title.bold());
+        var formattedDates = HTMLworkDates.replace(data,job.dates);
+        var formattedDescrip = HTMLworkDescription.replace(data,job.description);
+        var formattedConcat = formattedEmployer + formattedTitle + formattedDates + formattedDescrip;
+        $('.work-entry:last').append(formattedConcat);
+      });
+      //
+      console.log("   End init Work View");
+    },
+    display: function(){
+
+    }
+  };
+  //
+  // Projects VIEW
+  //
+  var projectsView = {
+    // TODO: Refactor init function
+    init: function(){
+      // Get data that will be used
+
+      //
+      console.log("  Init Projects View ");
+      // Project header click event handler
+      $('#project-h2').click(function(event){
+        // Show or hide project sub zone
+        $('#sub-projects').slideToggle(function(){
+          // Get the value of the :visible object
+          var isVis = $('#sub-projects').is(':visible');
+          // get the a element for this
+          var arrow = $('#project-h2').children('a');
+          // if visible
+          if(isVis){
+            // Set h2 to up arrow
+            arrow.removeClass('entypo-down-open-mini');
+            arrow.addClass('entypo-up-open-mini');
+          }else {// if not visible
+            // Set h2 to have a down arrow
+            arrow.removeClass('entypo-up-open-mini');
+            arrow.addClass('entypo-down-open-mini');
+          }
+        });
+      });
+      // iterate through all projects and place them in the projects div
+      projects.projects.forEach(function(project){
+        $('#sub-projects').append(HTMLprojectStart);
+        // Add the box class to surround the project entry
+        $('.project-entry').addClass('box');
+        // Add title div
+        var frmTitle = HTMLprojectTitle.replace(data,project.title);
+        // add the href link to title div
+        frmTitle = frmTitle.replace('#',project.giturl);
+        // Add project dates
+        var frmDate = HTMLprojectDates.replace(data,project.dates);
+        // Add description
+        var frmDescrip = HTMLprojectDescription.replace(data,project.description);
+        // Add the css to the project picture
+        var devTemplate = HTMLprojectImage.replace('>', 'class="projectpic">');
+        // If the image array has any values, iterate through
+        //  them and add them to the project images
+        var frmImage = '';
+        //
+        if(project.images.length > 0){
+          project.images.forEach(function(image){
+            frmImage += devTemplate.replace(data,image);
+          });
+        }
+        // Combine all formatted strings
+        var frmConcat = frmTitle + frmDate + frmDescrip + frmImage;
+        $('.project-entry:last').append(frmConcat);
+      });
+      //
+      console.log("  End projects init ");
+    },
+    display: function(){
+
+    }
+  };
+  //
   // EDUCATION VIEW
   //
   var educationView = {
@@ -445,110 +562,8 @@ $(function(){
 
     }
   };
-  //
-  // Work VIEW
-  //
-  var workView = {
-    // TODO: Refactor init function
-    init: function(){
-      console.log("Init Work View ");
-      // Work header click event handler
-      $('#work-h2').click(function(event){
-        // Show or hide Work sub zone
-        $('#sub-work').slideToggle(function(){
-          // Get the value of the :visible object
-          var isVis = $('#sub-work').is(':visible');
-          // get the a element for this
-          var arrow = $('#work-h2').children('a');
-          // if visible
-          if(isVis){
-            // Set h2 to up arrow
-            arrow.removeClass('entypo-down-open-mini');
-            arrow.addClass('entypo-up-open-mini');
-          }else {// if not visible
-            // Set h2 to have a down arrow
-            arrow.removeClass('entypo-up-open-mini');
-            arrow.addClass('entypo-down-open-mini');
-          }
-        });
-      });
-      // Iterate through work array and setup
-      //  their boxes
-      this.jobs.forEach(function(job){
-        $('#sub-work').append(HTMLworkStart);
-        $('.work-entry').addClass('box');
-        var formattedEmployer = HTMLworkEmployer.replace(data,job.employer);
-        var formattedTitle = HTMLworkTitle.replace(data,job.title.bold());
-        var formattedDates = HTMLworkDates.replace(data,job.dates);
-        var formattedDescrip = HTMLworkDescription.replace(data,job.description);
-        var formattedConcat = formattedEmployer + formattedTitle + formattedDates + formattedDescrip;
-        $('.work-entry:last').append(formattedConcat);
-      });
-    },
-    display: function(){
 
-    }
-  };
-  //
-  // Projects VIEW
-  //
-  var projectsView = {
-    // TODO: Refactor init function
-    init: function(){
-      console.log("Init Projects View ");
-      // Project header click event handler
-      $('#project-h2').click(function(event){
-        // Show or hide project sub zone
-        $('#sub-projects').slideToggle(function(){
-          // Get the value of the :visible object
-          var isVis = $('#sub-projects').is(':visible');
-          // get the a element for this
-          var arrow = $('#project-h2').children('a');
-          // if visible
-          if(isVis){
-            // Set h2 to up arrow
-            arrow.removeClass('entypo-down-open-mini');
-            arrow.addClass('entypo-up-open-mini');
-          }else {// if not visible
-            // Set h2 to have a down arrow
-            arrow.removeClass('entypo-up-open-mini');
-            arrow.addClass('entypo-down-open-mini');
-          }
-        });
-      });
-      // iterate through all projects and place them in the projects div
-      projects.projects.forEach(function(project){
-        $('#sub-projects').append(HTMLprojectStart);
-        // Add the box class to surround the project entry
-        $('.project-entry').addClass('box');
-        // Add title div
-        var frmTitle = HTMLprojectTitle.replace(data,project.title);
-        // add the href link to title div
-        frmTitle = frmTitle.replace('#',project.giturl);
-        // Add project dates
-        var frmDate = HTMLprojectDates.replace(data,project.dates);
-        // Add description
-        var frmDescrip = HTMLprojectDescription.replace(data,project.description);
-        // Add the css to the project picture
-        var devTemplate = HTMLprojectImage.replace('>', 'class="projectpic">');
-        // If the image array has any values, iterate through
-        //  them and add them to the project images
-        var frmImage = '';
-        //
-        if(project.images.length > 0){
-          project.images.forEach(function(image){
-            frmImage += devTemplate.replace(data,image);
-          });
-        }
-        // Combine all formatted strings
-        var frmConcat = frmTitle + frmDate + frmDescrip + frmImage;
-        $('.project-entry:last').append(frmConcat);
-      });
-    },
-    display: function(){
 
-    }
-  };
   //
   // Initialize the octopus
   console.log("Before init octopus");
