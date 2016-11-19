@@ -151,23 +151,23 @@ $(function(){
   //
   var projectsModel = {
     projects : [{// Project
-      'title': "Arcade Game Remix",
-      'dates': "October, 2016 - November, 2016",
-      'description': "A tribute to Frogger.  A fun little app where the player dodges ugly bugs to get to the safety of the river.  This project is an example of using JavaScript for user interaction. (Play it here: https://grindcom.github.io/frontend-nanodegree-arcade-game/)",
-      'images': ["./images/enemy-bug-2.png"],
-      'giturl': "https://github.com/Grindcom/frontend-nanodegree-arcade-game"
+      title: "Arcade Game Remix",
+      dates: "October, 2016 - November, 2016",
+      description: "A tribute to Frogger.  A fun little app where the player dodges ugly bugs to get to the safety of the river.  This project is an example of using JavaScript for user interaction. (Play it here: https://grindcom.github.io/frontend-nanodegree-arcade-game/)",
+      images: ["./images/enemy-bug-2.png"],
+      giturl: "https://github.com/Grindcom/frontend-nanodegree-arcade-game"
     },{// Project
-      'title' : "Portfolio",
-      'dates' : "September, 2016 - September, 2016",
-      'description' : "A portfolio of projects, created for the Front End Developer nanodegree.",
-      'images' : ["./images/pexels-photo-255x150_thumb_1x.jpg","./images/PuppiesOn_theRun-255x150_thumb_1x.jpg"],
-      'giturl' : "https://github.com/Grindcom/portfolio"
+      title : "Portfolio",
+      dates : "September, 2016 - September, 2016",
+      description : "A portfolio of projects, created for the Front End Developer nanodegree.",
+      images : ["./images/pexels-photo-255x150_thumb_1x.jpg","./images/PuppiesOn_theRun-255x150_thumb_1x.jpg"],
+      giturl : "https://github.com/Grindcom/portfolio"
     },{// Project
-      'title' : "Resume'",
-      'dates' : "September, 2016 - September, 2016",
-      'description' : "A Resume' of projects, created for the UDacity Front End Developer nanodegree. It serves as a sample of my developer skill set - HTML, CSS and JavaScript.",
-      'images' : ["./images/pexels-photo-255x150_thumb_1x.jpg"],
-      'giturl' : "https://github.com/Grindcom/frontend-nanodegree-resume"
+      title : "Resume'",
+      dates : "September, 2016 - September, 2016",
+      description : "A Resume' of projects, created for the UDacity Front End Developer nanodegree. It serves as a sample of my developer skill set - HTML, CSS and JavaScript.",
+      images : ["./images/pexels-photo-255x150_thumb_1x.jpg"],
+      giturl : "https://github.com/Grindcom/frontend-nanodegree-resume"
     }],
 
   };
@@ -197,9 +197,9 @@ $(function(){
       // Add projects
       //  Make sure there is something in projects first
       //
-      if(projectsModel.length > 0 ){
-        console.log(" Init projectsView");
-        // projectsView.init();
+      if(projectsModel.projects.length > 0 ){
+        console.log("Call Init projectsView");
+        projectsView.init();
       }
       //
       // Add Education
@@ -230,6 +230,9 @@ $(function(){
     },
     getWorkJobs: function(){
       return workModel.jobs;
+    },
+    getProjects: function(){
+      return projectsModel.projects;
     },
     display: function(){
 
@@ -422,7 +425,7 @@ $(function(){
     // TODO: Refactor init function
     init: function(){
       // Get data that will be used
-
+      this.projects = octopus.getProjects();
       //
       console.log("  Init Projects View ");
       // Project header click event handler
@@ -446,7 +449,7 @@ $(function(){
         });
       });
       // iterate through all projects and place them in the projects div
-      projects.projects.forEach(function(project){
+      this.projects.forEach(function(project){
         $('#sub-projects').append(HTMLprojectStart);
         // Add the box class to surround the project entry
         $('.project-entry').addClass('box');
