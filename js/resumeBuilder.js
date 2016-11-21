@@ -182,7 +182,6 @@ $(function(){
   //
   var octopus = {
     init: function(){
-      console.log("Init Octopus");
       mainView.init();
       bioView.init();
       //
@@ -190,7 +189,6 @@ $(function(){
       //  Make sure there are jobs first, then call work display
       //
       if(workModel.jobs.length > 0){
-        console.log("Call Init workView");
         workView.init();
       }
       //
@@ -198,7 +196,6 @@ $(function(){
       //  Make sure there is something in projects first
       //
       if(projectsModel.projects.length > 0 ){
-        console.log("Call Init projectsView");
         projectsView.init();
       }
       //
@@ -206,7 +203,6 @@ $(function(){
       //  Make sure there is something to display before calling function
       //
       if((educationModel.schools.length > 0) || (educationModel.onlineCourses.length > 0) ){
-        console.log("Call Init educationView");
         educationView.init(educationModel.schools, educationModel.onlineCourses);
       }
     },
@@ -277,25 +273,20 @@ $(function(){
   //
   var mainView = {
     init: function(){
-      console.log("   Init Main View ");
       //
       // Hover over functions
       //  Shake visible divs
       //
-      // $('#theElement').effect('shake', 100);
       $('#work-h2, #project-h2, #education-h2').mouseover(function(){
-        console.log("hello");
         $('#skills').effect('shake');
 
       });
       //
-      console.log("   Call helperInit");
       // Add maps
       this.addMaps();
       //
       helperInit(octopus);
       //
-      console.log("   End init main view");
     },
     addMaps: function(){
       $('#mapDiv').append(googleMap);
@@ -322,7 +313,7 @@ $(function(){
   var bioView = {
     // TODO: Refactor init function
     init: function(){
-      console.log("Init Bio View...");
+      // Get reference to data that will be placed in the bio vew
       this.biopic = octopus.getBioPic();
       this.name = octopus.getBioName();
       this.role = octopus.getBioRole();
@@ -374,7 +365,6 @@ $(function(){
       $('#topContacts1, #footerContacts').append(formattedLin);
       $('#topContacts1, #footerContacts').append(formattedLocation);
       //
-      console.log("  End bioView init");
     },
     display: function(){
 
@@ -389,7 +379,6 @@ $(function(){
       // Get data that this view uses
       this.jobs = octopus.getWorkJobs();
       //
-      console.log("  Init Work View ");
       // Work header click event handler
       $('#work-h2').click(function(event){
         // Show or hide Work sub zone
@@ -423,7 +412,6 @@ $(function(){
         $('.work-entry:last').append(formattedConcat);
       });
       //
-      console.log("   End init Work View");
     },
     display: function(){
 
@@ -438,7 +426,6 @@ $(function(){
       // Get data that will be used
       this.projects = octopus.getProjects();
       //
-      console.log("  Init Projects View ");
       // Project header click event handler
       $('#project-h2').click(function(event){
         // Show or hide project sub zone
@@ -488,7 +475,6 @@ $(function(){
         $('.project-entry:last').append(frmConcat);
       });
       //
-      console.log("  End projects init ");
     },
     display: function(){
 
@@ -503,7 +489,6 @@ $(function(){
       // Get data that will be used here
       this.schools = octopus
       //
-      console.log("Init Education View ");
       var schools = schoolsArr;
       var onlineCourses = onlineCoursesArr;
       // Education header click event handler
@@ -583,8 +568,6 @@ $(function(){
 
   //
   // Initialize the octopus
-  console.log("Before init octopus");
-
   $(document).ready(function(){
     octopus.init();
   });

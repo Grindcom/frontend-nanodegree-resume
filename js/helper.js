@@ -119,14 +119,11 @@ function initializeMap() {
   appended to #mapDiv in resumeBuilder.js.
   */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
-  console.log("     After Map...");
-
   /*
   locationFinder() returns an array of every location string from the JSONs
   written for bio, education, and work.
   */
   function locationFinder() {
-    console.log("Location Finder");
     // initializes an empty array
     var locations = [];
 
@@ -138,7 +135,6 @@ function initializeMap() {
     // as described in the Udacity FEND Style Guide:
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
     this.schools.forEach(function(school){
-      console.log("  education.schools...");
       locations.push(school.location);
     });
     // iterates through work locations and appends each location to
@@ -260,14 +256,10 @@ function helperInit(octopus){
   this.schools = octopus.getSchools();
   this.jobs = octopus.getWorkJobs();
   //
-  var tmp = octopus.getBioName();
-  console.log(" Builder " + tmp);
-  console.log("     Helper Init");
   window.addEventListener('resize', function(e) {
     //   // Make sure the map bounds get updated on page resize
     map.fitBounds(mapBounds);
   });
-  console.log("     Call initializeMap");
   //
   this.initializeMap();
 }
