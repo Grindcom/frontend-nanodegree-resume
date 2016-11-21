@@ -205,6 +205,12 @@ $(function(){
       if((educationModel.schools.length > 0) || (educationModel.onlineCourses.length > 0) ){
         educationView.init(educationModel.schools, educationModel.onlineCourses);
       }
+      //
+      // Set initial sections to up, or hidden
+      // Cause a click event on the project-h2
+      $('#project-h2').click();
+      // Cause a click event on the education-h2
+      $('#education-h2').click();
     },
     getBioContacts: function(){
       return bioModel.contacts;
