@@ -150,13 +150,13 @@ $(function(){
   // Projects object
   //
   var projectsModel = {
-     projects : [{// Project
+     projects : [/*{// Project
        title: " ",
        dates: " ",
        description: " ",
        images: [" "],
        giturl: " "
-     },{// Project
+     }*/,{// Project
        title: "Website Performance Optimization",
        dates: "November, 2016",
        description: "Demonstrate techniques used that will allow a web page to be rendered in one second or less.",
@@ -172,7 +172,7 @@ $(function(){
       title : "Portfolio",
       dates : "September, 2016 - September, 2016",
       description : "A portfolio of projects, created for the Front End Developer nanodegree.",
-      images : ["./images/pexels-photo-255x150_thumb_1x.jpg","./images/PuppiesOn_theRun-255x150_thumb_1x.jpg"],
+      images : [/*"./images/pexels-photo-255x150_thumb_1x.jpg",*/"./images/PuppiesOn_theRun-255x150_thumb_1x.jpg"],
       giturl : "https://github.com/Grindcom/portfolio"
     },{// Project
       title : "Resume'",
