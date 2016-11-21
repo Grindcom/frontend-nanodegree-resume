@@ -1,6 +1,8 @@
 # UDacity Resume Project
 ## Overview
-Beyond the obvious use of this project as an actual resume, it als represents my ability to use the single responsibility principal for design; in this case encapsulating data and functionality in a single structure.  
+Beyond the obvious use of this project as an online resume, it also serves to showcase my ability to use separation of concerns logic. In this case, the separation of concerns is centered around resumeBuilder.js where the data model and view logic are separate and controlled from the 'octopus'; separating Data, Operations and View logic in a simple example.  
+The Project Details section, beolow explains the original project, which can be seen by selecting [the master branch](https://github.com/Grindcom/greg-ford-resume/tree/master) for the project.  
+
 
 ## This project demonstrates:
 1. Accessing data utilizing schema.
