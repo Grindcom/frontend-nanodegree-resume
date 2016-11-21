@@ -3,6 +3,11 @@
 Beyond the obvious use of this project as an online resume, it also serves to showcase my ability to use separation of concerns logic. In this case, the separation of concerns is centered around resumeBuilder.js where the data model and view logic are separate and controlled from the 'octopus'; separating Data, Operations and View logic in a simple example.  
 The Project Details section, beolow explains the original project, which can be seen by selecting [the master branch](https://github.com/Grindcom/greg-ford-resume/tree/master) for the project.  
 
+## This project demonstrates:
+1. Accessing data utilizing schema.
+2. Manipulating html elements utilizing JavaScript.
+3. Using third party API's; in this case googleMap.
+
 
 # Project Details
 ## How do I complete this project?
