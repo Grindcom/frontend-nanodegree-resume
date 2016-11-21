@@ -151,6 +151,18 @@ $(function(){
   //
   var projectsModel = {
      projects : [{// Project
+       title: " ",
+       dates: " ",
+       description: " ",
+       images: [" "],
+       giturl: " "
+     },{// Project
+       title: "Website Performance Optimization",
+       dates: "November, 2016",
+       description: "Demonstrate techniques used that will allow a web page to be rendered in one second or less.",
+       images: ["./images/topGear.jpg"],
+       giturl: "https://github.com/Grindcom/frontend-nanodegree-mobile-portfolio"
+     },{// Project
       title: "Arcade Game Remix",
       dates: "October, 2016 - November, 2016",
       description: "A tribute to Frogger.  A fun little app where the player dodges ugly bugs to get to the safety of the river.  This project is an example of using JavaScript for user interaction. (Play it here: https://grindcom.github.io/frontend-nanodegree-arcade-game/)",
@@ -165,7 +177,7 @@ $(function(){
     },{// Project
       title : "Resume'",
       dates : "September, 2016 - September, 2016",
-      description : "A Resume' of projects, created for the UDacity Front End Developer nanodegree. It serves as a sample of my developer skill set - HTML, CSS and JavaScript.",
+      description : "A Resume' of projects, created for the UDacity Front End Developer nanodegree. It serves as a sample of my developer skill set - HTML, CSS and JavaScript.  With branches demonstrating single responsibility principal (SRP) and seperation of concerns (SoC) design methods",
       images : ["./images/pexels-photo-255x150_thumb_1x.jpg"],
       giturl : "https://github.com/Grindcom/frontend-nanodegree-resume"
     }],
