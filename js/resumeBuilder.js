@@ -43,8 +43,8 @@ $(function(){
     contacts : {
       mobile : "250-305-8802",
       email : oldEmail,
-      github : "Grindcom",
-      linkedin : "gtford",
+      github : ["Grindcom","https://github.com/Grindcom"],
+      linkedin : ["gtford","https://ca.linkedin.com/in/gtford"],
       location : "Williams Lake, BC"
     },
     welcomeMessage : message,
@@ -346,8 +346,8 @@ $(function(){
       // Set up Contacts
       var formattedEmail = HTMLemail.replace(data,this.contacts.email);
       var formattedMobile = HTMLmobile.replace(data,this.contacts.mobile);
-      var formattedGit = HTMLgithub.replace(data,this.contacts.github);
-      var formattedLin = HTMLlinkedIn.replace(data,this.contacts.linkedin);
+      var formattedGit = HTMLgithub.replace(data,'<a href="'+this.contacts.github[1] +'">'+this.contacts.github[0]+'</a>');
+      var formattedLin = HTMLlinkedIn.replace(data,'<a href="'+this.contacts.linkedin[1]+'">'+this.contacts.linkedin[0]+'</a>');
       var formattedLocation = HTMLlocation.replace(data,this.contacts.location);
       // Add to header
       //  Use prepend to put it at the start of the header area
