@@ -179,7 +179,7 @@ $(function(){
       dates : "September, 2016 - September, 2016",
       description : "A Resume' of projects, created for the UDacity Front End Developer nanodegree. It serves as a sample of my developer skill set - HTML, CSS and JavaScript.  With branches demonstrating single responsibility principal (SRP) and seperation of concerns (SoC) design methods",
       images : ["./images/pexels-photo-255x150_thumb_1x.jpg"],
-      giturl : "https://github.com/Grindcom/frontend-nanodegree-resume"
+      giturl : "https://github.com/Grindcom/greg-ford-resume"
     }],
 
   };
