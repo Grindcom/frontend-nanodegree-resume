@@ -346,8 +346,8 @@ $(function(){
       // Set up Contacts
       var formattedEmail = HTMLemail.replace(data,this.contacts.email);
       var formattedMobile = HTMLmobile.replace(data,this.contacts.mobile);
-      var formattedGit = HTMLgithub.replace(data,'<a href="'+this.contacts.github[1] +'">'+this.contacts.github[0]+'</a>');
-      var formattedLin = HTMLlinkedIn.replace(data,'<a href="'+this.contacts.linkedin[1]+'">'+this.contacts.linkedin[0]+'</a>');
+      var formattedGit = HTMLgithub.replace(data,this.contacts.github[0]);
+      var formattedLin = HTMLlinkedIn.replace(data,this.contacts.linkedin[0]);
       var formattedLocation = HTMLlocation.replace(data,this.contacts.location);
       // Add to header
       //  Use prepend to put it at the start of the header area
