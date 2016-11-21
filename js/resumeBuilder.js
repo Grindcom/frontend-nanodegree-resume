@@ -273,19 +273,17 @@ $(function(){
   //
   var mainView = {
     init: function(){
-      //
       // Hover over functions
       //  Shake visible divs
-      //
       $('#work-h2, #project-h2, #education-h2').mouseover(function(){
+        // Shake any elements with id = skills
         $('#skills').effect('shake');
-
       });
       //
       // Add maps
       this.addMaps();
       //
-      helperInit(octopus);
+      helperInit(octopus);//Call init in helper.js
       //
     },
     addMaps: function(){
