@@ -156,7 +156,7 @@ $(function(){
        description: " ",
        images: [" "],
        giturl: " "
-     }*/,{// Project
+     },*/{// Project
        title: "Website Performance Optimization",
        dates: "November, 2016",
        description: "Demonstrate techniques used that will allow a web page to be rendered in one second or less.",
