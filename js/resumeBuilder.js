@@ -145,7 +145,59 @@ $(function(){
     }],
 
   };
-
+  //
+  // Certification
+  //
+  // TODO: Add this to the App or change to using KnockoutJS
+  var certificationModel = {
+    cert : [{
+      type: 'Class 5,6 Drivers license',
+      completeDate: 'June, 1983',
+    },{
+      type: 'Auto Extrication, Level I',
+      completeDate: 'November, 2015'
+    },{
+      type: 'First Aid, Level I',
+      completeDate: 'November, 2014'
+    },{
+      type: 'Road Rescue Rope Operations, Level II',
+      completeDate: 'November, 2014'
+    },{
+      type: 'Rapid Intervention Team',
+      completeDate: 'September, 2013'
+    },{
+      type: 'Fire Firefighter, Level I and II',
+      completeDate: 'October, 2013'
+    },{
+      type: 'HazMat Operations, Level II',
+      completeDate: 'April, 2013'
+    },{
+      type: 'HazMat Awareness, Level I',
+      completeDate: 'February, 2013'
+    },{
+      type: 'Fire Scene Preservation for the Firefighter',
+      completeDate: 'November, 2012'
+    },{
+      type: 'ICS I-100 (Incident Command System)',
+      completeDate: 'October, 2012'
+    },{
+      type: 'Emergency Scene Traffic Control',
+      completeDate: 'June, 2012'
+    },{
+      type: 'Wildland Firefighter I (Office of the Fire Commissioner)',
+      completeDate: 'April, 2012'
+    },{
+      type: 'Recruits Basic Firefighting Pro',
+      completeDate: 'July, 2011'
+    },{
+      type: 'Private Pilot License',
+      completeDate: 'March, 1993'
+    },{
+      type: 'Radio Telephone Operators Restricted Certificate (Class 07)',
+      completeDate: 'June, 1989'
+    }
+  ]
+};
   //
   // Projects object
   //
@@ -156,7 +208,14 @@ $(function(){
        description: " ",
        images: [" "],
        giturl: " "
-     },*/{// Project
+     },*/
+     {// Project
+       title: "Cat Clicker",
+       dates: "December, 2016",
+       description: "Demonstrate the use of KnockoutJS",
+       images: ["./images/ko-logo.png"],
+       giturl: "https://github.com/Grindcom/ud989-cat-clicker-ko-starter"
+     },{// Project
        title: "Website Performance Optimization",
        dates: "November, 2016",
        description: "Demonstrate techniques used that will allow a web page to be rendered in one second or less.",
