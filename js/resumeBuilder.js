@@ -119,6 +119,12 @@ $(function(){
   //
   var workModel = {
     jobs : [{// work experience
+      'employer' : "Tolko Industries LTD.",
+      'title' : "Laborer",
+      'location' : "Williams Lake,BC",
+      'dates' : "January, 2019 - in progress",
+      'description' : "Clean Up and Rotation"
+    },{// work experience
       'employer' : "Williams Lake Fire Department",
       'title' : "Firefighter",
       'location' : "Williams Lake,BC",
